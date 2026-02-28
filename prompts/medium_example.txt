@@ -1,0 +1,1 @@
+Help me write a Python script that reads a CSV file and outputs the top 10 rows sorted by the "revenue" column. The file path will be provided as a command-line argument.
