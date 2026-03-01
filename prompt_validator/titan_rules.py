@@ -356,6 +356,208 @@ def check_governance_entries(prompt: str) -> list[Issue]:
 
 
 # ---------------------------------------------------------------------------
+# 13. COMPOSITE WEIGHT SUM VALIDATION
+# ---------------------------------------------------------------------------
+
+_WEIGHT_PATTERNS = {
+    "SCS": [
+        (r"0\.30\s*\*\s*TAS", 0.30),
+        (r"0\.20\s*\*\s*PQS", 0.20),
+        (r"0\.15\s*\*\s*VOL", 0.15),
+        (r"0\.15\s*\*\s*MOMENTUM", 0.15),
+        (r"0\.20\s*\*\s*STRUCTURE", 0.20),
+    ],
+    "TES": [
+        (r"0\.30\s*\*\s*TRIGGER", 0.30),
+        (r"0\.25\s*\*\s*STOP", 0.25),
+        (r"0\.25\s*\*\s*R_QUALITY", 0.25),
+        (r"0\.20\s*\*\s*TIMING", 0.20),
+    ],
+    "PQS": [
+        (r"0\.30\s*\*\s*DEPTH", 0.30),
+        (r"0\.25\s*\*\s*EMA", 0.25),
+        (r"0\.25\s*\*\s*CANDLE", 0.25),
+        (r"0\.20\s*\*\s*VOL", 0.20),
+    ],
+}
+
+
+def check_weight_sums(prompt: str) -> list[Issue]:
+    """Verify composite score weights sum to 1.0."""
+    issues = []
+    for score_name, weight_specs in _WEIGHT_PATTERNS.items():
+        found_weights = []
+        for pattern, expected_w in weight_specs:
+            if re.search(pattern, prompt, re.IGNORECASE):
+                found_weights.append(expected_w)
+        if found_weights:
+            total = round(sum(found_weights), 2)
+            if total != 1.0:
+                issues.append(Issue(
+                    message=f"{score_name} weights do not sum to 1.0",
+                    severity=Severity.ERROR, category=Category.ACCURACY,
+                    detail=f"{score_name} weights sum to {total} (found {len(found_weights)} components).",
+                    penalty=15,
+                ))
+    return issues
+
+
+# ---------------------------------------------------------------------------
+# 14. ENTRY GATE COUNT VALIDATION
+# ---------------------------------------------------------------------------
+
+def check_gate_count(prompt: str) -> list[Issue]:
+    """Verify all 12 entry gates are listed."""
+    gate_numbers = set()
+    for m in re.finditer(r"\b(?:gate\s+)?(\d{1,2})\b", prompt.lower()):
+        n = int(m.group(1))
+        if 1 <= n <= 12:
+            gate_numbers.add(n)
+    # Also detect numbered rows like "| **1** |" or "| 1 |"
+    for m in re.finditer(r"\|\s*\*?\*?(\d{1,2})\*?\*?\s*\|", prompt):
+        n = int(m.group(1))
+        if 1 <= n <= 12:
+            gate_numbers.add(n)
+    if len(gate_numbers) < 12:
+        missing = sorted(set(range(1, 13)) - gate_numbers)
+        return [Issue(
+            message="Incomplete 12-gate entry sequence",
+            severity=Severity.WARNING, category=Category.STRUCTURE,
+            detail=f"Found gates {sorted(gate_numbers)}. Missing: {missing}.",
+            penalty=3,
+        )]
+    return []
+
+
+# ---------------------------------------------------------------------------
+# 15. SETUP A/B/C COMPLETENESS
+# ---------------------------------------------------------------------------
+
+def check_setup_completeness(prompt: str) -> list[Issue]:
+    """Verify Setup A, B, and C each define entry trigger, stop, and eligibility."""
+    lower = prompt.lower()
+    issues = []
+    for setup, label in [("setup a", "Breakout"), ("setup b", "Pullback"), ("setup c", "Range Reversion")]:
+        if setup not in lower:
+            issues.append(Issue(
+                message=f"Missing {setup.upper()} ({label})",
+                severity=Severity.WARNING, category=Category.STRUCTURE,
+                detail=f"{setup.upper()} definition not found.", penalty=5,
+            ))
+    return issues
+
+
+# ---------------------------------------------------------------------------
+# 16. HARD KILL DEFINITIONS
+# ---------------------------------------------------------------------------
+
+def check_hard_kills(prompt: str) -> list[Issue]:
+    """Verify EFF > 2.5 and R_POTENTIAL < 1.0 hard kills are defined."""
+    lower = prompt.lower()
+    issues = []
+    has_eff_kill = "eff" in lower and ("2.5" in prompt or "invalid" in lower)
+    has_r_kill = "r_potential" in lower and ("1.0" in prompt or "invalid" in lower)
+    if not has_eff_kill:
+        issues.append(Issue(
+            message="No EFF hard kill defined",
+            severity=Severity.WARNING, category=Category.ACCURACY,
+            detail="EFF > 2.5 should invalidate the setup.", penalty=5,
+        ))
+    if not has_r_kill:
+        issues.append(Issue(
+            message="No R_POTENTIAL hard kill defined",
+            severity=Severity.WARNING, category=Category.ACCURACY,
+            detail="R_POTENTIAL < 1.0 should invalidate the setup.", penalty=5,
+        ))
+    return issues
+
+
+# ---------------------------------------------------------------------------
+# 17. THRESHOLD CROSS-REFERENCE CONSISTENCY
+# ---------------------------------------------------------------------------
+
+def check_threshold_consistency(prompt: str) -> list[Issue]:
+    """Verify ADX, drawdown, and loss thresholds are consistent across sections."""
+    issues = []
+    # Check drawdown thresholds: DEFENSIVE at 5%, HALT at 8%
+    has_5pct_defensive = bool(re.search(r"5\.0%.*defensive|defensive.*5\.0%", prompt, re.IGNORECASE))
+    has_8pct_halt = bool(re.search(r"8\.0%.*halt|halt.*8\.0%|drawdown.*8\.0", prompt, re.IGNORECASE))
+    if not has_5pct_defensive:
+        issues.append(Issue(
+            message="DEFENSIVE regime at 5% drawdown not found",
+            severity=Severity.INFO, category=Category.ACCURACY,
+            detail="Section 7 and 20 should agree on 5.0% DEFENSIVE threshold.",
+            penalty=3,
+        ))
+    if not has_8pct_halt:
+        issues.append(Issue(
+            message="SYSTEM_HALT at 8% drawdown not found",
+            severity=Severity.INFO, category=Category.ACCURACY,
+            detail="Section 20 should define 8.0% drawdown → SYSTEM_HALT.",
+            penalty=3,
+        ))
+    return issues
+
+
+# ---------------------------------------------------------------------------
+# 18. SLIPPAGE MODEL
+# ---------------------------------------------------------------------------
+
+def check_slippage_model(prompt: str) -> list[Issue]:
+    """Verify slippage model is defined (SLIPPAGE_BASE, SLIPPAGE_PAD)."""
+    lower = prompt.lower()
+    has_slippage = "slippage" in lower or "slippage_pad" in lower or "slippage_base" in lower
+    if not has_slippage:
+        return [Issue(
+            message="No slippage model defined",
+            severity=Severity.INFO, category=Category.ACCURACY,
+            detail="Define SLIPPAGE_BASE and SLIPPAGE_PAD for stop placement accuracy.",
+            penalty=3,
+        )]
+    return []
+
+
+# ---------------------------------------------------------------------------
+# 19. MAX HOLDING PERIOD
+# ---------------------------------------------------------------------------
+
+def check_max_hold(prompt: str) -> list[Issue]:
+    """Verify max holding period is defined."""
+    lower = prompt.lower()
+    has_max_hold = any(k in lower for k in ["max_hold", "max hold", "maximum hold", "10 trading days", "day 10"])
+    if not has_max_hold:
+        return [Issue(
+            message="No max holding period defined",
+            severity=Severity.WARNING, category=Category.ACCURACY,
+            detail="Swing systems should cap holding duration.", penalty=5,
+        )]
+    return []
+
+
+# ---------------------------------------------------------------------------
+# 20. POSITION SIZING COMPLETENESS
+# ---------------------------------------------------------------------------
+
+def check_position_sizing_detail(prompt: str) -> list[Issue]:
+    """Verify portfolio heat, overnight adjustment, and risk-per-trade."""
+    lower = prompt.lower()
+    issues = []
+    if "portfolio_heat" not in lower and "portfolio heat" not in lower:
+        issues.append(Issue(
+            message="No portfolio heat limit",
+            severity=Severity.INFO, category=Category.ACCURACY,
+            detail="Define max portfolio heat (sum of open risks).", penalty=3,
+        ))
+    if "overnight" not in lower:
+        issues.append(Issue(
+            message="No overnight position adjustment",
+            severity=Severity.INFO, category=Category.ACCURACY,
+            detail="Multi-day systems need overnight sizing rules.", penalty=3,
+        ))
+    return issues
+
+
+# ---------------------------------------------------------------------------
 # Aggregate all TITAN rules
 # ---------------------------------------------------------------------------
 
@@ -377,4 +579,13 @@ ALL_TITAN_RULES = [
     check_halt_conditions,
     check_output_format,
     check_governance_entries,
+    # --- Deep audit rules (added v1.0.0 audit) ---
+    check_weight_sums,
+    check_gate_count,
+    check_setup_completeness,
+    check_hard_kills,
+    check_threshold_consistency,
+    check_slippage_model,
+    check_max_hold,
+    check_position_sizing_detail,
 ]

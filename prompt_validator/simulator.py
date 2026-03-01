@@ -723,6 +723,8 @@ def _sim_titan(scenario: Scenario) -> SimResult:
     result = SimResult("TITAN", scenario.name)
     weekly_loss_r = 0.0
     daily_loss_r = 0.0
+    weekly_trade_count = 0
+    daily_trade_count = 0
     consecutive_losses = 0
     cooldown = 0
     trade_history = []  # for WMG
@@ -731,6 +733,12 @@ def _sim_titan(scenario: Scenario) -> SimResult:
         if cooldown > 0:
             cooldown -= 1
             continue
+
+        # --- GATE 2: Trade caps (Section 3.3) ---
+        if weekly_trade_count >= 2:
+            continue  # Max 2 new entries per week
+        if daily_trade_count >= 1:
+            continue  # Max 1 new entry per day
 
         # --- GATE 3: Loss limits ---
         if weekly_loss_r >= 4.0:
@@ -801,11 +809,17 @@ def _sim_titan(scenario: Scenario) -> SimResult:
         # Volume contraction during pullback
         vol_contract = bars[i].volume < 0.8 * sma_vol[i] if sma_vol[i] > 0 else False
 
+        # Pullback candle quality: count bearish bars in pullback (Section 8.3)
+        if i >= 10:
+            pb_bars_count = sum(1 for k in range(max(0, i - 7), i) if not bars[k].is_bullish)
+        else:
+            pb_bars_count = 0
+
         def _pqs_score(pb_depth: float) -> int:
             depth = 100 if 0.5 <= pb_depth <= 1.5 else 50 if (1.5 < pb_depth <= 2.5 or 0.3 <= pb_depth < 0.5) else 0
             ema_s = 100 if ema_touch else 50 if min(near_ema50, near_ema21) < 1.5 else 0
             vol_s = 100 if vol_contract else 50 if bars[i].volume < sma_vol[i] else 0
-            candle_s = 50  # Simplified: assume moderate pullback quality
+            candle_s = 100 if 3 <= pb_bars_count <= 5 else 50 if pb_bars_count in (2, 6, 7) else 0
             return int(0.30 * depth + 0.25 * ema_s + 0.25 * candle_s + 0.20 * vol_s)
 
         pqs_long = _pqs_score(pb_depth_long)
@@ -878,40 +892,95 @@ def _sim_titan(scenario: Scenario) -> SimResult:
         if wmg_locked:
             continue
 
+        # --- REGIME classification (Section 7) ---
+        sideways = not uptrend and not downtrend
+        adx_weak = adx[i] < 20
+        is_range_regime = sideways and adx_weak
+
+        # --- Setup C: Range Reversion (Section 14) ---
+        range_high = max(bars[k].high for k in range(max(0, i - 40), i + 1)) if i >= 10 else 0
+        range_low = min(bars[k].low for k in range(max(0, i - 40), i + 1)) if i >= 10 else 0
+        mid_range = (range_high + range_low) / 2
+        near_range_low = abs(closes[i] - range_low) <= 0.3 * atr[i] if atr[i] > 0 else False
+        near_range_high = abs(closes[i] - range_high) <= 0.3 * atr[i] if atr[i] > 0 else False
+
         # --- COOLDOWN check (Section 21) ---
         in_cooldown = consecutive_losses >= 2
-        if in_cooldown:
-            # Only allow if SCS >= 70 and TES >= 70
-            best_scs = max(scs_long, scs_short)
-            if best_scs < 70:
-                continue
 
-        # --- Direction selection (Setup A: breakout, Setup B: pullback) ---
+        # --- Direction selection (Setup A: breakout, Setup B: pullback, Setup C: range) ---
         direction = None
+        setup_type = None
+
         # Setup A — Breakout: price breaks swing high/low with volume (uses breakout SCS)
-        if scs_brk_long >= 55 and tas_long >= 65 and breakout_long and breakout_vol and bars[i].is_bullish:
+        if not in_cooldown and scs_brk_long >= 55 and tas_long >= 65 and breakout_long and breakout_vol and bars[i].is_bullish:
             direction = "LONG"
-        elif scs_brk_short >= 55 and tas_short >= 65 and breakout_short and breakout_vol and not bars[i].is_bullish:
+            setup_type = "A"
+        elif not in_cooldown and scs_brk_short >= 55 and tas_short >= 65 and breakout_short and breakout_vol and not bars[i].is_bullish:
             direction = "SHORT"
+            setup_type = "A"
         # Setup B — Pullback: price near EMA + trigger bar + structure (uses pullback SCS)
         elif scs_long >= 55 and tas_long >= 40 and trigger_long and ema_touch:
             direction = "LONG"
+            setup_type = "B"
         elif scs_short >= 55 and tas_short >= 40 and trigger_short and ema_touch:
             direction = "SHORT"
+            setup_type = "B"
+        # Setup C — Range Reversion: price near range boundary with trigger
+        elif is_range_regime and near_range_low and trigger_long and scs_long >= 55:
+            direction = "LONG"
+            setup_type = "C"
+        elif is_range_regime and near_range_high and trigger_short and scs_short >= 55:
+            direction = "SHORT"
+            setup_type = "C"
+
+        # Apply cooldown filter: requires SCS >= 70 AND TES >= 70 (Section 21)
+        if in_cooldown and direction:
+            candidate_scs = scs_brk_long if setup_type == "A" and direction == "LONG" else \
+                            scs_brk_short if setup_type == "A" and direction == "SHORT" else \
+                            scs_long if direction == "LONG" else scs_short
+            if candidate_scs < 70:
+                direction = None
 
         if direction:
             entry = bars[i].close
             atr_daily = atr[i] * 2  # Proxy for daily ATR
-            if direction == "LONG":
-                stop = entry - 1.0 * atr_daily
-                t1 = entry + 1.5 * atr_daily
-                t2 = entry + 2.5 * atr_daily
-                t3 = entry + 3.5 * atr_daily
+
+            if setup_type == "A":
+                # Setup A targets (Section 17): T1=1*ATR, T2=2*ATR, T3=3*ATR
+                if direction == "LONG":
+                    stop = entry - 1.0 * atr_daily
+                    t1 = entry + 1.0 * atr_daily
+                    t2 = entry + 2.0 * atr_daily
+                    t3 = entry + 3.0 * atr_daily
+                else:
+                    stop = entry + 1.0 * atr_daily
+                    t1 = entry - 1.0 * atr_daily
+                    t2 = entry - 2.0 * atr_daily
+                    t3 = entry - 3.0 * atr_daily
+            elif setup_type == "C":
+                # Setup C targets (Section 17): T1=MidRange, T2=opposite bound
+                if direction == "LONG":
+                    stop = range_low - 1.0 * atr_daily
+                    t1 = mid_range
+                    t2 = range_high - 0.5 * atr_daily
+                    t3 = t2  # No T3 for range trades
+                else:
+                    stop = range_high + 1.0 * atr_daily
+                    t1 = mid_range
+                    t2 = range_low + 0.5 * atr_daily
+                    t3 = t2
             else:
-                stop = entry + 1.0 * atr_daily
-                t1 = entry - 1.5 * atr_daily
-                t2 = entry - 2.5 * atr_daily
-                t3 = entry - 3.5 * atr_daily
+                # Setup B targets (Section 17): T1=swing, T2=swing+1*ATR, T3=swing+2*ATR
+                if direction == "LONG":
+                    stop = entry - 1.0 * atr_daily
+                    t1 = swing_high if i >= 10 else entry + 1.0 * atr_daily
+                    t2 = t1 + 1.0 * atr_daily
+                    t3 = t1 + 2.0 * atr_daily
+                else:
+                    stop = entry + 1.0 * atr_daily
+                    t1 = swing_low if i >= 10 else entry - 1.0 * atr_daily
+                    t2 = t1 - 1.0 * atr_daily
+                    t3 = t1 - 2.0 * atr_daily
 
             risk = abs(entry - stop)
             if risk < 0.01:
@@ -924,9 +993,13 @@ def _sim_titan(scenario: Scenario) -> SimResult:
                 continue
 
             # TES gate
-            tes = _tes(direction == "LONG" and trigger_long or direction == "SHORT" and trigger_short,
-                       atr_daily, entry, stop, t1)
+            has_trigger = (direction == "LONG" and trigger_long) or (direction == "SHORT" and trigger_short)
+            tes = _tes(has_trigger, atr_daily, entry, stop, t1)
             if tes < 50:
+                continue
+
+            # Cooldown TES check (Section 21): also requires TES >= 70
+            if in_cooldown and tes < 70:
                 continue
 
             # --- 3-tier partial exit simulation ---
@@ -993,6 +1066,8 @@ def _sim_titan(scenario: Scenario) -> SimResult:
             trade_r = result.trades[-1].r_multiple
             daily_loss_r += max(0, -trade_r)
             weekly_loss_r += max(0, -trade_r)
+            weekly_trade_count += 1
+            daily_trade_count += 1
             trade_history.append(trade_r)
 
             if trade_pnl < 0:
