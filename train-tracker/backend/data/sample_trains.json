@@ -1,0 +1,220 @@
+{
+  "trains": [
+    {
+      "number": "12301",
+      "name": "Howrah Rajdhani Express",
+      "source": "NDLS",
+      "destination": "HWH",
+      "run_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "stations": [
+        {"code": "NDLS", "name": "New Delhi", "arrival": null, "departure": "16:55", "day": 1, "distance": 0, "halt": 0},
+        {"code": "CNB", "name": "Kanpur Central", "arrival": "21:30", "departure": "21:35", "day": 1, "distance": 440, "halt": 5},
+        {"code": "ALD", "name": "Prayagraj Junction", "arrival": "23:38", "departure": "23:43", "day": 1, "distance": 634, "halt": 5},
+        {"code": "MGS", "name": "Mughal Sarai Junction", "arrival": "01:20", "departure": "01:30", "day": 2, "distance": 782, "halt": 10},
+        {"code": "GAYA", "name": "Gaya Junction", "arrival": "03:40", "departure": "03:42", "day": 2, "distance": 997, "halt": 2},
+        {"code": "DHN", "name": "Dhanbad Junction", "arrival": "05:55", "departure": "06:00", "day": 2, "distance": 1159, "halt": 5},
+        {"code": "ASN", "name": "Asansol Junction", "arrival": "06:52", "departure": "06:55", "day": 2, "distance": 1230, "halt": 3},
+        {"code": "BWN", "name": "Barddhaman Junction", "arrival": "07:58", "departure": "08:00", "day": 2, "distance": 1338, "halt": 2},
+        {"code": "HWH", "name": "Howrah Junction", "arrival": "09:55", "departure": null, "day": 2, "distance": 1451, "halt": 0}
+      ]
+    },
+    {
+      "number": "12951",
+      "name": "Mumbai Rajdhani Express",
+      "source": "MMCT",
+      "destination": "NDLS",
+      "run_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "stations": [
+        {"code": "MMCT", "name": "Mumbai Central", "arrival": null, "departure": "16:35", "day": 1, "distance": 0, "halt": 0},
+        {"code": "BRC", "name": "Vadodara Junction", "arrival": "20:47", "departure": "20:50", "day": 1, "distance": 392, "halt": 3},
+        {"code": "RTM", "name": "Ratlam Junction", "arrival": "00:10", "departure": "00:15", "day": 2, "distance": 622, "halt": 5},
+        {"code": "KOTA", "name": "Kota Junction", "arrival": "03:35", "departure": "03:40", "day": 2, "distance": 862, "halt": 5},
+        {"code": "SWM", "name": "Sawai Madhopur", "arrival": "05:13", "departure": "05:15", "day": 2, "distance": 981, "halt": 2},
+        {"code": "NDLS", "name": "New Delhi", "arrival": "08:35", "departure": null, "day": 2, "distance": 1384, "halt": 0}
+      ]
+    },
+    {
+      "number": "12611",
+      "name": "Chennai Rajdhani Express",
+      "source": "NDLS",
+      "destination": "MAS",
+      "run_days": ["Wed", "Fri"],
+      "stations": [
+        {"code": "NDLS", "name": "New Delhi", "arrival": null, "departure": "15:55", "day": 1, "distance": 0, "halt": 0},
+        {"code": "AGC", "name": "Agra Cantt", "arrival": "18:07", "departure": "18:12", "day": 1, "distance": 195, "halt": 5},
+        {"code": "JHS", "name": "Jhansi Junction", "arrival": "20:20", "departure": "20:35", "day": 1, "distance": 403, "halt": 15},
+        {"code": "BPL", "name": "Bhopal Junction", "arrival": "00:10", "departure": "00:20", "day": 2, "distance": 707, "halt": 10},
+        {"code": "NGP", "name": "Nagpur Junction", "arrival": "05:50", "departure": "06:05", "day": 2, "distance": 1093, "halt": 15},
+        {"code": "BZA", "name": "Vijayawada Junction", "arrival": "14:25", "departure": "14:35", "day": 2, "distance": 1658, "halt": 10},
+        {"code": "MAS", "name": "Chennai Central", "arrival": "20:05", "departure": null, "day": 2, "distance": 2182, "halt": 0}
+      ]
+    },
+    {
+      "number": "12259",
+      "name": "Sealdah Duronto Express",
+      "source": "NDLS",
+      "destination": "SDAH",
+      "run_days": ["Mon", "Thu", "Sat"],
+      "stations": [
+        {"code": "NDLS", "name": "New Delhi", "arrival": null, "departure": "20:15", "day": 1, "distance": 0, "halt": 0},
+        {"code": "CNB", "name": "Kanpur Central", "arrival": "00:35", "departure": "00:40", "day": 2, "distance": 440, "halt": 5},
+        {"code": "MGS", "name": "Mughal Sarai Junction", "arrival": "04:55", "departure": "05:05", "day": 2, "distance": 782, "halt": 10},
+        {"code": "ASN", "name": "Asansol Junction", "arrival": "09:38", "departure": "09:43", "day": 2, "distance": 1230, "halt": 5},
+        {"code": "BWN", "name": "Barddhaman Junction", "arrival": "10:50", "departure": "10:53", "day": 2, "distance": 1338, "halt": 3},
+        {"code": "SDAH", "name": "Sealdah", "arrival": "12:55", "departure": null, "day": 2, "distance": 1460, "halt": 0}
+      ]
+    },
+    {
+      "number": "12431",
+      "name": "Trivandrum Rajdhani Express",
+      "source": "NDLS",
+      "destination": "TVC",
+      "run_days": ["Tue", "Fri"],
+      "stations": [
+        {"code": "NDLS", "name": "New Delhi", "arrival": null, "departure": "10:55", "day": 1, "distance": 0, "halt": 0},
+        {"code": "MTJ", "name": "Mathura Junction", "arrival": "12:59", "departure": "13:01", "day": 1, "distance": 141, "halt": 2},
+        {"code": "KOTA", "name": "Kota Junction", "arrival": "16:58", "departure": "17:03", "day": 1, "distance": 468, "halt": 5},
+        {"code": "BRC", "name": "Vadodara Junction", "arrival": "22:25", "departure": "22:30", "day": 1, "distance": 913, "halt": 5},
+        {"code": "PNVL", "name": "Panvel", "arrival": "03:13", "departure": "03:15", "day": 2, "distance": 1284, "halt": 2},
+        {"code": "MAO", "name": "Madgaon Junction", "arrival": "10:10", "departure": "10:20", "day": 2, "distance": 1647, "halt": 10},
+        {"code": "MAJN", "name": "Mangaluru Junction", "arrival": "14:00", "departure": "14:10", "day": 2, "distance": 1886, "halt": 10},
+        {"code": "CLT", "name": "Kozhikode", "arrival": "17:38", "departure": "17:43", "day": 2, "distance": 2104, "halt": 5},
+        {"code": "TCR", "name": "Thrissur", "arrival": "19:40", "departure": "19:45", "day": 2, "distance": 2255, "halt": 5},
+        {"code": "ERS", "name": "Ernakulam Junction", "arrival": "21:20", "departure": "21:25", "day": 2, "distance": 2340, "halt": 5},
+        {"code": "TVC", "name": "Thiruvananthapuram Central", "arrival": "01:15", "departure": null, "day": 3, "distance": 2561, "halt": 0}
+      ]
+    },
+    {
+      "number": "12002",
+      "name": "Bhopal Shatabdi Express",
+      "source": "NDLS",
+      "destination": "BPL",
+      "run_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      "stations": [
+        {"code": "NDLS", "name": "New Delhi", "arrival": null, "departure": "06:00", "day": 1, "distance": 0, "halt": 0},
+        {"code": "MTJ", "name": "Mathura Junction", "arrival": "07:37", "departure": "07:39", "day": 1, "distance": 141, "halt": 2},
+        {"code": "AGC", "name": "Agra Cantt", "arrival": "08:12", "departure": "08:17", "day": 1, "distance": 195, "halt": 5},
+        {"code": "GWL", "name": "Gwalior Junction", "arrival": "09:37", "departure": "09:39", "day": 1, "distance": 306, "halt": 2},
+        {"code": "JHS", "name": "Jhansi Junction", "arrival": "10:45", "departure": "10:55", "day": 1, "distance": 403, "halt": 10},
+        {"code": "BPL", "name": "Bhopal Junction", "arrival": "14:30", "departure": null, "day": 1, "distance": 707, "halt": 0}
+      ]
+    },
+    {
+      "number": "12622",
+      "name": "Tamil Nadu Express",
+      "source": "NDLS",
+      "destination": "MAS",
+      "run_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "stations": [
+        {"code": "NDLS", "name": "New Delhi", "arrival": null, "departure": "22:30", "day": 1, "distance": 0, "halt": 0},
+        {"code": "MTJ", "name": "Mathura Junction", "arrival": "00:28", "departure": "00:30", "day": 2, "distance": 141, "halt": 2},
+        {"code": "AGC", "name": "Agra Cantt", "arrival": "01:15", "departure": "01:25", "day": 2, "distance": 195, "halt": 10},
+        {"code": "JHS", "name": "Jhansi Junction", "arrival": "04:05", "departure": "04:15", "day": 2, "distance": 403, "halt": 10},
+        {"code": "BPL", "name": "Bhopal Junction", "arrival": "08:35", "departure": "08:45", "day": 2, "distance": 707, "halt": 10},
+        {"code": "NGP", "name": "Nagpur Junction", "arrival": "15:15", "departure": "15:35", "day": 2, "distance": 1093, "halt": 20},
+        {"code": "BZA", "name": "Vijayawada Junction", "arrival": "01:25", "departure": "01:35", "day": 3, "distance": 1658, "halt": 10},
+        {"code": "MAS", "name": "Chennai Central", "arrival": "07:10", "departure": null, "day": 3, "distance": 2182, "halt": 0}
+      ]
+    },
+    {
+      "number": "12723",
+      "name": "Telangana Express",
+      "source": "NDLS",
+      "destination": "SC",
+      "run_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "stations": [
+        {"code": "NDLS", "name": "New Delhi", "arrival": null, "departure": "06:50", "day": 1, "distance": 0, "halt": 0},
+        {"code": "AGC", "name": "Agra Cantt", "arrival": "09:35", "departure": "09:45", "day": 1, "distance": 195, "halt": 10},
+        {"code": "JHS", "name": "Jhansi Junction", "arrival": "12:05", "departure": "12:15", "day": 1, "distance": 403, "halt": 10},
+        {"code": "BPL", "name": "Bhopal Junction", "arrival": "16:20", "departure": "16:35", "day": 1, "distance": 707, "halt": 15},
+        {"code": "NGP", "name": "Nagpur Junction", "arrival": "23:10", "departure": "23:25", "day": 1, "distance": 1093, "halt": 15},
+        {"code": "BPQ", "name": "Balharshah", "arrival": "02:05", "departure": "02:10", "day": 2, "distance": 1254, "halt": 5},
+        {"code": "KZJ", "name": "Kazipet Junction", "arrival": "07:18", "departure": "07:28", "day": 2, "distance": 1505, "halt": 10},
+        {"code": "SC", "name": "Secunderabad Junction", "arrival": "10:15", "departure": null, "day": 2, "distance": 1658, "halt": 0}
+      ]
+    },
+    {
+      "number": "16526",
+      "name": "Kanyakumari Express",
+      "source": "SBC",
+      "destination": "CAPE",
+      "run_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "stations": [
+        {"code": "SBC", "name": "KSR Bengaluru", "arrival": null, "departure": "21:00", "day": 1, "distance": 0, "halt": 0},
+        {"code": "SA", "name": "Salem Junction", "arrival": "02:15", "departure": "02:20", "day": 2, "distance": 214, "halt": 5},
+        {"code": "ED", "name": "Erode Junction", "arrival": "03:28", "departure": "03:33", "day": 2, "distance": 296, "halt": 5},
+        {"code": "TPJ", "name": "Tiruchchirapalli Junction", "arrival": "06:20", "departure": "06:30", "day": 2, "distance": 437, "halt": 10},
+        {"code": "MDU", "name": "Madurai Junction", "arrival": "09:15", "departure": "09:25", "day": 2, "distance": 594, "halt": 10},
+        {"code": "NCJ", "name": "Nagercoil Junction", "arrival": "13:30", "departure": "13:35", "day": 2, "distance": 816, "halt": 5},
+        {"code": "CAPE", "name": "Kanyakumari", "arrival": "14:15", "departure": null, "day": 2, "distance": 838, "halt": 0}
+      ]
+    },
+    {
+      "number": "12627",
+      "name": "Karnataka Express",
+      "source": "NDLS",
+      "destination": "SBC",
+      "run_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "stations": [
+        {"code": "NDLS", "name": "New Delhi", "arrival": null, "departure": "21:15", "day": 1, "distance": 0, "halt": 0},
+        {"code": "MTJ", "name": "Mathura Junction", "arrival": "23:18", "departure": "23:20", "day": 1, "distance": 141, "halt": 2},
+        {"code": "KOTA", "name": "Kota Junction", "arrival": "03:35", "departure": "03:40", "day": 2, "distance": 468, "halt": 5},
+        {"code": "RTM", "name": "Ratlam Junction", "arrival": "06:35", "departure": "06:40", "day": 2, "distance": 622, "halt": 5},
+        {"code": "BRC", "name": "Vadodara Junction", "arrival": "09:15", "departure": "09:25", "day": 2, "distance": 913, "halt": 10},
+        {"code": "PUNE", "name": "Pune Junction", "arrival": "16:30", "departure": "16:40", "day": 2, "distance": 1265, "halt": 10},
+        {"code": "SUR", "name": "Solapur", "arrival": "20:00", "departure": "20:10", "day": 2, "distance": 1479, "halt": 10},
+        {"code": "GR", "name": "Gulbarga", "arrival": "22:45", "departure": "22:50", "day": 2, "distance": 1634, "halt": 5},
+        {"code": "GTL", "name": "Guntakal Junction", "arrival": "01:55", "departure": "02:15", "day": 3, "distance": 1806, "halt": 20},
+        {"code": "DMM", "name": "Dharmavaram Junction", "arrival": "03:30", "departure": "03:35", "day": 3, "distance": 1882, "halt": 5},
+        {"code": "SBC", "name": "KSR Bengaluru", "arrival": "10:50", "departure": null, "day": 3, "distance": 2444, "halt": 0}
+      ]
+    }
+  ],
+  "stations": {
+    "NDLS": "New Delhi",
+    "HWH": "Howrah Junction",
+    "MMCT": "Mumbai Central",
+    "MAS": "Chennai Central",
+    "SBC": "KSR Bengaluru",
+    "SC": "Secunderabad Junction",
+    "TVC": "Thiruvananthapuram Central",
+    "SDAH": "Sealdah",
+    "BPL": "Bhopal Junction",
+    "CNB": "Kanpur Central",
+    "ALD": "Prayagraj Junction",
+    "MGS": "Mughal Sarai Junction",
+    "GAYA": "Gaya Junction",
+    "DHN": "Dhanbad Junction",
+    "ASN": "Asansol Junction",
+    "BWN": "Barddhaman Junction",
+    "AGC": "Agra Cantt",
+    "JHS": "Jhansi Junction",
+    "NGP": "Nagpur Junction",
+    "BZA": "Vijayawada Junction",
+    "BRC": "Vadodara Junction",
+    "RTM": "Ratlam Junction",
+    "KOTA": "Kota Junction",
+    "SWM": "Sawai Madhopur",
+    "MTJ": "Mathura Junction",
+    "GWL": "Gwalior Junction",
+    "MAO": "Madgaon Junction",
+    "MAJN": "Mangaluru Junction",
+    "CLT": "Kozhikode",
+    "TCR": "Thrissur",
+    "ERS": "Ernakulam Junction",
+    "PNVL": "Panvel",
+    "PUNE": "Pune Junction",
+    "SUR": "Solapur",
+    "GR": "Gulbarga",
+    "GTL": "Guntakal Junction",
+    "DMM": "Dharmavaram Junction",
+    "BPQ": "Balharshah",
+    "KZJ": "Kazipet Junction",
+    "SA": "Salem Junction",
+    "ED": "Erode Junction",
+    "TPJ": "Tiruchchirapalli Junction",
+    "MDU": "Madurai Junction",
+    "NCJ": "Nagercoil Junction",
+    "CAPE": "Kanyakumari"
+  }
+}
