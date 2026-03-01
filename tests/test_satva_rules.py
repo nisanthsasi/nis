@@ -195,13 +195,13 @@ class TestSatvaValidatorIntegration:
         validator = SatvaValidator()
         results = validator.validate(prompt)
 
-        # Domain score should be reasonable for a well-structured document
-        assert results["domain"].score >= 50
-        # Combined should reflect both
-        assert results["combined_score"] >= 40
-        # Should detect the determinism violation
-        det_issues = [
+        # Domain score should be high after fixes
+        assert results["domain"].score >= 80
+        # Combined should pass conditional threshold
+        assert results["combined_score"] >= 70
+        # Should detect the intentionally varied TR thresholds
+        threshold_issues = [
             i for i in results["domain"].issues
-            if "deterministic" in i.message.lower() or "judgment" in i.message.lower()
+            if "threshold" in i.message.lower() or "TR" in i.detail
         ]
-        assert len(det_issues) >= 1
+        assert len(threshold_issues) >= 1
