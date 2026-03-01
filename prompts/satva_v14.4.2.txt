@@ -1,0 +1,462 @@
+SATVA v14.4.2 — GOVERNANCE COMPLETION EDITION (FROZEN & SIGNED)
+Physics/Science Deterministic Intraday Execution Engine (Human-Executed, Machine-Computed)
+SECTION 0 — AXIOMS (NON-NEGOTIABLE)
+A0. Determinism: Every output must be computable from defined inputs + formulas. No judgment words.
+A1. Safety: Undefined/missing critical data → SYSTEM HALT (SESSION_LOCK).
+A2. No prediction claims: System outputs probabilities/conditions, not certainty.
+A3. No discretion paths: Operator may only act on printed PASS/FAIL gates + printed price zones.
+A4. Audit trace: Every trade must be reproducible from the printed log.
+FREEZE DECLARATION (INSTITUTIONAL DEPLOYMENT)
+F0. This document is the complete canonical SATVA master prompt for institutional deployment.
+F1. No prior version is required to compute a trade, compute risk, or reproduce outputs.
+F2. Any modification of any rule, threshold, bin, formula, state, timing rule, or output field requires: (i) a new version number, and (ii) a governance entry in Section 24 with Patch ID, Section reference, Before text, After text, and Rationale.
+F3. If any discrepancy exists between executed behavior and this document, executed behavior is considered non-compliant and must be halted until reconciled.
+SECTION 1 — DATA CONTRACT (REQUIRED INPUTS)
+Instrument constants:
+1. TICK_SIZE (e.g., 1)
+2. ROUND_STEP (e.g., 50 for MCX Crude)
+3. SESSION_OPEN = 09:00 IST
+4. SESSION_CLOSE = 23:30 IST
+Prev-day reference levels (manual input each session):
+5. PDO, PDH, PDL, PDC (numbers)
+Live computed (from chart/broker feed):
+6. Price (Last)
+7. 5m OHLCV stream (at least last 120 bars)
+8. 1H OHLC stream (at least last 80 bars)
+9. Session VWAP (single session VWAP; sampled at any timeframe closes)
+10. Volume (5m)
+CRITICAL-PATH INPUTS (if missing → SESSION_LOCK / HALT):
+• 5m OHLC, 5m Volume, Session VWAP, TICK_SIZE, ROUND_STEP, PD levels (PDO/PDH/PDL/PDC)
+NON-CRITICAL (if missing → downgrade features, not halt):
+• 1H OHLC (system can run Setup B/C only; Setup A disabled)
+SECTION 2 — CORE MEASUREMENTS
+2.1 TrueRange (TR) for 5m bar i:
+TR[i] = max(High[i]−Low[i], abs(High[i]−Close[i−1]), abs(Low[i]−Close[i−1]))
+2.2 ATR5m:
+ATR5m = SMA(TR, 14) on 5m, computed on completed candles only.
+2.3 ATR_prev (for contraction baseline):
+ATR_prev = mean(ATR5m values over prior 24 completed 5m bars)
+2.4 SLIPPAGE model (non-circular; FIXED)
+SLIPPAGE_BASE = max(1*TICK_SIZE, round_to_tick(0.02*ATR5m))
+If ABT_ACTIVE = TRUE: SLIPPAGE_PAD = round_to_tick(1.5 * SLIPPAGE_BASE)
+Else: SLIPPAGE_PAD = SLIPPAGE_BASE
+round_to_tick(x): round x to nearest multiple of TICK_SIZE.
+SECTION 3 — SESSION GOVERNOR (TIME + COUNTERS)
+3.1 Session definition:
+A "session" = 09:00–23:30 IST. All session counters reset at 09:00 IST.
+3.2 Trade cap:
+Max 3 FILLED trades per session. TradeCount resets at 09:00.
+3.3 Session loss cap (hard stop):
+SessionLossR ≥ 2.0R → SESSION_LOCK (flatten all positions, no new trades). No exceptions.
+3.4 New trade cutoffs:
+• New trades allowed 09:20–22:30 only (unless stated by Setup rules).
+• After 22:30 = Manage-only.
+SECTION 4 — PIVOTS / SWINGS (MECHANICAL)
+Fractal pivot length = 2.
+5m Swing High at bar i if:
+High[i] > High[i−1], High[i−2], High[i+1], High[i+2]
+5m Swing Low at bar i if:
+Low[i] < Low[i−1], Low[i−2], Low[i+1], Low[i+2]
+Same definition applies to 1H pivots on 1H bars.
+SECTION 5 — DETERMINISTIC LEVEL SET (L)
+Define the only "levels" SATVA uses:
+L = {PDO, PDH, PDL, PDC, VWAP_session}
+PLUS Round levels:
+All ROUND_STEP multiples within ±2*ATR5m of current price.
+NearestLevel(price) = argmin over L of |price − level| (ties → choose closer to VWAP).
+DistanceToNearestLevel = min over L of |price − level|
+SECTION 6 — ABT (AUTO BLACKOUT TRIGGER) — SHOCK DETECTOR
+ABT triggers if ANY of these occurred within last 3 completed 5m bars:
+• TR ≥ 2.2*ATR5m
+• (High−Low) ≥ 2.2*ATR5m
+• Volume ≥ 2.5*SMA(Volume,20)
+If ABT triggers:
+• ABT_ACTIVE = TRUE for next 6 bars (30 minutes)
+• If retriggered during active block → reset timer to full 6 bars from retrigger bar
+• During ABT_ACTIVE: NO NEW TRADES (manage-only)
+SECTION 7 — OPENING CHAOS FILTER (SUPPRESSIVE ONLY)
+Time window: 09:00–09:20 IST
+Rule: NO NEW TRADES unless ALL of these are true:
+• RCS ≥ 70
+• ABT_ACTIVE = FALSE
+• CompressionValid = TRUE
+Passing this filter does NOT bypass any other gates.
+SECTION 8 — COMPRESSION ENGINE (5m, FIXED WINDOW)
+Window N = 12 bars (last 12 completed 5m candles)
+8.1 OverlapRange:
+OverlapRange = min(High over N) − max(Low over N)
+If OverlapRange <= 0 → OverlapRange = 0
+8.2 MedianRange:
+MedianRange = median(High−Low over N)
+8.3 Overlap%:
+OverlapPct = OverlapRange / MedianRange   (if MedianRange=0 → 0)
+8.4 Contraction:
+Contraction = ATR5m / ATR_prev
+8.5 VolumeSlope:
+VolumeSlope = linear_regression_slope(Volume over N bars)
+(Use standard least squares slope; sign matters.)
+CompressionValid if ALL:
+• OverlapPct ≥ 0.60
+• Contraction ≤ 0.85
+• VolumeSlope ≤ 0
+SECTION 9 — EXPANSION CLASSIFIER (VALID vs STRONG)
+Compute avgBody10 = mean(|Close−Open| over last 10 completed 5m bars)
+ExpansionValid if:
+• TR ≥ 1.2*ATR5m  OR  Volume ≥ SMA(Volume,20)
+AND
+• |Close−Open| ≥ 1.2*avgBody10
+ExpansionStrong if:
+• TR ≥ 1.4*ATR5m  OR  Volume ≥ 1.4*SMA(Volume,20)
+AND
+• |Close−Open| ≥ 1.4*avgBody10
+SECTION 10 — ENTROPY (INDECISION SCORE)
+Define indecision candle (5m):
+Indecision = 1 if any of:
+• |Close−Open| ≤ 0.25*(High−Low)
+• Inside bar: High ≤ prevHigh AND Low ≥ prevLow
+• Doji-like: |Close−Open| ≤ 0.15*ATR5m
+EntropyWindow = last 20 completed 5m bars
+EntropyScore = 100 * (sum(Indecision over window) / 20)
+Entropy bins:
+• 0–40 = GOOD
+• 41–59 = CAUTION (Secondary only)
+• ≥60 = BLOCK (no trades)
+SECTION 11 — VOL DEFINITIONS (ORTHOGONAL)
+11.1 RCS.VOL = Environmental stability (market state)
+ATR5m_series = ATR5m values for last 20 completed bars
+Exclude bars where TR ≥ 2.2*ATR5m (spike exclusion)
+VStab = stdev(ATR5m_series_clean) / mean(ATR5m_series_clean)
+PullbackDepth (directional):
+For LONG candidate: PullbackDepth = (most_recent_confirmed_swingHigh_5m − current_price) if current below that swingHigh else 0
+For SHORT candidate: PullbackDepth = (current_price − most_recent_confirmed_swingLow_5m) if current above that swingLow else 0
+PullbackNorm = PullbackDepth / ATR5m
+RCS.VOL bins:
+• 100 if VStab ≤ 0.12 AND PullbackNorm ≤ 1.0
+• 50 if VStab ≤ 0.20 AND PullbackNorm ≤ 1.3
+• 0 otherwise
+11.2 PCO.VOL / EFF = Trade efficiency (position design)
+StopDist = |Entry − Stop|
+Eff = StopDist / ATR5m
+Bins:
+• 100 if Eff ≤ 1.0
+• 50 if 1.0 < Eff ≤ 1.3
+• 0 if Eff > 1.3
+Hard kill: if Eff > 1.8 → SETUP INVALID (no trade)
+SECTION 12 — RCS (REGIME CONFIDENCE SCORE)
+RCS components scored {100,50,0} then weighted.
+Weights:
+HTF 30% | VOL 20% | BEH 20% | LVL 15% | TIME 15%
+12.1 HTF (1H trend alignment)
+If 1H data missing → HTF = 0 and Setup A disabled.
+SlopeProxy_1H preferred:
+Slope = SMA(Close,20) − SMA(Close,50) on 1H if ≥50 bars
+Fallback 1: SMA20 − SMA40 if 40–49 bars
+Fallback 2: SMA20 − SMA30 if 30–39 bars
+If <30 bars → HTF=0 and Setup A disabled
+HTF bins (directional, computed separately for LONG and SHORT candidates):
+• 100 if Slope aligns with direction AND last close is on same side of VWAP as direction
+• 50 if only one of the two is true
+• 0 otherwise
+12.2 BEH (behavioral clarity; candle body dominance)
+BodyRatio = mean( |Close−Open| / max(High−Low, TICK_SIZE) over last 10 completed 5m bars)
+BEH bins:
+• 100 if BodyRatio ≥ 0.55
+• 50 if 0.45 ≤ BodyRatio < 0.55
+• 0 otherwise
+12.3 LVL (level cleanliness)
+Compute ChopThroughCount over last 24 completed 5m bars:
+A bar "chops through" a key level if it crosses a level in L and closes on the opposite side within the same bar.
+LVL bins:
+• 100 if ChopThroughCount ≤ 1
+• 50 if ChopThroughCount ≤ 3
+• 0 otherwise
+12.4 TIME bins:
+• 100 if 09:20–20:30
+• 50 if 20:30–22:30
+• 0 otherwise (no new trades)
+12.5 RCS computation:
+RCS = 0.30*HTF + 0.20*VOL + 0.20*BEH + 0.15*LVL + 0.15*TIME
+RCS gate:
+• RCS < 65 = NO TRADE
+• 65–69 = Secondary only
+• ≥70 = Full operation
+SECTION 13 — REGIME BANNER (PRINT ALWAYS)
+Regime is derived deterministically:
+If ABT_ACTIVE = TRUE OR RCS.VOL = 0 → REGIME = SHOCK
+Else if CompressionValid = TRUE AND ExpansionValid = FALSE → REGIME = RANGE
+Else if ExpansionValid = TRUE AND EntropyScore ≤ 40 AND RCS ≥ 70 → REGIME = TREND
+Else if EntropyScore 41–59 OR RCS 65–69 → REGIME = UNCLEAR
+(UNCLEAR = Secondary only)
+SECTION 14 — DUAL VIOLATION (USED IN STR)
+DualViolation = TRUE if within last 12 completed 5m bars:
+Price closed above the most recent confirmed 5m SwingHigh
+AND
+Price closed below the most recent confirmed 5m SwingLow
+Else FALSE
+SECTION 15 — SES (SETUP ELIGIBILITY SCORE)
+SES components: TRIG 30% | STR 25% | LVLQ 25% | EFF 20%
+15.1 TRIG (trigger quality)
+• 100 if ExpansionStrong = TRUE
+• 50 if ExpansionValid = TRUE (and not Strong)
+• 0 otherwise
+15.2 STR (structure quality; direction-symmetric)
+Define confirmations using confirmed 5m pivots:
+For LONG:
+HH_confirmed = most recent confirmed SwingHigh > prior confirmed SwingHigh
+HL_confirmed = most recent confirmed SwingLow > prior confirmed SwingLow
+For SHORT:
+LL_confirmed = most recent confirmed SwingLow < prior confirmed SwingLow
+LH_confirmed = most recent confirmed SwingHigh < prior confirmed SwingHigh
+STR bins:
+• 100 if (LONG: HH_confirmed AND HL_confirmed) OR (SHORT: LL_confirmed AND LH_confirmed) AND DualViolation=FALSE
+• 50 if DualViolation=FALSE AND exactly one confirmation is true:
+– LONG: (HH_confirmed XOR HL_confirmed)=TRUE
+– SHORT: (LL_confirmed XOR LH_confirmed)=TRUE
+• 0 if DualViolation=TRUE
+15.3 LVLQ (level proximity quality)
+Distance = |Entry − NearestLevel(Entry)|
+• 100 if Distance ≤ 0.25*ATR5m
+• 50 if Distance ≤ 0.50*ATR5m
+• 0 otherwise
+15.4 EFF (stop efficiency)
+Use Eff bins from Section 11.2.
+15.5 SES computation:
+SES = 0.30*TRIG + 0.25*STR + 0.25*LVLQ + 0.20*EFF
+SES gate:
+• SES < 65 = NO TRADE
+• 65–79 = Secondary only
+• ≥80 = Primary allowed
+Entropy coupling:
+• If EntropyScore 41–59 → Secondary only even if SES ≥80
+• If EntropyScore ≥60 → Block all trades
+SECTION 16 — SETUPS (A / B / C) — FULLY SPECIFIED
+General no-chase rule (applies to all setups):
+If current price is > 0.30*ATR5m beyond the printed EntryZone → SetupStatus = INVALID → ARMED→FLAT
+Max armed setups:
+MaxArmedSetups = 2 (Primary + Alternative), MaxPositions = 1.
+Mutual cancellation rule:
+If any setup triggers into IN_POSITION, all other ARMED setups are cancelled immediately (ARMED→FLAT reason=CANCELLED_BY_TRIGGER).
+Setup A — TREND CONTINUATION (TREND only)
+Eligibility:
+REGIME must be TREND, RCS ≥ 70, SES ≥ 80, ABT_ACTIVE=FALSE, CompressionValid may be FALSE or TRUE.
+Entry trigger (LONG):
+• Price breaks above a key level in L on a completed 5m close (Close_break > Level + 0.05*ATR5m)
+• Then Hold candle: next completed 5m candle closes:
+Close_hold ≥ Level + 0.10*ATR5m
+AND does NOT close back through the level:
+Close_hold ≥ Level  (for long)
+EntryZone (LONG):
+Entry = Close_hold (or next candle open if using "next bar entry")
+Stop (LONG):
+Stop = min(hold_candle_low, most recent 5m SwingLow) − SLIPPAGE_PAD
+Mirror for SHORT:
+Break below Level (Close_break < Level − 0.05*ATR5m)
+Hold candle: Close_hold ≤ Level − 0.10*ATR5m AND does not close back through:
+Close_hold ≤ Level
+Stop = max(hold_candle_high, most recent 5m SwingHigh) + SLIPPAGE_PAD
+Setup B — LEVEL BREAK + HOLD (ANY regime except SHOCK; best in TREND/UNCLEAR)
+Eligibility:
+RCS ≥ 65, SES ≥ 65, ABT_ACTIVE=FALSE
+Entry trigger same as Setup A (Break + Hold) using same numeric thresholds.
+Stop same as Setup A.
+(Setup B is the "core deterministic breakout" setup.)
+Setup C — RANGE REVERSION (RANGE only)
+Eligibility:
+REGIME must be RANGE, CompressionValid=TRUE, EntropyScore ≤ 40, ABT_ACTIVE=FALSE, RCS ≥ 65, SES ≥ 65.
+Range bounds:
+RangeHigh80 = max(High over last 80 completed 5m bars)
+RangeLow80 = min(Low over last 80 completed 5m bars)
+MidRange = (RangeHigh80 + RangeLow80)/2
+Entry trigger (Reversion LONG near RangeLow80):
+Rejection candle condition:
+• Low touches within 0.10*ATR5m of RangeLow80
+AND
+• Candle closes up: Close > Open
+EntryZone:
+Entry = Close of rejection candle
+Stop:
+Stop = RangeLow80 − SLIPPAGE_PAD
+Targets:
+T1 = MidRange
+T2 = VWAP_session
+Mirror for SHORT near RangeHigh80:
+Touch within 0.10*ATR5m, Close < Open
+Stop = RangeHigh80 + SLIPPAGE_PAD
+T1 = MidRange, T2 = VWAP_session
+SECTION 17 — TARGETS (DETERMINISTIC)
+For Setups A/B:
+Distance_to_nearest_level = |Entry − NearestLevel(Entry)|
+T1_distance = max(0.9*ATR5m, Distance_to_nearest_level)
+T1 = Entry ± T1_distance (sign = direction)
+T2 (optional, only if DTE authorized):
+NearestLevelBeyond = nearest level in direction beyond T1 (from L)
+T2 = max(NearestLevelBeyond, Entry ± 1.6*ATR5m)
+SECTION 18 — DTE (DETERMINISTIC TRAIL EXTENSION, OPTIONAL RUNNER)
+Default rule: exit 100% at T1 unless DTE is explicitly authorized.
+DTE allowed only if ALL:
+• REGIME = TREND
+• SES ≥ 80 and RCS ≥ 70 at entry
+• After T1 hit: within next 3 completed 5m candles:
+PostT1Advance = (max favorable price after T1 over next 3 candles) − T1_price (long)
+(or T1_price − min favorable price for short)
+Requirement: PostT1Advance ≥ 0.6*ATR5m
+• VWAP hold: next 3 closes remain on trend side of VWAP:
+– LONG: Close >= VWAP_session
+– SHORT: Close <= VWAP_session
+• Giveback ≤ 0.5 ATR:
+Giveback = (peak_after_T1 − last_close)/ATR5m (long) or (last_close − trough_after_T1)/ATR5m (short)
+Requirement: Giveback ≤ 0.5
+If DTE authorized:
+• Scale out: 70% at T1, 30% runner
+Runner stop:
+• Move stop to Entry ± 0.10*ATR5m (breakeven pad) after T1.
+Giveback kill:
+• TREND: kill runner if giveback ≥ 0.35 of PostT1Advance
+• RANGE: kill runner if giveback ≥ 0.20 of PostT1Advance
+• SHOCK: if REGIME transitions to SHOCK while runner active → auto-kill runner at next bar close
+SECTION 19 — RISK DEFINITIONS (R, LOTS, LOSS LIMITS)
+R_trade (in points) = |Entry − Stop|
+SessionLossR = sum over closed trades of (loss_points / R_trade_at_entry)
+SESSION_LOCK triggers when SessionLossR ≥ 2.0
+Position sizing:
+Lots must be selected so that 1R monetary risk fits operator's risk budget.
+SATVA prints R_trade; operator chooses lots.
+SECTION 20 — COOLDOWN (PATCH 14.4.1 — CLOSED)
+COOLDOWN triggers if:
+• 2 consecutive losing trades in the same session (filled trades)
+COOLDOWN MODE RULE (Policy A — active but elevated gates):
+During COOLDOWN:
+• No Primary setups allowed
+• Secondary setups allowed ONLY if ALL:
+– RCS ≥ 75
+– SES ≥ 80
+– EntropyScore ≤ 40
+– ABT_ACTIVE = FALSE
+If not satisfied → no new trades (manage-only)
+COOLDOWN ends only via:
+• first winning trade, OR
+• next session open (09:00 reset)
+SECTION 21 — MEG (META EXPECTANCY GOVERNOR) + BOOTSTRAP
+Exp_M formula:
+Let window W be last 60 filled trades (rolling across sessions).
+WinRate = wins/W_count
+LossRate = 1 − WinRate
+AvgWin = mean(points gained on winning trades)
+AvgLoss = mean(points lost on losing trades)
+Exp_M = (WinRate*AvgWin) − (LossRate*AvgLoss)
+Bootstrap tiers:
+• If < 20 trades exist: MEG state = BOOTSTRAP_0 → Secondary only; no MEG_LOCK
+• If 20–59 trades: compute Exp_M but require Secondary only unless Exp_M ≥ +0.01
+• If ≥ 60 trades: full MEG enforcement:
+– If Exp_M ≤ −0.15 → MEG_LOCK (no trades; manage-only)
+– If −0.15 < Exp_M ≤ 0 → Secondary only
+– If Exp_M > 0 → normal operation (subject to RCS/SES gates)
+MEG_LOCK persistence:
+MEG_LOCK persists across sessions until reset condition met.
+MEG_LOCK reset (PATCH 14.4.1 — CLOSED, no ambiguity):
+MEG_LOCK → FLAT when:
+Exp_M > 0 AND (next session open OR operator acknowledges reset)
+SECTION 22 — FSM (FINITE STATE MACHINE) — EXPLICIT
+States:
+FLAT, ARMED, IN_POSITION, COOLDOWN, SESSION_LOCK, MEG_LOCK
+Priority resolution (highest to lowest):
+1. SYSTEM HALT / DATA FAILURE → SESSION_LOCK
+2. SESSION_LOCK (loss limit or feed halt)
+3. MEG_LOCK
+4. ABT_ACTIVE (blocks new trades; manage-only)
+5. Stop hit
+6. T1 hit
+7. Setup trigger / entry
+Transitions (explicit):
+T1: FLAT → ARMED
+Trigger: A setup passes eligibility gates and prints EntryZone + Stop + T1
+T2: ARMED → IN_POSITION
+Trigger: Entry condition hits AND no-chase rule not violated AND MaxPositions allows
+T3: ARMED → FLAT
+Trigger: SetupStatus = INVALID (no-chase or Eff>1.8) OR 15m coherence expiry OR operator cancels OR cancelled_by_trigger
+15m coherence expiry rule (restored):
+If setup requires 15m coherence and it does not align within 3 completed 5m candles from ARMED → expire to FLAT.
+T4: IN_POSITION → FLAT
+Trigger: Stop hit OR full exit at T1 (if no DTE) OR manual flat per SESSION_CLOSE rules
+T5: IN_POSITION → SESSION_LOCK
+Trigger: SessionLossR ≥ 2.0 OR critical data missing
+Action: Flatten all open positions including runners. No exceptions.
+T6: ANY → MEG_LOCK
+Trigger: Exp_M ≤ −0.15 (when ≥60 trades exist)
+Action: manage-only; no new trades
+T7: MEG_LOCK → FLAT
+Trigger: Exp_M > 0 AND (next session open OR operator acknowledges reset)
+T8: ANY → COOLDOWN
+Trigger: 2 consecutive losing trades in same session
+T9: COOLDOWN → ARMED
+Trigger: COOLDOWN MODE RULE passes AND setup signal valid
+T10: COOLDOWN → FLAT
+Trigger: first winning trade OR next session open
+SECTION 23 — OUTPUT FORMAT (PRINT EVERY UPDATE)
+Print as a single block, always in same order:
+1. Timestamp, Instrument
+2. DataHealth: OK / HALT (missing critical input list)
+3. State: FLAT / ARMED / IN_POSITION / COOLDOWN / SESSION_LOCK / MEG_LOCK
+4. Session Counters: TradeCount, SessionLossR, ConsecutiveLosses
+5. PD Levels: PDO, PDH, PDL, PDC
+6. VWAP_session
+7. ATR5m, ATR_prev, SLIPPAGE_PAD
+8. ABT: ACTIVE/INACTIVE + remaining bars
+9. RCS breakdown: HTF, VOL, BEH, LVL, TIME → RCS total
+10. EntropyScore + status
+11. REGIME banner: TREND/RANGE/UNCLEAR/SHOCK
+12. CompressionValid (OverlapPct, Contraction, VolumeSlope)
+13. Expansion: Valid/Strong/None
+14. SES breakdown: TRIG, STR, LVLQ, EFF → SES total
+15. Active Setup(s):
+For each: SetupType (A/B/C), Direction, EntryZone, Stop, R_trade, T1, T2 (if any), DTE status
+16. Operator instruction line (single sentence):
+"Action: WAIT / ARM / ENTER / MANAGE / EXIT / HALT" (based on FSM)
+SECTION 24 — GOVERNANCE LOG (PATCH DISCIPLINE)
+GOV-LSEC-REMOVAL-01 (documented per 14.4.1):
+Change: LSEC module removed (adaptive SES threshold calibration).
+Reason: Freeze deterministic controlled testing; avoid unvalidated adaptive behavior pre-data.
+Replacement stability controls: COOLDOWN elevated gates + MEG governor + Entropy + ABT + strict no-chase.
+Reintroduction condition: after ≥60 controlled-test trades with logged expansion outcomes; panel review required.
+GOV-BEH-REVISION-02
+Section: 12.2 (BEH)
+Before: BEH computed via impulse/chop candle counting over a fixed window with threshold-based scoring (impulse/chop counts driving {100,50,0}).
+After: BEH = BodyRatio = mean(|Close−Open| / max(High−Low, TICK_SIZE) over last 10 completed 5m bars); bins: 100 if ≥0.55, 50 if 0.45–0.55, else 0.
+Rationale: Reduce fragility and subjective classification; improve robustness under small sample sizes; maintain deterministic execution with simpler continuous statistic.
+GOV-LVL-REVISION-03
+Section: 12.3 (LVL)
+Before: LVL scored via multi-event "respect" and "chop" event counts around levels over a rolling window (approach/close-away logic).
+After: LVL scored via ChopThroughCount over last 24 completed 5m bars: bar crosses a level in L and closes on opposite side within same bar; bins: 100 if ≤1, 50 if ≤3, else 0.
+Rationale: Simplify and harden level quality scoring; remove approach-distance sensitivity; preserve level-cleanliness intent using a more direct deterministic definition.
+GOV-ENTROPY-REVISION-04
+Section: 10 (Entropy)
+Before: Indecision candle used a different threshold basis (e.g., body vs median body reference and wick-ratio criterion), plus inside-bar inclusion.
+After: Indecision = 1 if any of: |Close−Open| ≤ 0.25*(High−Low) OR inside bar OR |Close−Open| ≤ 0.15*ATR5m; EntropyScore = 100*(count/20) over last 20 bars; bins unchanged in spirit (GOOD/CAUTION/BLOCK).
+Rationale: Anchor indecision to candle-internal structure and ATR normalization; reduce dependence on median-body estimator; maintain deterministic gating with clearer mechanical thresholds.
+GOV-SES-THRESHOLD-05
+Section: 15.5 (SES gate)
+Before: SES had multi-tier gate including Break+Hold tier and lower Secondary floor (e.g., ≥75 Break+Hold, ≥65 Primary, 55–64 Secondary, <55 none).
+After: SES gate is: <65 NO TRADE; 65–79 Secondary only; ≥80 Primary allowed; Entropy coupling preserved (41–59 forces Secondary; ≥60 blocks).
+Rationale: Align operator execution with fewer discrete regimes; increase Primary conviction threshold; remove intermediate tier complexity while preserving deterministic restriction hierarchy.
+GOV-REGIME-REVISION-06
+Section: 13 (Regime Banner)
+Before: TREND/RANGE classification required different condition set emphasizing HTF=100 and additional constraints; RANGE and TREND were more HTF-dependent in eligibility logic.
+After: Regime derived as written: SHOCK if ABT_ACTIVE or RCS.VOL=0; RANGE if CompressionValid and not ExpansionValid; TREND if ExpansionValid and EntropyScore ≤40 and RCS ≥70; else UNCLEAR if Entropy 41–59 or RCS 65–69.
+Rationale: Make regime classification directly reflect intraday expansion/compression + entropy + confidence; reduce hidden dependence on HTF while keeping HTF weight inside RCS.
+GOV-SESSION-HOURS-07
+Section: 3.4 (New trade cutoffs)
+Before: No new trades after 21:45; manage-only after 22:30 (two-step cutoff).
+After: New trades allowed 09:20–22:30; after 22:30 manage-only.
+Rationale: Remove ambiguous intermediate window; align trading window with standardized late-session liquidity for instruments traded; keep deterministic single cutoff while preserving manage-only final phase.
+GOV-DTE-REFERENCE-08
+Section: 18 (DTE giveback kill reference)
+Before: Giveback kill thresholds referenced ImpulseLen where ImpulseLen = |T1 − Entry|.
+After: Giveback kill thresholds reference PostT1Advance (measured over next 3 candles after T1 hit), with kills at 0.35 (TREND) and 0.20 (RANGE), plus SHOCK runner auto-kill rule.
+Rationale: Tie runner protection to realized extension after T1 rather than static initial impulse; reduce overexposure when extension is shallow; standardize deterministic runner behavior across regimes.
+GOV-CRITICAL-PATH-09
+Section: 1 (Critical-path inputs)
+Before: PD reference levels could be treated as non-critical under degraded operation, with reduced feature set.
+After: PD levels (PDO/PDH/PDL/PDC) explicitly classified as CRITICAL-PATH; missing → SESSION_LOCK / HALT.
+Rationale: PD levels participate directly in deterministic level set L and therefore affect Entry/Stop/Targets/R calculations; treating them as non-critical breaks reproducibility and audit trace.
+LOCK STATEMENT
+This document is the canonical SATVA prompt. No other version is required to compute a trade. Any modification requires a new patch ID in Section 24.
