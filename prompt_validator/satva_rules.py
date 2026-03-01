@@ -170,22 +170,33 @@ def check_bin_coverage(prompt: str) -> list[Issue]:
 
 
 def check_threshold_consistency(prompt: str) -> list[Issue]:
-    """Check for threshold values that appear inconsistent across sections."""
+    """Check for threshold values that appear inconsistent across sections.
+
+    TR/ATR5m thresholds are checked *per section* because different sections
+    legitimately use different multiples (e.g., ABT uses 2.2, Expansion uses
+    1.2/1.4).  Only flag when the same section contains conflicting values
+    for the same concept.
+    """
     issues = []
+    sections = _find_sections(prompt)
 
-    # ABT threshold should be consistent
-    abt_tr_thresholds = re.findall(r"TR\s*[≥>=]+\s*([\d.]+)\s*\*?\s*ATR5m", prompt)
-    abt_unique = set(abt_tr_thresholds)
-    if len(abt_unique) > 1:
-        issues.append(Issue(
-            message="Inconsistent TR threshold multiples",
-            severity=Severity.WARNING,
-            category=Category.ACCURACY,
-            detail=f"Found different TR/ATR5m thresholds: {', '.join(sorted(abt_unique))}. Verify intentional.",
-            penalty=5,
-        ))
+    # Check TR thresholds per-section (same section should be self-consistent
+    # for ABT-type checks; Expansion intentionally has Valid vs Strong tiers)
+    for sec_num, sec_text in sections.items():
+        tr_thresholds = re.findall(r"TR\s*[≥>=]+\s*([\d.]+)\s*\*?\s*ATR5m", sec_text)
+        unique = set(tr_thresholds)
+        # ABT (Section 6) should use a single spike threshold
+        if sec_num == 6 and len(unique) > 1:
+            issues.append(Issue(
+                message=f"Inconsistent TR thresholds within Section {sec_num} (ABT)",
+                severity=Severity.WARNING,
+                category=Category.ACCURACY,
+                detail=f"ABT section uses multiple TR/ATR5m multiples: {', '.join(sorted(unique))}. "
+                       f"Spike detection should use a single threshold.",
+                penalty=10,
+            ))
 
-    # Session loss cap consistency
+    # Session loss cap consistency (must be same everywhere)
     loss_caps = re.findall(r"SessionLossR\s*[≥>=]+\s*([\d.]+)", prompt)
     unique_caps = set(loss_caps)
     if len(unique_caps) > 1:

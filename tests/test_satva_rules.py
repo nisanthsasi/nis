@@ -124,6 +124,25 @@ class TestThresholdConsistency:
         loss_issues = [i for i in issues if "SessionLossR" in i.message]
         assert len(loss_issues) == 1
 
+    def test_cross_section_tr_thresholds_not_flagged(self):
+        """Different TR thresholds in different sections are intentional."""
+        prompt = (
+            "SECTION 6 — ABT\nTR >= 2.2*ATR5m means spike\n"
+            "SECTION 9 — EXPANSION\nTR >= 1.2*ATR5m valid\nTR >= 1.4*ATR5m strong\n"
+        )
+        issues = rules.check_threshold_consistency(prompt)
+        tr_issues = [i for i in issues if "TR" in i.message]
+        assert len(tr_issues) == 0
+
+    def test_same_section_abt_conflict_flagged(self):
+        """Multiple TR thresholds WITHIN ABT section should be flagged."""
+        prompt = (
+            "SECTION 6 — ABT\nTR >= 2.2*ATR5m spike\nTR >= 1.8*ATR5m also spike\n"
+        )
+        issues = rules.check_threshold_consistency(prompt)
+        tr_issues = [i for i in issues if "ABT" in i.message]
+        assert len(tr_issues) == 1
+
 
 class TestFSM:
     def test_all_states_present(self):
@@ -196,12 +215,13 @@ class TestSatvaValidatorIntegration:
         results = validator.validate(prompt)
 
         # Domain score should be high after fixes
-        assert results["domain"].score >= 80
+        assert results["domain"].score >= 90
         # Combined should pass conditional threshold
-        assert results["combined_score"] >= 70
-        # Should detect the intentionally varied TR thresholds
-        threshold_issues = [
+        assert results["combined_score"] >= 75
+        # Cross-section TR thresholds (ABT=2.2, Expansion=1.2/1.4) should NOT
+        # be flagged — they are intentionally different across sections
+        false_positive_tr = [
             i for i in results["domain"].issues
-            if "threshold" in i.message.lower() or "TR" in i.detail
+            if "inconsistent tr" in i.message.lower()
         ]
-        assert len(threshold_issues) >= 1
+        assert len(false_positive_tr) == 0
