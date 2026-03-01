@@ -86,11 +86,16 @@ export function TrainDetailScreen({ route, navigation }) {
         <View style={styles.headerTop}>
           <View>
             <Text style={styles.trainNumber}>{trainNumber}</Text>
-            <Text style={styles.trainName}>
+            <Text style={styles.trainName} accessibilityRole="header">
               {trainRoute?.train_name || trainName}
             </Text>
           </View>
-          <TouchableOpacity onPress={onRefresh}>
+          <TouchableOpacity
+            onPress={onRefresh}
+            accessibilityRole="button"
+            accessibilityLabel="Refresh train status"
+            hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+          >
             <Ionicons name="refresh" size={24} color={colors.textLight} />
           </TouchableOpacity>
         </View>
@@ -274,7 +279,7 @@ const styles = StyleSheet.create({
   trainNumber: {
     fontSize: 14,
     fontWeight: "600",
-    color: "rgba(255,255,255,0.7)",
+    color: "rgba(255,255,255,0.85)",
   },
   trainName: {
     fontSize: 22,
@@ -300,7 +305,7 @@ const styles = StyleSheet.create({
   },
   endName: {
     fontSize: 11,
-    color: "rgba(255,255,255,0.7)",
+    color: "rgba(255,255,255,0.85)",
     marginTop: 2,
   },
   endTime: {
@@ -328,7 +333,7 @@ const styles = StyleSheet.create({
   },
   statusText: {
     fontSize: 13,
-    color: "rgba(255,255,255,0.9)",
+    color: "rgba(255,255,255,0.95)",
     flex: 1,
   },
   delayBadge: {

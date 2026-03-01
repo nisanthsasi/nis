@@ -1,9 +1,14 @@
 /**
  * ETACard - Displays ETA information with a prominent countdown.
+ *
+ * Accessibility:
+ * - accessibilityLiveRegion for dynamic ETA updates
+ * - Icons have accessibilityLabel or are hidden from screen readers
+ * - Status conveyed via text, not color alone
  */
 
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Platform } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../utils/colors";
 import {
@@ -17,9 +22,16 @@ export function ETACard({ eta }) {
   if (!eta) return null;
 
   const badge = getStatusBadge(eta.status);
+  const delayText = eta.delay_minutes > 0 ? `${eta.delay_minutes} minutes late` : "No delay";
 
   return (
-    <View style={styles.card}>
+    <View
+      style={styles.card}
+      accessible={true}
+      accessibilityRole="summary"
+      accessibilityLabel={`Expected arrival at ${eta.expected_arrival || "unknown"}. ${badge.text}. ${formatDuration(eta.time_remaining_minutes)} remaining. ${formatDistance(eta.remaining_distance_km)} away. ${eta.remaining_stops} stops left. ${delayText}`}
+      {...(Platform.OS === "android" ? { accessibilityLiveRegion: "polite" } : {})}
+    >
       {/* Status badge */}
       <View style={[styles.badge, { backgroundColor: badge.bg }]}>
         <Text style={[styles.badgeText, { color: badge.color }]}>
@@ -29,7 +41,9 @@ export function ETACard({ eta }) {
 
       {/* Main ETA display */}
       <View style={styles.etaMain}>
-        <Text style={styles.etaLabel}>Expected Arrival</Text>
+        <Text style={styles.etaLabel} accessibilityRole="header">
+          Expected Arrival
+        </Text>
         <Text style={styles.etaTime}>{eta.expected_arrival || "--:--"}</Text>
         {eta.scheduled_arrival && eta.expected_arrival !== eta.scheduled_arrival && (
           <Text style={styles.scheduledTime}>
@@ -41,7 +55,13 @@ export function ETACard({ eta }) {
       {/* Time remaining */}
       {eta.time_remaining_minutes > 0 && (
         <View style={styles.countdown}>
-          <Ionicons name="time-outline" size={20} color={colors.accent} />
+          <Ionicons
+            name="time-outline"
+            size={20}
+            color={colors.accent}
+            accessibilityElementsHidden={true}
+            importantForAccessibility="no"
+          />
           <Text style={styles.countdownText}>
             {formatDuration(eta.time_remaining_minutes)} remaining
           </Text>
@@ -50,8 +70,13 @@ export function ETACard({ eta }) {
 
       {/* Stats row */}
       <View style={styles.statsRow}>
-        <View style={styles.stat}>
-          <Ionicons name="navigate-outline" size={18} color={colors.primary} />
+        <View style={styles.stat} accessibilityLabel={`Distance: ${formatDistance(eta.remaining_distance_km)}`}>
+          <Ionicons
+            name="navigate-outline"
+            size={18}
+            color={colors.primary}
+            importantForAccessibility="no"
+          />
           <Text style={styles.statValue}>
             {formatDistance(eta.remaining_distance_km)}
           </Text>
@@ -60,19 +85,25 @@ export function ETACard({ eta }) {
 
         <View style={styles.statDivider} />
 
-        <View style={styles.stat}>
-          <Ionicons name="git-commit-outline" size={18} color={colors.primary} />
+        <View style={styles.stat} accessibilityLabel={`${eta.remaining_stops} stops remaining`}>
+          <Ionicons
+            name="git-commit-outline"
+            size={18}
+            color={colors.primary}
+            importantForAccessibility="no"
+          />
           <Text style={styles.statValue}>{eta.remaining_stops}</Text>
           <Text style={styles.statLabel}>Stops</Text>
         </View>
 
         <View style={styles.statDivider} />
 
-        <View style={styles.stat}>
+        <View style={styles.stat} accessibilityLabel={`Delay: ${delayText}`}>
           <Ionicons
             name="alert-circle-outline"
             size={18}
             color={getDelayColor(eta.delay_minutes)}
+            importantForAccessibility="no"
           />
           <Text
             style={[
@@ -89,7 +120,12 @@ export function ETACard({ eta }) {
       {/* Current position */}
       {eta.current_station_name && (
         <View style={styles.currentPos}>
-          <Ionicons name="location" size={16} color={colors.accent} />
+          <Ionicons
+            name="location"
+            size={16}
+            color={colors.accent}
+            importantForAccessibility="no"
+          />
           <Text style={styles.currentPosText}>
             Currently at: {eta.current_station_name}
           </Text>
@@ -120,7 +156,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   badgeText: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: "700",
   },
   etaMain: {
@@ -128,9 +164,10 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   etaLabel: {
-    fontSize: 13,
+    fontSize: 14,
     color: colors.textSecondary,
     marginBottom: 4,
+    fontWeight: "600",
   },
   etaTime: {
     fontSize: 42,
@@ -178,9 +215,10 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   statLabel: {
-    fontSize: 11,
+    fontSize: 12,
     color: colors.textMuted,
     marginTop: 2,
+    fontWeight: "500",
   },
   statDivider: {
     width: 1,
@@ -197,8 +235,8 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   currentPosText: {
-    fontSize: 13,
+    fontSize: 14,
     color: colors.textSecondary,
-    fontWeight: "500",
+    fontWeight: "600",
   },
 });

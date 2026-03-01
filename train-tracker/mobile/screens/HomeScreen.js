@@ -74,7 +74,9 @@ export function HomeScreen({ navigation }) {
       <ScrollView style={styles.scroll} keyboardShouldPersistTaps="handled">
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>Train Tracker</Text>
+          <Text style={styles.headerTitle} accessibilityRole="header">
+            Train Tracker
+          </Text>
           <Text style={styles.headerSubtitle}>
             Indian Railways Live Tracking
           </Text>
@@ -93,6 +95,8 @@ export function HomeScreen({ navigation }) {
               onSubmitEditing={handleSearch}
               returnKeyType="search"
               autoCorrect={false}
+              accessibilityLabel="Search trains"
+              accessibilityHint="Enter a train number or name, then tap Search"
             />
             {query.length > 0 && (
               <TouchableOpacity
@@ -101,6 +105,9 @@ export function HomeScreen({ navigation }) {
                   setResults([]);
                   setSearched(false);
                 }}
+                accessibilityRole="button"
+                accessibilityLabel="Clear search"
+                hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
               >
                 <Ionicons
                   name="close-circle"
@@ -113,6 +120,8 @@ export function HomeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.searchButton}
             onPress={handleSearch}
+            accessibilityRole="button"
+            accessibilityLabel="Search trains"
           >
             <Text style={styles.searchButtonText}>Search</Text>
           </TouchableOpacity>
@@ -123,16 +132,20 @@ export function HomeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.actionCard}
             onPress={() => navigation.navigate("StationSearch")}
+            accessibilityRole="button"
+            accessibilityLabel="Find trains between stations"
           >
-            <Ionicons name="swap-horizontal" size={28} color={colors.primary} />
+            <Ionicons name="swap-horizontal" size={28} color={colors.primary} importantForAccessibility="no" />
             <Text style={styles.actionText}>Trains Between{"\n"}Stations</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.actionCard}
             onPress={() => navigation.navigate("StationSearch")}
+            accessibilityRole="button"
+            accessibilityLabel="Search stations"
           >
-            <Ionicons name="location-outline" size={28} color={colors.accent} />
+            <Ionicons name="location-outline" size={28} color={colors.accent} importantForAccessibility="no" />
             <Text style={styles.actionText}>Search{"\n"}Stations</Text>
           </TouchableOpacity>
         </View>
@@ -164,12 +177,15 @@ export function HomeScreen({ navigation }) {
         {/* Popular trains */}
         {!searched && (
           <View style={styles.popularSection}>
-            <Text style={styles.sectionTitle}>Popular Trains</Text>
+            <Text style={styles.sectionTitle} accessibilityRole="header">Popular Trains</Text>
             {POPULAR_TRAINS.map((train) => (
               <TouchableOpacity
                 key={train.number}
                 style={styles.popularCard}
                 onPress={() => handlePopularPress(train)}
+                accessibilityRole="button"
+                accessibilityLabel={`Train ${train.number}, ${train.name}, ${train.route}`}
+                accessibilityHint="Double tap to view details"
               >
                 <View style={styles.popularLeft}>
                   <Ionicons
@@ -222,7 +238,7 @@ const styles = StyleSheet.create({
   },
   headerSubtitle: {
     fontSize: 14,
-    color: "rgba(255,255,255,0.7)",
+    color: "rgba(255,255,255,0.85)",
     marginTop: 4,
   },
   searchSection: {

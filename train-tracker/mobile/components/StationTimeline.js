@@ -1,11 +1,10 @@
 /**
  * StationTimeline - Displays the train route as a vertical timeline.
  *
- * Shows each station with:
- * - Connection line (green for passed, grey for upcoming)
- * - Station dot (green/orange/grey based on status)
- * - Station name, code, and scheduled/actual times
- * - Delay info and distance
+ * Accessibility:
+ * - Each station row has a descriptive accessibilityLabel
+ * - Status is conveyed via text labels, not color alone
+ * - All text meets WCAG 2.2 AA contrast requirements
  */
 
 import React from "react";
@@ -13,11 +12,19 @@ import { View, Text, StyleSheet } from "react-native";
 import { colors } from "../utils/colors";
 import { formatTime, getDelayColor, getDelayText } from "../utils/helpers";
 
+function getStationStatusText(station, isCurrent, isPassed, isFirst, isLast) {
+  if (isCurrent) return "Current station";
+  if (isPassed) return "Passed";
+  if (isFirst) return "Origin";
+  if (isLast) return "Destination";
+  return "Upcoming";
+}
+
 export function StationTimeline({ stations, currentStationCode }) {
   if (!stations || stations.length === 0) return null;
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} accessibilityRole="list">
       {stations.map((station, index) => {
         const isFirst = index === 0;
         const isLast = index === stations.length - 1;
@@ -31,10 +38,22 @@ export function StationTimeline({ stations, currentStationCode }) {
         let lineColor = colors.trackLine;
         if (isPassed || isCurrent) lineColor = colors.trackLinePassed;
 
+        const statusText = getStationStatusText(station, isCurrent, isPassed, isFirst, isLast);
+        const delayLabel = station.delay_minutes > 0 && (isPassed || isCurrent)
+          ? `, ${getDelayText(station.delay_minutes)}`
+          : "";
+        const a11yLabel = `${station.name}, ${station.code}, ${statusText}${delayLabel}. Arrival ${formatTime(station.arrival)}, Departure ${formatTime(station.departure)}, ${Math.round(station.distance_km)} kilometers`;
+
         return (
-          <View key={`${station.code}-${index}`} style={styles.stationRow}>
+          <View
+            key={`${station.code}-${index}`}
+            style={styles.stationRow}
+            accessible={true}
+            accessibilityRole="text"
+            accessibilityLabel={a11yLabel}
+          >
             {/* Timeline column */}
-            <View style={styles.timelineCol}>
+            <View style={styles.timelineCol} importantForAccessibility="no">
               {!isFirst && (
                 <View
                   style={[
@@ -81,6 +100,11 @@ export function StationTimeline({ stations, currentStationCode }) {
                 <Text style={styles.stationCode}>{station.code}</Text>
               </View>
 
+              {/* Text-based status label (not color-only) */}
+              <Text style={[styles.statusLabel, isCurrent && styles.statusLabelCurrent]}>
+                {statusText}
+              </Text>
+
               <View style={styles.timeRow}>
                 {/* Arrival */}
                 <View style={styles.timeBlock}>
@@ -99,6 +123,7 @@ export function StationTimeline({ stations, currentStationCode }) {
                             color: getDelayColor(station.delay_minutes),
                           },
                         ]}
+                        accessibilityLabel={`Actual arrival ${station.actual_arrival}`}
                       >
                         {formatTime(station.actual_arrival)}
                       </Text>
@@ -122,6 +147,7 @@ export function StationTimeline({ stations, currentStationCode }) {
                             color: getDelayColor(station.delay_minutes),
                           },
                         ]}
+                        accessibilityLabel={`Actual departure ${station.actual_departure}`}
                       >
                         {formatTime(station.actual_departure)}
                       </Text>
@@ -144,6 +170,7 @@ export function StationTimeline({ stations, currentStationCode }) {
                     styles.delayText,
                     { color: getDelayColor(station.delay_minutes) },
                   ]}
+                  accessibilityLabel={`Delay: ${getDelayText(station.delay_minutes)}`}
                 >
                   {getDelayText(station.delay_minutes)}
                 </Text>
@@ -169,7 +196,7 @@ const styles = StyleSheet.create({
   },
   stationRow: {
     flexDirection: "row",
-    minHeight: 72,
+    minHeight: 80,
   },
   timelineCol: {
     width: 40,
@@ -212,7 +239,7 @@ const styles = StyleSheet.create({
   stationHeader: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 4,
+    marginBottom: 2,
   },
   stationName: {
     fontSize: 15,
@@ -227,11 +254,20 @@ const styles = StyleSheet.create({
   stationCode: {
     fontSize: 12,
     color: colors.textMuted,
-    fontWeight: "500",
+    fontWeight: "600",
     backgroundColor: colors.divider,
     paddingHorizontal: 6,
     paddingVertical: 2,
     borderRadius: 4,
+  },
+  statusLabel: {
+    fontSize: 11,
+    fontWeight: "600",
+    color: colors.textMuted,
+    marginBottom: 4,
+  },
+  statusLabelCurrent: {
+    color: colors.accent,
   },
   timeRow: {
     flexDirection: "row",
@@ -244,6 +280,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: colors.textMuted,
     textTransform: "uppercase",
+    fontWeight: "700",
   },
   timeValue: {
     fontSize: 14,
@@ -252,7 +289,7 @@ const styles = StyleSheet.create({
   },
   actualTime: {
     fontSize: 12,
-    fontWeight: "500",
+    fontWeight: "600",
   },
   distText: {
     fontSize: 13,
@@ -260,7 +297,7 @@ const styles = StyleSheet.create({
   },
   delayText: {
     fontSize: 12,
-    fontWeight: "600",
+    fontWeight: "700",
     marginTop: 4,
   },
   haltText: {

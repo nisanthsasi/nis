@@ -94,7 +94,7 @@ export function ETAScreen({ route, navigation }) {
         </Text>
         <View style={styles.headerRoute}>
           <Text style={styles.headerTo}>ETA to</Text>
-          <Text style={styles.headerStation}>{eta.destination_name}</Text>
+          <Text style={styles.headerStation} accessibilityRole="header">{eta.destination_name}</Text>
           <Text style={styles.headerCode}>{eta.destination_station}</Text>
         </View>
       </View>
@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
   },
   headerTrain: {
     fontSize: 13,
-    color: "rgba(255,255,255,0.7)",
+    color: "rgba(255,255,255,0.85)",
     fontWeight: "600",
   },
   headerRoute: {
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
   },
   headerTo: {
     fontSize: 13,
-    color: "rgba(255,255,255,0.6)",
+    color: "rgba(255,255,255,0.85)",
   },
   headerStation: {
     fontSize: 24,
