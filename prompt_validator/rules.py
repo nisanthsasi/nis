@@ -134,9 +134,33 @@ FILLER_WORDS = [
 ]
 
 
+def _is_structured_spec(prompt: str) -> bool:
+    """Detect whether the prompt is a structured system specification.
+
+    Structured specs (with numbered sections, formulas, state machines) are
+    inherently long by design.  Length penalties should be reduced for these.
+    """
+    section_headers = len(re.findall(r"SECTION\s+\d+", prompt, re.IGNORECASE))
+    has_formulas = bool(re.search(r"[A-Z_]+\s*=\s*", prompt))
+    return section_headers >= 3 and has_formulas
+
+
 def check_excessive_length(prompt: str) -> list[Issue]:
     word_count = len(prompt.split())
+    structured = _is_structured_spec(prompt)
+
     if word_count > 2000:
+        if structured:
+            return [
+                Issue(
+                    message="Structured specification is long",
+                    severity=Severity.INFO,
+                    category=Category.EFFICIENCY,
+                    detail=f"{word_count} words across {len(re.findall(r'SECTION', prompt, re.IGNORECASE))} sections. "
+                           f"Length is expected for a system specification; verify no unnecessary duplication.",
+                    penalty=3,
+                )
+            ]
         return [
             Issue(
                 message="Prompt is excessively long",
@@ -186,7 +210,13 @@ def check_filler_words(prompt: str) -> list[Issue]:
 
 
 def check_repeated_sentences(prompt: str) -> list[Issue]:
-    sentences = [s.strip().lower() for s in re.split(r'[.!?]+', prompt) if s.strip()]
+    # Only consider fragments with 3+ words as real sentences.
+    # Single words/numbers from version strings or list items are not duplicates.
+    sentences = [
+        s.strip().lower()
+        for s in re.split(r'[.!?]+', prompt)
+        if s.strip() and len(s.strip().split()) >= 3
+    ]
     seen = set()
     duplicates = set()
     for s in sentences:

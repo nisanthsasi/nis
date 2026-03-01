@@ -122,12 +122,17 @@ class TestEfficiencyRules:
         assert rules.check_filler_words("Write a sorting function") == []
 
     def test_repeated_sentences(self):
-        prompt = "Write code. Write code. Do it well."
+        prompt = "Write the code now. Write the code now. Do it well enough."
         issues = rules.check_repeated_sentences(prompt)
         assert len(issues) == 1
 
     def test_no_repeated_sentences(self):
-        assert rules.check_repeated_sentences("Write code. Test it. Deploy it.") == []
+        assert rules.check_repeated_sentences("Write the code. Test it carefully. Deploy it now.") == []
+
+    def test_short_fragments_not_flagged(self):
+        """Single words or 2-word fragments from version numbers should not count."""
+        prompt = "Version 14.4.2. Section 4. Item 4. Entry 4."
+        assert rules.check_repeated_sentences(prompt) == []
 
     def test_redundant_please(self):
         prompt = "Please help me. Please write code. Please test it. Please deploy."
