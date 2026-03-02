@@ -204,9 +204,49 @@ class TestGovernance:
         assert issues[0].severity == Severity.INFO
 
 
+class TestV15Modules:
+    def test_v15_modules_not_checked_on_v14(self):
+        """v15 module checks should not run on v14 prompts."""
+        issues = rules.check_v15_modules(MINIMAL_SATVA)
+        assert len(issues) == 0
+
+    def test_v15_modules_present(self):
+        """v15 prompt with all modules should pass."""
+        with open("prompts/satva_v15.0.0.txt") as f:
+            prompt = f.read()
+        issues = rules.check_v15_modules(prompt)
+        assert len(issues) == 0
+
+    def test_v15_missing_setup_d(self):
+        """v15 prompt without Setup D should be flagged."""
+        prompt = "SATVA v15.0.0\nHTF EXEC TAS RSI divergence VOL_EXPANDING VOL_CONTRACTING VOL_DRYUP PB_DEPTH PB_CANDLE\nTier 1 Tier 2 watchdog DATA_STALE"
+        issues = rules.check_v15_modules(prompt)
+        setup_d_issues = [i for i in issues if "Setup D" in i.message]
+        assert len(setup_d_issues) == 1
+
+
+class TestPartialExitTiers:
+    def test_v14_skipped(self):
+        issues = rules.check_partial_exit_tiers(MINIMAL_SATVA)
+        assert len(issues) == 0
+
+    def test_v15_correct_tiers(self):
+        prompt = "SATVA v15.0.0\nSECTION 22 — PARTIAL EXIT ENGINE\nClose 40% of position\nClose 30% of position\nExit 30% trailing\n"
+        issues = rules.check_partial_exit_tiers(prompt)
+        assert len(issues) == 0
+
+
+class TestVersionDetection:
+    def test_detect_v14(self):
+        assert rules._detect_version(MINIMAL_SATVA) == "v14"
+
+    def test_detect_v15(self):
+        assert rules._detect_version("SATVA v15.0.0 prompt") == "v15"
+
+
 class TestSatvaValidatorIntegration:
-    def test_full_satva_prompt(self):
-        """Load the actual SATVA prompt and validate it."""
+    def test_full_satva_v14_prompt(self):
+        """Load the actual SATVA v14 prompt and validate it."""
         with open("prompts/satva_v14.4.2.txt") as f:
             prompt = f.read()
 
@@ -225,3 +265,25 @@ class TestSatvaValidatorIntegration:
             if "inconsistent tr" in i.message.lower()
         ]
         assert len(false_positive_tr) == 0
+
+    def test_full_satva_v15_prompt(self):
+        """Load the actual SATVA v15 prompt and validate it."""
+        with open("prompts/satva_v15.0.0.txt") as f:
+            prompt = f.read()
+
+        from prompt_validator.satva_validator import SatvaValidator
+        validator = SatvaValidator()
+        results = validator.validate(prompt)
+
+        # Domain score should be high for a well-structured v15 prompt
+        assert results["domain"].score >= 85
+        # Combined should pass
+        assert results["combined_score"] >= 70
+        # Should not have any ERROR-level domain issues
+        domain_errors = [
+            i for i in results["domain"].issues
+            if i.severity == Severity.ERROR
+        ]
+        assert len(domain_errors) == 0, (
+            f"Unexpected domain errors: {[e.message for e in domain_errors]}"
+        )

@@ -6,6 +6,8 @@ These rules check for:
 - Threshold/bin gap analysis
 - Cross-section reference integrity
 - Governance discipline
+
+Supports both v14.x and v15.x section layouts.
 """
 
 import re
@@ -31,11 +33,19 @@ def _extract_variables(prompt: str) -> set[str]:
     return set(re.findall(r"\b([A-Z][A-Z_]{2,})\b", prompt))
 
 
+def _detect_version(prompt: str) -> str:
+    """Detect SATVA version from prompt text. Returns 'v15' or 'v14'."""
+    if re.search(r"v15\.\d+\.\d+", prompt):
+        return "v15"
+    return "v14"
+
+
 # ---------------------------------------------------------------------------
 # 1. STRUCTURAL COMPLETENESS
 # ---------------------------------------------------------------------------
 
-REQUIRED_SECTIONS = {
+# v14 section layout
+REQUIRED_SECTIONS_V14 = {
     0: "AXIOMS",
     1: "DATA CONTRACT",
     2: "CORE MEASUREMENTS",
@@ -53,13 +63,42 @@ REQUIRED_SECTIONS = {
     24: "GOVERNANCE",
 }
 
+# v15 section layout (sections renumbered to accommodate new modules)
+REQUIRED_SECTIONS_V15 = {
+    0: "AXIOMS",
+    1: "DATA CONTRACT",
+    2: "CORE MEASUREMENTS",
+    3: "SESSION GOVERNOR",
+    5: "LEVEL SET",
+    6: "ABT",
+    12: "TAS",
+    13: "MOMENTUM",
+    14: "VOLUME PROFILE",
+    15: "PQS",
+    16: "RCS",
+    17: "REGIME",
+    19: "SES",
+    20: "SETUPS",
+    21: "TARGETS",
+    22: "PARTIAL EXIT",
+    25: "RISK",
+    29: "FSM",
+    30: "OUTPUT FORMAT",
+    31: "GOVERNANCE",
+}
+
+# Union mapping used by default — selects based on version detection
+REQUIRED_SECTIONS = REQUIRED_SECTIONS_V14
+
 
 def check_section_completeness(prompt: str) -> list[Issue]:
     """Verify all critical sections are present."""
     sections = _find_sections(prompt)
+    version = _detect_version(prompt)
+    required = REQUIRED_SECTIONS_V15 if version == "v15" else REQUIRED_SECTIONS_V14
     issues = []
     missing = []
-    for num, label in REQUIRED_SECTIONS.items():
+    for num, label in required.items():
         if num not in sections:
             missing.append(f"Section {num} ({label})")
     if missing:
@@ -102,7 +141,7 @@ def check_freeze_declaration(prompt: str) -> list[Issue]:
 # 2. FORMULA & THRESHOLD INTEGRITY
 # ---------------------------------------------------------------------------
 
-EXPECTED_FORMULAS = [
+EXPECTED_FORMULAS_BASE = [
     ("TR", r"TR\[?\w*\]?\s*=\s*max"),
     ("ATR5m", r"ATR5m\s*=\s*SMA"),
     ("RCS", r"RCS\s*=\s*0\.\d+"),
@@ -115,12 +154,25 @@ EXPECTED_FORMULAS = [
     ("Contraction", r"Contraction\s*="),
 ]
 
+# Additional formulas expected in v15
+EXPECTED_FORMULAS_V15 = [
+    ("TAS", r"TAS\s*=\s*0\.\d+"),
+    ("PQS", r"PQS\s*=\s*0\.\d+"),
+    ("ATR1H", r"ATR1H\s*=\s*SMA"),
+    ("RSI_5m", r"RSI_5m\s*=\s*RSI"),
+    ("MOM", r"MOM\s*=\s*max"),
+]
+
 
 def check_formula_definitions(prompt: str) -> list[Issue]:
     """Verify key formulas are explicitly defined."""
+    version = _detect_version(prompt)
+    formulas = list(EXPECTED_FORMULAS_BASE)
+    if version == "v15":
+        formulas.extend(EXPECTED_FORMULAS_V15)
     issues = []
     missing = []
-    for name, pattern in EXPECTED_FORMULAS:
+    for name, pattern in formulas:
         if not re.search(pattern, prompt):
             missing.append(name)
     if missing:
@@ -134,37 +186,39 @@ def check_formula_definitions(prompt: str) -> list[Issue]:
     return issues
 
 
+def _check_weight_sum(prompt: str, label: str, pattern: str) -> list[Issue]:
+    """Check that a weighted formula sums to 1.00."""
+    issues = []
+    matches = re.findall(pattern, prompt)
+    if matches:
+        coeffs = re.findall(r"0\.(\d+)", matches[0])
+        total = sum(int(c) for c in coeffs)
+        if total != 100:
+            issues.append(Issue(
+                message=f"{label} weights sum to {total/100:.2f}, expected 1.00",
+                severity=Severity.ERROR,
+                category=Category.ACCURACY,
+                detail=f"Weights in {label} formula: {matches[0].strip()}",
+                penalty=20,
+            ))
+    return issues
+
+
 def check_bin_coverage(prompt: str) -> list[Issue]:
     """Check that scoring bins (100/50/0) have no gaps or overlaps."""
+    version = _detect_version(prompt)
     issues = []
 
     # Check RCS weight sum
-    rcs_weights = re.findall(r"RCS\s*=\s*([\d.+*\w\s]+)", prompt)
-    if rcs_weights:
-        coeffs = re.findall(r"0\.(\d+)", rcs_weights[0])
-        total = sum(int(c) for c in coeffs)
-        if total != 100:
-            issues.append(Issue(
-                message=f"RCS weights sum to {total/100:.2f}, expected 1.00",
-                severity=Severity.ERROR,
-                category=Category.ACCURACY,
-                detail=f"Weights in RCS formula: {rcs_weights[0].strip()}",
-                penalty=20,
-            ))
+    issues.extend(_check_weight_sum(prompt, "RCS", r"RCS\s*=\s*([\d.+*\w\s]+)"))
 
     # Check SES weight sum
-    ses_weights = re.findall(r"SES\s*=\s*([\d.+*\w\s]+)", prompt)
-    if ses_weights:
-        coeffs = re.findall(r"0\.(\d+)", ses_weights[0])
-        total = sum(int(c) for c in coeffs)
-        if total != 100:
-            issues.append(Issue(
-                message=f"SES weights sum to {total/100:.2f}, expected 1.00",
-                severity=Severity.ERROR,
-                category=Category.ACCURACY,
-                detail=f"Weights in SES formula: {ses_weights[0].strip()}",
-                penalty=20,
-            ))
+    issues.extend(_check_weight_sum(prompt, "SES", r"SES\s*=\s*([\d.+*\w\s]+)"))
+
+    # v15-specific composite score checks
+    if version == "v15":
+        issues.extend(_check_weight_sum(prompt, "TAS", r"TAS\s*=\s*(0\.\d+[\d.+*\w\s]+)"))
+        issues.extend(_check_weight_sum(prompt, "PQS", r"PQS\s*=\s*(0\.\d+[\d.+*\w\s]+)"))
 
     return issues
 
@@ -304,21 +358,34 @@ def check_fsm_dead_states(prompt: str) -> list[Issue]:
 # 4. CROSS-REFERENCE INTEGRITY
 # ---------------------------------------------------------------------------
 
+CRITICAL_VARS_BASE = {
+    "ATR5m": r"ATR5m\s*=",
+    "ATR_prev": r"ATR_prev\s*=",
+    "SLIPPAGE_PAD": r"SLIPPAGE_PAD\s*=",
+    "VWAP_session": r"VWAP.?session",
+    "RCS": r"RCS\s*=\s*0\.",
+    "SES": r"SES\s*=\s*0\.",
+    "CompressionValid": r"CompressionValid\s*(if|=|:)",
+    "ExpansionValid": r"ExpansionValid\s*(if|=|:)",
+    "EntropyScore": r"EntropyScore\s*=",
+}
+
+CRITICAL_VARS_V15 = {
+    "TAS": r"TAS\s*=\s*0\.",
+    "PQS": r"PQS\s*=\s*0\.",
+    "ATR1H": r"ATR1H\s*=",
+    "MOM": r"MOM\s*=\s*max",
+    "PORTFOLIO_HEAT": r"PORTFOLIO_HEAT\s*=",
+}
+
+
 def check_cross_references(prompt: str) -> list[Issue]:
     """Check that variables referenced in one section are defined in another."""
+    version = _detect_version(prompt)
     issues = []
-    # Key variables that MUST be defined before use
-    critical_vars = {
-        "ATR5m": r"ATR5m\s*=",
-        "ATR_prev": r"ATR_prev\s*=",
-        "SLIPPAGE_PAD": r"SLIPPAGE_PAD\s*=",
-        "VWAP_session": r"VWAP.?session",
-        "RCS": r"RCS\s*=\s*0\.",
-        "SES": r"SES\s*=\s*0\.",
-        "CompressionValid": r"CompressionValid\s*(if|=|:)",
-        "ExpansionValid": r"ExpansionValid\s*(if|=|:)",
-        "EntropyScore": r"EntropyScore\s*=",
-    }
+    critical_vars = dict(CRITICAL_VARS_BASE)
+    if version == "v15":
+        critical_vars.update(CRITICAL_VARS_V15)
     undefined = []
     for var, definition_pattern in critical_vars.items():
         # Variable is used
@@ -453,6 +520,98 @@ def check_governance_entries(prompt: str) -> list[Issue]:
 
 
 # ---------------------------------------------------------------------------
+# 7. v15-SPECIFIC MODULE CHECKS
+# ---------------------------------------------------------------------------
+
+V15_REQUIRED_MODULES = [
+    ("TAS", ["HTF", "EXEC"]),
+    ("MOM", ["RSI", "divergence"]),
+    ("VOLP", ["VOL_EXPANDING", "VOL_CONTRACTING", "VOL_DRYUP"]),
+    ("PQS", ["PB_DEPTH", "PB_CANDLE"]),
+]
+
+
+def check_v15_modules(prompt: str) -> list[Issue]:
+    """Verify v15-specific analytical modules are present and complete."""
+    version = _detect_version(prompt)
+    if version != "v15":
+        return []
+
+    issues = []
+    lower = prompt.lower()
+    for module_name, keywords in V15_REQUIRED_MODULES:
+        missing_kw = [kw for kw in keywords if kw.lower() not in lower]
+        if missing_kw:
+            issues.append(Issue(
+                message=f"v15 module {module_name} missing components",
+                severity=Severity.WARNING,
+                category=Category.ACCURACY,
+                detail=f"Expected keywords not found: {', '.join(missing_kw)}",
+                penalty=5 * len(missing_kw),
+            ))
+
+    # Check Setup D exists in v15
+    if "setup d" not in lower:
+        issues.append(Issue(
+            message="v15 Setup D (Momentum Pullback) not found",
+            severity=Severity.WARNING,
+            category=Category.STRUCTURE,
+            detail="SATVA v15 should define Setup D for momentum pullback entries.",
+            penalty=8,
+        ))
+
+    # Check 3-tier partial exit engine
+    if "tier 1" not in lower and "tier 2" not in lower:
+        issues.append(Issue(
+            message="v15 3-tier partial exit engine not found",
+            severity=Severity.WARNING,
+            category=Category.STRUCTURE,
+            detail="SATVA v15 should define a 3-tier partial exit engine (T1/T2/T3).",
+            penalty=8,
+        ))
+
+    # Check data health watchdogs
+    if "watchdog" not in lower and "data_stale" not in lower:
+        issues.append(Issue(
+            message="v15 data health watchdogs not found",
+            severity=Severity.WARNING,
+            category=Category.STRUCTURE,
+            detail="SATVA v15 should define data freshness and volume anomaly watchdogs.",
+            penalty=5,
+        ))
+
+    return issues
+
+
+def check_partial_exit_tiers(prompt: str) -> list[Issue]:
+    """Verify partial exit percentages in the Partial Exit Engine section sum correctly."""
+    version = _detect_version(prompt)
+    if version != "v15":
+        return []
+
+    issues = []
+    # Find the Partial Exit Engine section specifically
+    sections = _find_sections(prompt)
+    exit_section = sections.get(22, "")
+    if not exit_section:
+        return issues
+
+    # Look for tier percentage allocations within the exit section only
+    tier_pcts = re.findall(r"(?:close|exit)\s+(\d+)%", exit_section.lower())
+    if len(tier_pcts) >= 3:
+        total = sum(int(p) for p in tier_pcts[:3])
+        if total != 100:
+            issues.append(Issue(
+                message=f"Partial exit tiers sum to {total}%, expected 100%",
+                severity=Severity.WARNING,
+                category=Category.ACCURACY,
+                detail=f"Tier percentages found: {', '.join(tier_pcts[:3])}",
+                penalty=10,
+            ))
+    return issues
+
+
+# ---------------------------------------------------------------------------
 # Aggregate all SATVA rules
 # ---------------------------------------------------------------------------
 
@@ -470,4 +629,6 @@ ALL_SATVA_RULES = [
     check_halt_conditions,
     check_output_format_section,
     check_governance_entries,
+    check_v15_modules,
+    check_partial_exit_tiers,
 ]
