@@ -11,14 +11,19 @@ Provides endpoints for:
 """
 
 import os
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 
 from services.train_service import TrainService
 from services.eta_service import ETAService
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static")
 CORS(app)
+
+
+@app.route("/")
+def index():
+    return send_from_directory(app.static_folder, "index.html")
 
 # Initialize services
 train_service = TrainService()

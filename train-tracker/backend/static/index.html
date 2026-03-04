@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Railways Train Tracker</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f2f5; color: #1a1a2e; }
+
+.header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 20px; text-align: center; }
+.header h1 { font-size: 24px; margin-bottom: 4px; }
+.header p { font-size: 14px; opacity: 0.8; }
+
+.container { max-width: 800px; margin: 0 auto; padding: 16px; }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.tab { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; background: white; color: #555; transition: all 0.2s; }
+.tab.active { background: #0f3460; color: white; }
+.tab:hover:not(.active) { background: #e8e8e8; }
+
+.panel { display: none; }
+.panel.active { display: block; }
+
+.search-box { display: flex; gap: 8px; margin-bottom: 16px; }
+.search-box input, .search-box select { flex: 1; padding: 12px 16px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; outline: none; transition: border-color 0.2s; }
+.search-box input:focus { border-color: #0f3460; }
+.search-box button { padding: 12px 24px; background: #0f3460; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; white-space: nowrap; }
+.search-box button:hover { background: #1a4a8a; }
+
+.card { background: white; border-radius: 12px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.card h3 { color: #0f3460; margin-bottom: 8px; font-size: 16px; }
+.card .subtitle { color: #666; font-size: 13px; margin-bottom: 8px; }
+
+.badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 4px; margin-bottom: 4px; }
+.badge-blue { background: #e3f2fd; color: #1565c0; }
+.badge-green { background: #e8f5e9; color: #2e7d32; }
+.badge-orange { background: #fff3e0; color: #e65100; }
+.badge-red { background: #ffebee; color: #c62828; }
+.badge-gray { background: #f5f5f5; color: #616161; }
+
+.route-timeline { position: relative; padding-left: 24px; }
+.route-stop { position: relative; padding: 12px 0; border-left: 3px solid #ddd; padding-left: 20px; }
+.route-stop:last-child { border-left-color: transparent; }
+.route-stop::before { content: ''; position: absolute; left: -7px; top: 16px; width: 12px; height: 12px; border-radius: 50%; background: #0f3460; border: 2px solid white; }
+.route-stop.departed::before { background: #2e7d32; }
+.route-stop.current::before { background: #e65100; width: 14px; height: 14px; left: -8px; }
+.route-stop .stop-name { font-weight: 600; font-size: 14px; }
+.route-stop .stop-details { color: #666; font-size: 12px; margin-top: 2px; }
+.route-stop .delay { color: #c62828; font-weight: 600; }
+
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 12px; }
+.info-item { text-align: center; padding: 12px; background: #f8f9fa; border-radius: 8px; }
+.info-item .label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+.info-item .value { font-size: 20px; font-weight: 700; color: #0f3460; margin-top: 4px; }
+
+.status-banner { padding: 12px 16px; border-radius: 8px; margin-bottom: 12px; font-weight: 600; font-size: 14px; }
+.status-banner.delayed { background: #fff3e0; color: #e65100; border-left: 4px solid #e65100; }
+.status-banner.on-time { background: #e8f5e9; color: #2e7d32; border-left: 4px solid #2e7d32; }
+
+.loading { text-align: center; padding: 40px; color: #888; }
+.error { text-align: center; padding: 20px; color: #c62828; background: #ffebee; border-radius: 8px; margin: 12px 0; }
+.empty { text-align: center; padding: 40px; color: #999; }
+
+.two-col { display: flex; gap: 8px; }
+.two-col input { flex: 1; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Indian Railways Train Tracker</h1>
+  <p>Search trains, check live status & routes</p>
+</div>
+
+<div class="container">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('search')">Search Trains</button>
+    <button class="tab" onclick="showTab('live')">Live Status</button>
+    <button class="tab" onclick="showTab('between')">Between Stations</button>
+    <button class="tab" onclick="showTab('stations')">Stations</button>
+  </div>
+
+  <!-- Search Trains -->
+  <div id="panel-search" class="panel active">
+    <div class="search-box">
+      <input type="text" id="train-query" placeholder="Train number or name (e.g. 12301 or Rajdhani)" onkeydown="if(event.key==='Enter')searchTrains()">
+      <button onclick="searchTrains()">Search</button>
+    </div>
+    <div id="search-results"></div>
+  </div>
+
+  <!-- Live Status -->
+  <div id="panel-live" class="panel">
+    <div class="search-box">
+      <input type="text" id="live-train" placeholder="Train number (e.g. 12301)" onkeydown="if(event.key==='Enter')getLiveStatus()">
+      <button onclick="getLiveStatus()">Track</button>
+    </div>
+    <div id="live-results"></div>
+  </div>
+
+  <!-- Between Stations -->
+  <div id="panel-between" class="panel">
+    <div class="search-box two-col">
+      <input type="text" id="from-station" placeholder="From (e.g. NDLS)" onkeydown="if(event.key==='Enter')findBetween()">
+      <input type="text" id="to-station" placeholder="To (e.g. HWH)" onkeydown="if(event.key==='Enter')findBetween()">
+      <button onclick="findBetween()">Find</button>
+    </div>
+    <div id="between-results"></div>
+  </div>
+
+  <!-- Stations -->
+  <div id="panel-stations" class="panel">
+    <div class="search-box">
+      <input type="text" id="station-query" placeholder="Station name or code (e.g. Delhi or NDLS)" onkeydown="if(event.key==='Enter')searchStations()">
+      <button onclick="searchStations()">Search</button>
+    </div>
+    <div id="station-results"></div>
+  </div>
+</div>
+
+<script>
+const API = '';
+
+function showTab(name) {
+  document.querySelectorAll('.tab').forEach((t, i) => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  const tabs = ['search', 'live', 'between', 'stations'];
+  document.querySelectorAll('.tab')[tabs.indexOf(name)].classList.add('active');
+}
+
+async function api(path) {
+  const res = await fetch(API + path);
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Request failed');
+  return data;
+}
+
+async function searchTrains() {
+  const q = document.getElementById('train-query').value.trim();
+  if (!q) return;
+  const el = document.getElementById('search-results');
+  el.innerHTML = '<div class="loading">Searching...</div>';
+  try {
+    const data = await api('/api/trains/search?q=' + encodeURIComponent(q));
+    if (!data.trains.length) { el.innerHTML = '<div class="empty">No trains found</div>'; return; }
+    el.innerHTML = data.trains.map(t => `
+      <div class="card" style="cursor:pointer" onclick="viewTrain('${t.train_number}')">
+        <h3>${t.train_number} - ${t.train_name}</h3>
+        <div class="subtitle">${t.source_name} (${t.source}) → ${t.destination_name} (${t.destination})</div>
+        <div>${t.run_days.map(d => '<span class="badge badge-blue">' + d + '</span>').join('')}</div>
+      </div>
+    `).join('');
+  } catch(e) { el.innerHTML = '<div class="error">' + e.message + '</div>'; }
+}
+
+async function viewTrain(num) {
+  document.getElementById('live-train').value = num;
+  showTab('live');
+  getLiveStatus();
+}
+
+async function getLiveStatus() {
+  const num = document.getElementById('live-train').value.trim();
+  if (!num) return;
+  const el = document.getElementById('live-results');
+  el.innerHTML = '<div class="loading">Fetching live status...</div>';
+  try {
+    const data = await api('/api/trains/' + num + '/live');
+    let html = '';
+
+    // Status banner
+    const delayed = data.delay_minutes > 0;
+    html += '<div class="status-banner ' + (delayed ? 'delayed' : 'on-time') + '">';
+    html += data.status_message;
+    if (delayed) html += ' (Delayed by ' + data.delay_minutes + ' min)';
+    html += '</div>';
+
+    // Info cards
+    html += '<div class="card"><h3>' + data.train_number + ' - ' + data.train_name + '</h3>';
+    html += '<div class="info-grid">';
+    html += '<div class="info-item"><div class="label">Current Station</div><div class="value" style="font-size:14px">' + (data.current_station_name || '-') + '</div></div>';
+    if (data.next_station_name) html += '<div class="info-item"><div class="label">Next Station</div><div class="value" style="font-size:14px">' + data.next_station_name + '</div></div>';
+    if (data.eta_next_station) html += '<div class="info-item"><div class="label">ETA Next</div><div class="value">' + data.eta_next_station + '</div></div>';
+    html += '<div class="info-item"><div class="label">Delay</div><div class="value" style="color:' + (delayed ? '#c62828' : '#2e7d32') + '">' + data.delay_minutes + ' min</div></div>';
+    html += '</div></div>';
+
+    // Route timeline
+    html += '<div class="card"><h3>Route</h3><div class="route-timeline">';
+    data.stations.forEach((s, i) => {
+      const cls = s.has_departed ? 'departed' : (s.has_arrived ? 'current' : '');
+      html += '<div class="route-stop ' + cls + '">';
+      html += '<div class="stop-name">' + s.name + ' (' + s.code + ')</div>';
+      html += '<div class="stop-details">';
+      if (s.arrival) html += 'Arr: ' + s.arrival;
+      if (s.departure) html += (s.arrival ? ' | ' : '') + 'Dep: ' + s.departure;
+      if (s.distance_km) html += ' | ' + s.distance_km + ' km';
+      if (s.delay_minutes > 0) html += ' <span class="delay">+' + s.delay_minutes + ' min</span>';
+      if (s.actual_arrival) html += '<br>Expected: ' + s.actual_arrival;
+      html += '</div></div>';
+    });
+    html += '</div></div>';
+
+    el.innerHTML = html;
+  } catch(e) { el.innerHTML = '<div class="error">' + e.message + '</div>'; }
+}
+
+async function findBetween() {
+  const from = document.getElementById('from-station').value.trim().toUpperCase();
+  const to = document.getElementById('to-station').value.trim().toUpperCase();
+  if (!from || !to) return;
+  const el = document.getElementById('between-results');
+  el.innerHTML = '<div class="loading">Finding trains...</div>';
+  try {
+    const data = await api('/api/trains/between?from=' + from + '&to=' + to);
+    if (!data.trains.length) { el.innerHTML = '<div class="empty">No direct trains found</div>'; return; }
+    el.innerHTML = '<p style="margin-bottom:12px;color:#666">' + data.count + ' train(s) from ' + from + ' to ' + to + '</p>' +
+      data.trains.map(t => `
+      <div class="card" style="cursor:pointer" onclick="viewTrain('${t.train_number}')">
+        <h3>${t.train_number} - ${t.train_name}</h3>
+        <div class="info-grid">
+          <div class="info-item"><div class="label">Departure</div><div class="value">${t.departure}</div></div>
+          <div class="info-item"><div class="label">Arrival</div><div class="value">${t.arrival}</div></div>
+          <div class="info-item"><div class="label">Distance</div><div class="value">${t.duration_km} km</div></div>
+          <div class="info-item"><div class="label">Stops</div><div class="value">${t.stops}</div></div>
+        </div>
+        <div style="margin-top:8px">${t.run_days.map(d => '<span class="badge badge-blue">' + d + '</span>').join('')}</div>
+      </div>
+    `).join('');
+  } catch(e) { el.innerHTML = '<div class="error">' + e.message + '</div>'; }
+}
+
+async function searchStations() {
+  const q = document.getElementById('station-query').value.trim();
+  if (!q) return;
+  const el = document.getElementById('station-results');
+  el.innerHTML = '<div class="loading">Searching...</div>';
+  try {
+    const data = await api('/api/stations/search?q=' + encodeURIComponent(q));
+    if (!data.stations.length) { el.innerHTML = '<div class="empty">No stations found</div>'; return; }
+    el.innerHTML = data.stations.map(s => `
+      <div class="card">
+        <h3>${s.name}</h3>
+        <div class="subtitle">Code: <span class="badge badge-green">${s.code}</span></div>
+      </div>
+    `).join('');
+  } catch(e) { el.innerHTML = '<div class="error">' + e.message + '</div>'; }
+}
+</script>
+</body>
+</html>
