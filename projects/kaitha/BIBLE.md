@@ -36,7 +36,7 @@ Why she can't just leave: economic dependence (owns nothing but the hidden hoard
 **True antagonist = the cage** (marriage / money / patriarchy). Husband = its brutal face; loving sea-guard = its soft face. She escapes both.
 
 ## 6. Characters (working names — to confirm)
-### THANKAMM — protagonist ("gold," ironic)
+### THANKAM — protagonist ("gold," ironic)
 - **Want:** vanish with the money; be free.
 - **Need:** stop pricing herself in what men give/take; own herself.
 - **Flaw:** believes safety requires absolute solitude — to be free she must betray even love.
@@ -90,7 +90,7 @@ Time = screen time = shoot time. Camera locked to her after the opening hand-off
 - **Safety/logistics (TECH-01 + SME later):** night sea + real boat + sea-guard uniform/procedure authenticity.
 
 ## 9. Open Questions
-- [Q1] Confirm/replace working names (Thankamm / Krish / Ramanan).
+- [Q1] RESOLVED: names locked — Thankam / Krish (officer) / Ramanan.
 - [Q2] RESOLVED: full night (moon + faraway street lights; cool/warm split is the color signature).
 - [Q3] Husband's "ruined tenderness" beat — include (deepens him) or keep pure threat.
 
