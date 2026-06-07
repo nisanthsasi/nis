@@ -36,15 +36,15 @@ Why she can't just leave: economic dependence (owns nothing but the hidden hoard
 **True antagonist = the cage** (marriage / money / patriarchy). Husband = its brutal face; loving sea-guard = its soft face. She escapes both.
 
 ## 6. Characters (working names — to confirm)
-### THANKA — protagonist ("gold," ironic)
+### THANKAMM — protagonist ("gold," ironic)
 - **Want:** vanish with the money; be free.
 - **Need:** stop pricing herself in what men give/take; own herself.
 - **Flaw:** believes safety requires absolute solitude — to be free she must betray even love.
-- **Contradiction:** genuinely loves Shibu yet always meant to leave him; nurtures (curry, savings, care) the men she's escaping.
+- **Contradiction:** genuinely loves Krish yet always meant to leave him; nurtures (curry, savings, care) the men she's escaping.
 - **Arc Delta:** serves men's appetites → acts, kills, chooses herself, walks out of the frame/gaze.
 - **Function:** the architect; everyone is an instrument she didn't plan to feel for.
 
-### SHIBU — the lover / sea-guard
+### KRISH — the lover / sea-guard ("Krish officer")
 - **Want:** take her away; build a life *together* — believes the savings are *theirs*.
 - **Need:** to be chosen, not used.
 - **Flaw:** devotion blinds him; reads her care as love for him.
@@ -52,7 +52,7 @@ Why she can't just leave: economic dependence (owns nothing but the hidden hoard
 - **Arc Delta:** arrives a lover → abandoned inside the frame, an accomplice holding a voice note.
 - **Plant (required, §S2):** his longing to "come away together — soon" must be planted in the love scene so disposing the body feels, to him, like the night their future begins. That makes her betrayal cut.
 
-### VELAYUDHAN — the husband
+### RAMANAN — the husband
 - **Want:** dominion — food, sex, the money, control.
 - **Need (unmet):** to matter; clings to ownership as drink took the rest.
 - **Flaw:** entitlement + violence.
@@ -68,12 +68,12 @@ Time = screen time = shoot time. Camera locked to her after the opening hand-off
 | 0:00–0:05 | **Open on the man.** Kaitha snags his legs; he looks at sea + hut; washes legs in the stored vessels; distant call — "it's me." **[YOU]** | Shore → hut front (vessels). **Hand-off** man → her. |
 | 0:05–0:18 | **The ritual.** Backyard bath (authored/indicted gaze); dresses; lights the lamp; kerosene world; dead TV; pot on the log fire. **[NEED]** | Front → room → kitchen → backyard → room (figure-eight). |
 | 0:18–0:28 | **Love + the rice pot.** Lovemaking; the week's roll; the pot reveal — other rolls already inside. Reads as romance; it's her fund. **[SEARCH setup]** | Inside the room; intimate. |
-| 0:28 | Shibu leaves. Curry on the fire (**clock #2**). | Door → dark → back to her. |
-| 0:28–0:42 | **Rug-pull.** Velayudhan enters drunk — the real husband. Eats. Quarrel simmers. **[GO]** | Kitchen / table. |
+| 0:28 | Krish leaves. Curry on the fire (**clock #2**). | Door → dark → back to her. |
+| 0:28–0:42 | **Rug-pull.** Ramanan enters drunk — the real husband. Eats. Quarrel simmers. **[GO]** | Kitchen / table. |
 | 0:42–0:55 | **Escalation ladder.** Beats her; finishes food; goes to wash; she cleans; he returns; reignites; **she retaliates.** **[TAKE]** | Room ↔ wash ↔ kitchen. |
 | **0:55** | **MIDPOINT.** He throws her onto the rice pot — **money spills.** He grabs it. The abused becomes predator: **she beats him to death.** **[FIND — false win]** | Kitchen floor; spilled notes; stillness. |
-| 0:55–1:05 | Panic. The body. She calls Shibu; he comes; decision: deep in the sea. **[pay the price]** | Room → front → shore; body dragged. |
-| 1:05–1:15 | Shibu **returns in uniform**, loads the body, drives the boat out. **Camera stays on shore.** Boat = distant light (**clock #1: tide/dawn**). | Shore; he exits frame. |
+| 0:55–1:05 | Panic. The body. She calls Krish; he comes; decision: deep in the sea. **[pay the price]** | Room → front → shore; body dragged. |
+| 1:05–1:15 | Krish **returns in uniform**, loads the body, drives the boat out. **Camera stays on shore.** Boat = distant light (**clock #1: tide/dawn**). | Shore; he exits frame. |
 | 1:15–1:25 | **THE SOLO.** Alone, real time: packing, the money, **petrol around the hut**, the long walk to the cliff; micro-reversals (a passing light, the boat's early turn, the love on her face). **[all-is-lost → she chooses]** | Hut → out → rocks/kaitha → ascent to cliff. |
 | 1:25–1:29 | **CLIMAX.** From the cliff she **torches the hut.** Boat returns; his tiny figure by the flames. Voice note: *"I left because I loved you. I had no other choice."* **[RETURN]** | Cliff over sea + burning hut. |
 | 1:29–1:30 | **Resolution (B).** She **walks out of frame.** Hold on the fire and the distant, abandoned man. The camera, like him, is left behind. **[CHANGE]** | She exits; the gaze loses her. |
@@ -85,13 +85,13 @@ Time = screen time = shoot time. Camera locked to her after the opening hand-off
 ## 8. Production Notes (early flags for S4)
 - **Method:** true single take, *Victoria*-style — cheap in gear, expensive in **rehearsal** (the affordable resource). Many full-night takes; pick the best whole performance.
 - **Set = geography.** Hut (bed-hall → kitchen → backyard bath) + shore + rocks/kaitha + cliff must be one **continuously traversable** space; the set design *is* the camera path.
-- **Light (DP):** only a kerosene lamp until the final fire. Lock full-night (vs. dusk arc — open Q2); low-light body (Sony FX3 / A7S III), fast primes, lamp as motivated key + hidden LED; **fire = climax light cue.**
+- **Light (DP):** only a kerosene lamp until the final fire. Locked FULL NIGHT: moon + distant street lights (cool exterior) vs. kerosene lamp + hearth + final fire (warm interior); low-light body (Sony FX3 / A7S III), fast primes, lamp as motivated key + hidden LED; **fire = climax light cue.**
 - **Sound:** the sea masks the absence of cuts and wind noise; design the distant call, the sea, the fire as one continuous bed.
 - **Safety/logistics (TECH-01 + SME later):** night sea + real boat + sea-guard uniform/procedure authenticity.
 
 ## 9. Open Questions
-- [Q1] Confirm/replace working names (Thanka / Shibu / Velayudhan).
-- [Q2] Dawn deadline as on-screen clock — dusk-to-night light arc vs. locked full-night.
+- [Q1] Confirm/replace working names (Thankamm / Krish / Ramanan).
+- [Q2] RESOLVED: full night (moon + faraway street lights; cool/warm split is the color signature).
 - [Q3] Husband's "ruined tenderness" beat — include (deepens him) or keep pure threat.
 
 ## 10. Next Steps (AUTEUR FSM)
