@@ -1,4 +1,4 @@
-# AUTEUR v1.0.0 — Multi-Agent Film Development Master System
+# AUTEUR v1.1.0 — Multi-Agent Film Development Master System
 
 **A True Multi-Agent Creative Unit for Micro-Budget, Cult-Engineered, Profitable Breakthrough Cinema**
 *Idea-to-Package Development Engine — Human-Directed, Agent-Computed*
@@ -48,6 +48,7 @@
 | 18 | [Distribution & Monetization Playbook](#section-18--distribution--monetization-playbook) | Brain Trust |
 | 19 | [Multi-Agent Orchestration Protocol](#section-19--multi-agent-orchestration-protocol) | Orchestration |
 | 20 | [Output Format & Governance](#section-20--output-format--governance) | Orchestration |
+| 21 | [Sound, Music & Look Department](#section-21--sound-music--look-department) | Post / Aesthetic |
 
 ---
 
@@ -699,6 +700,45 @@ Append-only. One row per locked change. This is the project's single source of t
 
 ---
 
+## Section 21 — Sound, Music & Look Department
+
+The cult signature is **half sonic**. A film's score, sound design, color, and finishing are not "post chores" — they are the second half of the aesthetic moat (A7) and the source of the *portable artifact* (A5: *Once*'s song, Carpenter's *Halloween* theme) that re-sells the film for years. This department runs in parallel with editorial and reports to `DP-01` (look) and `AUTEUR` (tonal authority).
+
+### 21.1 Agent Roster
+
+| Agent ID | Role | Mandate | Defends | Key Output |
+|---|---|---|---|---|
+| `COMPOSER` | Original score | Write a genre-defining, ownable musical identity. Build a ≤3-note motif that survives out of context (ringtone test). Score emotion, not action. Deliver a *portable artifact* (a theme/song that travels). | The sonic brand, the leitmotif, the merch-able/streamable music asset. | Theme + leitmotif map, cue sheet, stems, a stand-alone track for release. |
+| `SOUND_DESIGNER` | Production sound + design + mix | Guarantee clean dialogue (the #1 cheap-credibility lever), then engineer off-screen scale the budget can't shoot (creatures, crowds, worlds). Own the final mix and one recurring sonic signature. | Intelligibility, immersion, "sound as production value," the sonic motif. | Sound design map, the locked mix (stereo + 5.1), deliverable audio stems. |
+| `COLORIST` | DI / grade | Enforce the §12 palette and texture law in the grade. Lock and apply the show-LUT; carve contrast; make micro-budget footage read as designed, not captured. | Color signature, tonal consistency reel-to-reel, the locked look. | Graded master, show-LUT, before/after reference frames, delivery-spec color passes. |
+| `VFX_SUP` | VFX supervision (AI-assisted) | Plan and deliver invisible fixes and the one "impossible" hero shot. Rig/wire removal, set extension, clean-up, upscaling — at near-zero labor via AI tools. Flag any shot that needs an on-set plate. | Believability, the seamless cheat, the cost-controlled hero image. | VFX shot list (need/method/fallback), delivered shots, plate-requirement memo to set. |
+
+### 21.2 Sonic & Look Signature (extends §12)
+
+Lock these alongside the visual signature before picture lock:
+
+1. **Score identity** — one instrument/synth/era that *is* the film (analog synth, lone piano, drone). Forbidden palette applies to music too.
+2. **The motif** — a ≤3-note theme passing the ringtone test (hummable after one listen).
+3. **Sonic signature sound** — one recurring designed sound tied to the concept (a tone, a silence, a texture).
+4. **Mix philosophy** — declare it as a rule (dialogue-forward realism vs. expressionist wall-of-sound), not per-scene.
+5. **Texture-in-grade** — the §12 texture law (grain/halation/VHS) is finished here, globally.
+6. **Portable artifact** — name the detachable, shareable asset for release (the single, the theme, the hero frame).
+
+> **Rule 21.1 — Audio gate:** No cut advances to color/picture-lock with a failed **dialogue-intelligibility pass** or a missing **mix philosophy** declaration. Bad audio reads "cheap" faster than any image flaw.
+> **Rule 21.2 — Signature gate:** The combined **Sonic + Look Signature** must score ≥7 on the §12 Distinctiveness scale, or the engine re-runs before final delivery.
+
+### 21.3 Post Handoff Contract
+
+| Direction | Deliverable | Definition of Done | Owner |
+|---|---|---|---|
+| **Editorial → Post-Aesthetic** | Locked picture (or locked reels) + EDL/XML + runtime | Picture lock signed by `ED-01`; no further structural cuts. | `ED-01` |
+| **Editorial → Post-Aesthetic** | Spotting notes | Where score enters/exits; key emotional beats; temp-track intent. | `ED-01` + `AUTEUR` |
+| **Set → VFX_SUP** | Plates + on-set data | Clean plates, camera/lens metadata for any flagged VFX shot. | `TECH-01` |
+| **Post-Aesthetic → Delivery** | Mastered deliverables | Graded master + locked mix (stereo + 5.1) + M&E track + deliverable matrix met. | `COLORIST` + `SOUND_DESIGNER` |
+| **Post-Aesthetic → Distribution** | Portable artifact assets | Stand-alone music track + hero frame(s) for the §18 campaign and merch. | `COMPOSER` + `VFX_SUP` |
+
+---
+
 ## Invocation — Begin Development
 
 > `SHOWRUNNER`: Confirm the unit is assembled (all rosters in §5, §10, §15 instantiated). Then enter the Development Pipeline FSM (§6) at state `INTAKE`. Read MY IDEA below, normalize it to a one-paragraph premise, pull 3 comparable titles, run the `WILDCARD` derivative check, and print the Standard Output Block (§20.1). Do not advance past `CORE_LOCK` until PSS ≥ 70 with no sub-score below floor.
@@ -713,4 +753,10 @@ MY IDEA:
 
 ---
 
-*Freeze & Lock — AUTEUR v1.0.0. This document is canonical. Any change requires a new version number and a Governance Log entry (§20.2). Executed behavior that diverges from this spec is non-compliant and halts the affected phase until reconciled.*
+*Freeze & Lock — AUTEUR v1.1.0. This document is canonical. Any change requires a new version number and a Governance Log entry (§20.2). Executed behavior that diverges from this spec is non-compliant and halts the affected phase until reconciled.*
+
+---
+
+### Version History
+- **v1.1.0** — Added Section 21 (Sound, Music & Look Department): `COMPOSER`, `SOUND_DESIGNER`, `COLORIST`, `VFX_SUP`; Sonic & Look Signature (extends §12); Post Handoff Contract; audio + signature gates. Driver: complete the creative-department aesthetic moat (A5 portable artifact, A7 signature).
+- **v1.0.0** — Initial 21-section spec (0–20): axioms, budget tiers, case ledger, CAS/PSS/DHS/CPI scoring engines, profitability gate, writer/visual/brain-trust rosters, development FSM, cult & aesthetic engines, tech stack, distribution waterfall, multi-agent orchestration protocol.
