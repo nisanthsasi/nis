@@ -1,7 +1,7 @@
 # KAITHA — Pressure Test (S6) v1
 *Brain Trust audit of the full 90-minute draft. Run on AUTEUR v1.1.0 §16 (DHS) + §17 (CPI).*
 
-**Verdict: CONDITIONAL.** DHS 92 (structurally sound, greenlit-for-polish) · CPI 74 (cult-capable). Zero P0 defects, but 4 P1s exceed the ≤3 gate ceiling → clear the punch-list, re-score, then advance to PACKAGE.
+**Verdict: CONDITIONAL** (updated v4 — P1.1 closed, P1.4 phone closed; P1.2, P1.3, remaining SME items open). DHS 92 (structurally sound, greenlit-for-polish) · CPI 74 (cult-capable). Zero P0 defects, but 4 P1s exceed the ≤3 gate ceiling → clear the punch-list, re-score, then advance to PACKAGE.
 
 ---
 
@@ -44,10 +44,10 @@
 Cult-capable, one shy of cult-engineered. Weak on **participation (C5)** — the lever for this kind of film is the single-take "how did they do it" making-of/rehearsal doc as the community engine; pair with sharper quotability (C3) and theory-bait to clear 75+.
 
 ## P1 Punch-List (clear → re-score → PACKAGE)
-1. **P1.1** Exploit the Krish/money irony — his "our savings" recognized; he helps anyway. *(highest value)*
+1. ~~**P1.1** Exploit the Krish/money irony.~~ **DONE (v4):** money is canon **Krish's bribe money**; at the body he recognizes his own rolls, sees the truth (Ramanan died over the money), and *chooses not to see it*. Seeded in the love scene ('the Lankan boats… nobody ever sees them').
 2. **P1.2** First-act legibility — 1–2 early "tells" so 0:00–0:28 reads as a question, not flat romance.
 3. **P1.3** Real-time sustain — +1–2 micro-reversals in the SOLO and the marriage simmer.
-4. **P1.4** SME authenticity pass — body-resurfacing, Krish's exposure, the phone, tide/procedure.
+4. **P1.4** SME authenticity pass — body-resurfacing, Krish's exposure, tide/procedure. **Phone RESOLVED (v4):** contraband phone secretly charged by Krish and given to her (no power at the hut). Remaining: body-resurfacing, Krish-as-suspect, tide/'third bar'/uniform procedure.
 
 ## P2 (polish)
 - Ramanan +1 rounding beat (F6); tonal modulation control across the take (F9); kerosene quantity/logistics.

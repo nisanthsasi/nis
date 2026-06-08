@@ -182,8 +182,10 @@ Behind her, Krish gets up, pulls on his trousers, his shirt. He digs in the pock
 
 > **KRISH**
 > This week's.
+> *(a tired half-grin)*
+> The Lankan boats ran heavy. Nobody saw them come in. Nobody ever does.
 
-He holds it out. Not to a table. To her — open palm, the way you'd offer something at a temple.
+He holds it out. Not to a table. To her — open palm, the way you'd offer something at a temple. A guard's hand, with a guard's wages in it — the kind that don't come from wages.
 
 She wipes her hand on the cloth at her waist and takes it.
 
@@ -219,6 +221,13 @@ He comes up behind her, wraps her, kisses the wet hair at her temple.
 
 > **KRISH**
 > I like it cold.
+
+He reaches into his shirt and brings out a PHONE — small, scratched, its screen glowing. He's charged it somewhere out on his rounds, the way he always does; no current reaches this hut, and he can't stand the thought of her alone on a dark shore with no way to call. He holds his hand out for the dead one she keeps under the mattress.
+
+They make the swap without a word — a living phone for a flat one. The most practical tenderness there is, and the most secret. Nobody knows she has it. Nobody knows he is the one who keeps it breathing.
+
+> **KRISH (CONT'D)** *(pocketing the dead phone)*
+> Keep it close. Anyone comes — you call me. Only me.
 
 A last hold. Genuinely tender, both of them, which is the unbearable part. He breaks it, finds his sandals, his torch. At the door he stops, looks back at her in the lamp and the firelight — the whole warm lie of the room — like a man memorizing a thing he's certain he'll keep.
 
@@ -473,7 +482,7 @@ The sea. The moon laid flat across it. And out there in the dark somewhere, on h
 
 The plan assembles itself out of the pieces she already owns. She didn't choose it. It was simply *there,* the way the exit was always there. `[1:01]`
 
-She takes the phone from the shelf — a small, scratched thing. Its screen lights her face cold blue, the only colour in the room that the warm lamp can't touch.
+She takes the phone from under the mattress — the secret one, the one he keeps alive for her. Its screen lights her face cold blue, the only colour in the room the warm lamp can't touch. *Anyone comes — you call me. Only me.* She is about to use the phone he charges with his own hands to do the one thing he never armed her for.
 
 She dials. Holds it to her ear. The sea. The ringing.
 
@@ -557,7 +566,17 @@ Then he sees her face in the lamplight — the split lip, the mark coming up alo
 
 Something in him goes very still and very cold on her behalf. `[1:07]`
 
-> **KRISH** *(low)*
+And then his eyes drop to the floor — to the rice, to the rolls scattered through it, dark at the edges where the pool has reached them.
+
+He knows that money. Of course he knows it. He carried it here himself, roll by roll, week by week, off the boats nobody is supposed to see — and put it into her hands to keep. His risk, his crime, his future, all of it, spilled across the floor beside a dead man.
+
+And for half a second the whole truth stands in front of him, asking to be looked at: *Ramanan didn't die for the hands on her throat. He died when he got his hands on the money.*
+
+Krish looks at it. Krish looks at her.
+
+And he chooses — not to see. Because the man who finishes that thought cannot do what has to be done next, and he has already decided to do it. He folds the question up small and puts it somewhere he won't have to open again. He loves her past the truth, the same way he is about to love her past the law.
+
+> **KRISH** *(low; settling it for himself as much as for her)*
 > He did this.
 
 She doesn't answer. She doesn't have to. She lets the bruise tell the story — lets him build, out of one true mark, the whole clean tale he needs: a man came home with his hands up, and she only survived. It is not a lie she says. It is a lie she allows. The first of the night.

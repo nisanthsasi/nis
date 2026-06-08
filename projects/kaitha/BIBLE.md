@@ -48,9 +48,13 @@ Why she can't just leave: economic dependence (owns nothing but the hidden hoard
 - **Want:** take her away; build a life *together* — believes the savings are *theirs*.
 - **Need:** to be chosen, not used.
 - **Flaw:** devotion blinds him; reads her care as love for him.
-- **Contradiction:** coast-guardian who becomes a body-disposer for love.
+- **Contradiction:** coast-guardian who becomes a body-disposer for love; an officer of the law who is *himself* corrupt.
 - **Arc Delta:** arrives a lover → abandoned inside the frame, an accomplice holding a voice note.
 - **Plant (required, §S2):** his longing to "come away together — soon" must be planted in the love scene so disposing the body feels, to him, like the night their future begins. That makes her betrayal cut.
+
+### Canon (locked) — the money & the phone
+- **The money is KRISH'S BRIBE MONEY.** He is a sea-guard on the take, paid to not see the night boats ("the Lankan boats"). The weekly rolls are *his* dirty money, given into her keeping as "our field." Consequences: dirty provenance; he is already compromised (sharpens his exposure as prime suspect); and at the body he **recognizes his own rolls** — the truth is right there (Ramanan died over the money, not the bruise) and he *chooses not to see it* because finishing the thought would stop him helping her. *"He found the money"* stays literally true; Krish takes the innocent reading on purpose.
+- **The phone is contraband, charged by KRISH.** No current reaches the hut; he secretly charges it on his rounds and gives it to her ("Keep it close. Anyone comes — you call me. Only me."). She is dependent on him even for a charged phone — and she uses the very phone he keeps alive to make the call that damns him and to send the voice note that leaves him. Resolves the SME "no-power vs. mobile" plausibility flag.
 
 ### RAMANAN — the husband
 - **Want:** dominion — food, sex, the money, control.
@@ -107,3 +111,4 @@ Time = screen time = shoot time. Camera locked to her after the opening hand-off
 | v1 | 2026-06-08 | CORE_LOCK→STRUCTURE | Spine, single-take grammar, characters, beat map locked | §3/§7 greenlight | SHOWRUNNER | PSS 90 / CAS 88 | None |
 | v2 | 2026-06-08 | DRAFT | Full 90-min real-time draft (0:00–1:30) | §6 S5 | SHOWRUNNER | — | None |
 | v3 | 2026-06-08 | PRESSURE_TEST | Audited; CONDITIONAL — 4 P1 punch-list | §16/§17 | SHOWRUNNER | DHS 92 / CPI 74 | Money-irony gap is the key fix (DEVILS_ADVOCATE) |
+| v4 | 2026-06-08 | PRESSURE_TEST→revise | Locked canon: money = Krish's bribe money (he recognizes it at the body, chooses blindness); phone = contraband charged by Krish. Closes P1.1 + P1.4(phone) | DEVILS_ADVOCATE + SME_POOL | DHS 92 / CPI ~76 (est.) | Resolved |
