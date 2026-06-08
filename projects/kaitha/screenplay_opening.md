@@ -2,7 +2,7 @@
 *Single continuous take. Dialogue performed in Malayalam. Timecodes [m:ss] are real-time blocking aids, not cuts — there are no cuts.*
 *Names: THANKAM (her) · KRISH (officer/lover) · RAMANAN (husband). Light: full night — moon + distant street lights (cool exterior) vs. kerosene lamp + hearth, and the final fire (warm interior).*
 
-Status: minutes 0:00–0:55 drafted (S5) — through the MIDPOINT kill. Continues to the aftermath (panic → calling Krish) next.
+Status: minutes 0:00–1:05 drafted (S5) — through the aftermath + the call. Continues to the disposal at sea next.
 
 ---
 
@@ -433,5 +433,107 @@ She does not drop the wood. She stands over him, holding it, looking down — no
 The fire mutters. The sea breathes. The curry, forgotten, has begun to catch and burn — a thin black thread of smoke rising from the kitchen, the second clock running out.
 
 Thankam stands in the lamplight, over her husband, over her money, and the night is exactly half gone. `[0:55]`
+
+*CONTINUED — no cut.*
+
+---
+
+## Minutes 55–1:05 — Aftermath & The Call
+*Genuine horror first (the love is real), then cold clarity that RETURNS rather than arrives. She uses Krish's love to pull him into the crime — and knows it.*
+
+**INT. THE HUT — CONTINUOUS** `[0:55]`
+
+She stands over him, the billet still in her fist.
+
+The smell reaches her before anything else does — the curry, catching, black smoke ribboning from the kitchen. Her body obeys an older instinct than thought: she crosses, lifts the burnt pot off the flame with a fold of cloth, sets it down. Domestic. Automatic. A woman taking the food off the fire while her husband cools on the floor behind her.
+
+And that small ordinary act is what breaks her.
+
+The wood drops from her hand. The shaking comes all at once, late, enormous — the body finally catching up to what it has done. She backs into the wall and stays there, breath gone ragged, both hands pressed flat to the mud plaster as if the room were tilting.
+
+She makes the mistake of looking at his face. `[0:57]`
+
+Not the drunk. The other one. The blue boat. The whole shore looking at them. A sound comes out of her, small and torn, the only one she'll make all night.
+
+For this moment she is just a woman who has killed the man she once sat in the front of a boat with, and the grief is real and the terror is real and there is nothing cold in her at all.
+
+It lasts as long as it lasts.
+
+Then — somewhere under the panic — the other thing surfaces. The thing that was always there, under the years, under the arithmetic. Not new. Returning.
+
+She wipes her face hard with the heel of her hand. Once. And when she takes the hand away she is looking at the room differently — not as a horror. As a problem. The architect, back at her table. `[0:59]`
+
+First, the money. Always the money. She kneels — careful of the pool — and works the rolls out of his waistband, his shirt front, gathers the spilled ones from the bloodied rice, wipes each on her mundu, sets them in a dry stack apart from him. Her hands have stopped shaking now that they have a task.
+
+Then the body itself. The size of it. She gets her hands under an arm and pulls — and it barely moves, dead weight on a mud floor. She cannot do this alone. She was never going to be able to do this alone.
+
+She straightens. Looks, slowly, at the open door.
+
+The sea. The moon laid flat across it. And out there in the dark somewhere, on his midnight round — a man who loves her, who knows every current off this coast, who has a boat and the authority to be on the black water at any hour and the heart to do anything she asks.
+
+The plan assembles itself out of the pieces she already owns. She didn't choose it. It was simply *there,* the way the exit was always there. `[1:01]`
+
+She takes the phone from the shelf — a small, scratched thing. Its screen lights her face cold blue, the only colour in the room that the warm lamp can't touch.
+
+She dials. Holds it to her ear. The sea. The ringing.
+
+A click.
+
+> **KRISH (FILTERED)** *(warm, teasing)*
+> Missing me already?
+
+She closes her eyes. When she speaks her voice is perfectly level, and holding it level is the hardest thing she has done tonight — harder than the wood.
+
+> **THANKAM**
+> Come back.
+
+> **KRISH (FILTERED)**
+> I've the round till—
+
+> **THANKAM**
+> Krishéttaa. Come back. Now.
+
+A silence on the line. The teasing gone out of it. He has known her long enough to hear the floor under those three words.
+
+> **KRISH (FILTERED)** *(quiet)*
+> ...Enthuvaayi? What happened. Thankam.
+
+She can't say it. Her mouth opens on the shape of it and nothing comes.
+
+> **THANKAM**
+> Just come.
+
+She ends the call before he can ask again. Stands in the dark holding the dead blue glow, and for one second her face shows exactly what she has just done — reached into the one clean thing in her life and pulled it down into this. `[1:03]`
+
+She knows it. She does it anyway.
+
+She sets the phone face-down. She waits. She rights the lamp. She does not look at the body again — she has spent that already.
+
+The fire dies to embers. The smoke thins. The sea counts the time.
+
+Then — light. A TORCH BEAM, swinging hard across the kaitha and the rocks, coming fast. He ran the whole way.
+
+> **KRISH (O.S.)**
+> Thankam—?
+
+The beam hits the doorway. He steps in —
+
+— and stops dead.
+
+The torch finds it for him, piece by piece: the shattered pot. The rice. The stacked rolls. The dark pool. Ramanan.
+
+The CAMERA stays on HER — on her face as she watches him see it. The easy, happy man from an hour ago draining out of him in real time, replaced by something hollow and afraid.
+
+A long, terrible beat. The two of them and the body and the money between.
+
+> **KRISH** *(barely a breath)*
+> ...Thankam. What did you—
+
+> **THANKAM** *(flat; four words; complete)*
+> He found the money.
+
+And she watches it land on him — watches him understand, exactly, what she is, and what she will do to keep what's hers. Watches the fear of her arrive in the eyes of the one man who only ever looked at her with love.
+
+The night is half over, and so is he. He just doesn't know it yet. `[1:05]`
 
 *CONTINUED — no cut.*
