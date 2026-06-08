@@ -243,3 +243,134 @@ The warmth goes out of her body before it goes out of her face.
 She doesn't move. She watches the dark doorway. `[0:28]`
 
 *CONTINUED — no cut.*
+
+---
+
+## Minutes 28–42 — The Rug-Pull: Ramanan (the meal, the simmer)
+*Ramanan plays with ruined tenderness — a man who was someone once — curdling into shame-driven threat.*
+
+**INT. THE HUT — CONTINUOUS** `[0:28]`
+
+She watches the doorway. The footsteps stop just outside it — a sway, a hand finding the frame.
+
+RAMANAN fills the door. Fifties looking older, a body that was once a strong man's and has been let go. Drink has rubbed him soft and mean at once. He blinks at the lamplight like it offends him.
+
+He doesn't knock. You don't knock at your own house.
+
+> **RAMANAN** *(thick)*
+> Light's on. Burning oil for who.
+
+And there it is — the floor dropping out from under the last twenty minutes. The way he steps in and owns the air. The way she doesn't move to him and doesn't move away. At her throat, catching the lamp, a thin faded THALI we never noticed.
+
+Not a visitor. A husband.
+
+He comes in, knocks against the doorframe, rights himself with a dignity that's almost worse than falling. He sees the food. Something in him eases — an animal coming to the one warm thing it knows.
+
+> **RAMANAN (CONT'D)**
+> You cooked.
+
+> **THANKAM** *(flat, careful)*
+> Sit before you fall.
+
+He sits, heavy, at the low table. She brings the curry, rice, water — the same hands that fed the other man, doing it again, emptied out now. She keeps the table between them.
+
+He eats with his fingers, badly, hungry. For a moment he is just an old man eating his wife's cooking in a lamplit room, and the room almost forgives him. `[0:31]`
+
+> **RAMANAN** *(mouth full, quieter)*
+> You used to put more coconut.
+
+> **THANKAM**
+> Coconut costs.
+
+> **RAMANAN** *(a wet, fond laugh that turns somewhere halfway)*
+> Everything costs with you. Counting woman. Always counting.
+
+He looks up at her then, and for one unbearable second there's a man in there — the one she might have married, before the sea took his boat and the arrack took the rest. His eyes go soft and lost.
+
+> **RAMANAN (CONT'D)**
+> We had a boat. You remember the boat. Blue one. You sat in the front and the whole shore looked at us.
+
+> **THANKAM** *(something almost gentle, against her will)*
+> I remember.
+
+> **RAMANAN**
+> Where'd it go, Thankam.
+
+She doesn't answer. They both know where it went. It went the way he's going — drunk into the water, piece by piece.
+
+For a breath they are just two people who lost the same life.
+
+Then he reaches the bottom of the plate, and the softness has nowhere left to sit, and it sours — the way it always sours. He licks his fingers and looks around the room: the straight shelves, the steady lamp, the swept floor. A house that runs too well for a house with no money in it. `[0:34]`
+
+> **RAMANAN**
+> Eh. Lamp full of oil. Pot full of rice. Fish in the curry.
+
+> **THANKAM**
+> Eat your food.
+
+> **RAMANAN** *(rising heat under the slur)*
+> I'm asking how. Man brings nothing home in two years and the woman keeps a lamp like a temple. How, Thankam.
+
+> **THANKAM**
+> I manage.
+
+> **RAMANAN**
+> You manage.
+
+He says it slow, tasting the rot in it. His eyes go to the high shelf — pass over the rice pot — don't stop. Not yet. But the camera feels them pass, and so do we, and so does she. Her hand finds the edge of the table. `[0:36]`
+
+> **RAMANAN (CONT'D)**
+> Sumathi's man saw a fellow come down the rocks. Evenings. Uniform fellow.
+
+The room goes very still. The fire mutters. Outside, the sea.
+
+> **THANKAM** *(not a flicker)*
+> People walk the shore.
+
+> **RAMANAN**
+> To this hut. There's nothing past this hut but rock and sea.
+
+> **THANKAM**
+> Then he walked to the rock and the sea.
+
+He stares at her. Drink makes him slow but it doesn't make him blind, and shame is a sharp thing in a soft man. He stands — too fast, the bench scraping, the lamp flames ducking. `[0:38]`
+
+> **RAMANAN**
+> Open the pot.
+
+> **THANKAM**
+> Which pot.
+
+> **RAMANAN**
+> You know which.
+
+She doesn't move. And that — her not moving, her perfect unbothered stillness — is the thing that lights him. A woman who isn't afraid of you, when fear is the only currency you have left.
+
+> **RAMANAN (CONT'D)** *(low, ruined, almost begging)*
+> Just give me what's in it. Little bit. I'll go. You won't see me three days.
+
+> **THANKAM**
+> There's rice in it. Eat rice.
+
+He crosses the room. Not at the pot — at her. He takes her jaw in one big hand, not striking yet, just holding, turning her face up to the lamp to read it for the lie. `[0:40]`
+
+> **RAMANAN**
+> Whose money keeps this house.
+
+> **THANKAM** *(even, the table-edge white in her grip)*
+> Not yours. Never once yours.
+
+It's the truest thing she's said all night, and it's the worst thing she could have said.
+
+His hand tightens. The tenderness is all gone now — chased out by the oldest, smallest engine in him, the need to be bigger than the one person who has stopped being afraid.
+
+> **RAMANAN**
+> Say it again.
+
+She says nothing. She holds his eyes. Daring him, almost — some cold door in her already deciding.
+
+He hits her. `[0:42]`
+
+The lamp throws it huge up the wall — a giant striking a giant — and the room, the warm forgiving room, is not warm anymore.
+
+*CONTINUED — no cut.*
