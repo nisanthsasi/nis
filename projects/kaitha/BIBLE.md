@@ -98,3 +98,12 @@ Time = screen time = shoot time. Camera locked to her after the opening hand-off
 1. **S4 VISUAL_HANDOFF** — shootable camera-path map + light plan + location-count budget.
 2. **S5 DRAFT** — write the real-time script. Recommend drafting the **opening 10 minutes first** as proof-of-voice.
 3. **S6 PRESSURE_TEST** — DHS / CPI scoring on first draft.
+
+---
+
+## 11. Governance Log
+| Ver | Date | Phase | Change Summary | Driver | Decided By | Score (DHS/CPI) | Dissent? |
+|---|---|---|---|---|---|---|---|
+| v1 | 2026-06-08 | CORE_LOCK→STRUCTURE | Spine, single-take grammar, characters, beat map locked | §3/§7 greenlight | SHOWRUNNER | PSS 90 / CAS 88 | None |
+| v2 | 2026-06-08 | DRAFT | Full 90-min real-time draft (0:00–1:30) | §6 S5 | SHOWRUNNER | — | None |
+| v3 | 2026-06-08 | PRESSURE_TEST | Audited; CONDITIONAL — 4 P1 punch-list | §16/§17 | SHOWRUNNER | DHS 92 / CPI 74 | Money-irony gap is the key fix (DEVILS_ADVOCATE) |
