@@ -128,3 +128,118 @@ She lifts the lid. Steam. The good smell of it fills the little house.
 He rises. `[0:10]`
 
 *CONTINUED — no cut.*
+
+---
+
+## Minutes 10–28 — The Love Scene + The Rice-Pot Reveal
+
+**INT. THE HUT — CONTINUOUS** `[0:10]`
+
+Krish crosses to her at the mouth of the kitchen. The hearth is low and red behind her; the lamp is back on the floor by the bed. She turns from the pot. He's close. He smells of salt and diesel and the sea he guards.
+
+He doesn't grab. He waits — a boy, almost, for all the size of him. It is she who lifts a hand and lays it flat on his chest, reading him the way you read weather.
+
+For a moment her warmth is not a performance. That is the thing to understand about her. The hand on his chest means it.
+
+Then she takes that hand away, and uses it to lead him to the bed.
+
+The lamp on the floor throws them up the wall — the two dark giants again, folding into one. We do not crowd them. We sit back with the lamp and let the wall hold them. The hearth ticks. The sea breathes outside.
+
+It is not long. It is his need more than hers, and she gives it the way she gives everything in this house — fully, and from somewhere slightly to one side of herself.
+
+After. `[0:15]`
+
+They lie in the amber. His hand is in her hair. He is wrecked with happiness; she is looking at the ceiling, at the smoke-stain over the lamp, the way a person looks at a thing they have decided about.
+
+> **KRISH** *(drowsy, sure of the world)*
+> Another year. Maybe less.
+
+She says nothing. He takes the silence as agreement and builds on it, the way he always does.
+
+> **KRISH (CONT'D)**
+> I've been asking. There's land going cheap past Poovar — coconut, a well already dug. We take the boat down one morning and we just... don't come back. You and me.
+
+> **THANKAM** *(a small smile, for him)*
+> And the rice on the stove?
+
+> **KRISH**
+> Let it burn.
+
+She laughs — softly, real — and for a second you'd swear it was the simplest thing in the world, two people and a boat and somewhere south.
+
+Then she sits up. The blanket falls away; she gathers her mundu, practical, the night's clock already back in her.
+
+> **THANKAM**
+> Curry first. Then your boat.
+
+She crosses to the kitchen. He watches her go, propped on one arm, grinning at his luck. `[0:17]`
+
+**INT. KITCHEN (THROUGH THE LOW DOORWAY) — CONTINUOUS**
+
+She lifts the pot's lid. Stirs. Tastes from the back of her hand. The fire needs a log; she feeds it one, and the light jumps up her front.
+
+Behind her, Krish gets up, pulls on his trousers, his shirt. He digs in the pocket and comes out with a small, tight ROLL of notes, bound with a rubber band — soft from being carried.
+
+> **KRISH**
+> This week's.
+
+He holds it out. Not to a table. To her — open palm, the way you'd offer something at a temple.
+
+She wipes her hand on the cloth at her waist and takes it.
+
+And here is the ritual, worn smooth by repetition: she reaches up to the high shelf — the shelf where everything is straight — and brings down a fat clay RICE POT. She tips the lid.
+
+CAMERA FINDS WHAT'S INSIDE, over her shoulder: `[0:19]`
+
+Under a shallow hand of raw rice — ROLLS. Many of them. The same soft rubber-banded rolls, weeks of them, months, nested and hidden in the grain like eggs.
+
+She pushes his new roll down among the others. Smooths the rice back over the top. Sets the lid. Returns the pot to its exact place on the straight shelf.
+
+The whole thing takes ten seconds. She has done it a hundred times.
+
+> **KRISH** *(watching, full of it)*
+> Getting there. Our little field.
+
+> **THANKAM**
+> Mm.
+
+Our. He says it so easily. She doesn't correct it. She is the keeper of the pot; the pot lives in her house; the shelf is hers, and only her hand goes into the rice. He has never once counted it. He doesn't know how to want a thing the way she wants this.
+
+She turns back to the curry. On her face — lit hard by the new log — the warmth is gone, just for the length of a breath, and the arithmetic is back, doing its quiet sum over the steam.
+
+Gone again before he reaches her. `[0:22]`
+
+He comes up behind her, wraps her, kisses the wet hair at her temple.
+
+> **KRISH**
+> I've the midnight round. I'll come back after — eat then.
+
+> **THANKAM**
+> It'll be cold.
+
+> **KRISH**
+> I like it cold.
+
+A last hold. Genuinely tender, both of them, which is the unbearable part. He breaks it, finds his sandals, his torch. At the door he stops, looks back at her in the lamp and the firelight — the whole warm lie of the room — like a man memorizing a thing he's certain he'll keep.
+
+> **KRISH (CONT'D)**
+> Soon. Yeah?
+
+> **THANKAM** *(meeting his eyes; and she means it, which is the worst of it)*
+> Soon.
+
+He goes out into the dark. The torch beam swings once across the kaitha and is gone toward the rocks. `[0:25]`
+
+She stands a moment in the doorway, looking after a light that isn't there anymore.
+
+Then she goes back in. To the pot of curry, and the other pot, the one on the shelf. She doesn't open it. She just lets her hand rest flat against the cool clay of it, once — the only honest tenderness she's shown all night, and it's for the money, not the man.
+
+The curry mutters on the fire. The lamp steadies. The house is hers and quiet.
+
+Far off, under the sea-sound — FOOTSTEPS. Wrong ones. Heavy, unrhythmic, a man not minding where he puts them. Coming up from the road side, not the sea side.
+
+The warmth goes out of her body before it goes out of her face.
+
+She doesn't move. She watches the dark doorway. `[0:28]`
+
+*CONTINUED — no cut.*
