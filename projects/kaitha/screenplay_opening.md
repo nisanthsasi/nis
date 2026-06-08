@@ -2,7 +2,7 @@
 *Single continuous take. Dialogue performed in Malayalam. Timecodes [m:ss] are real-time blocking aids, not cuts — there are no cuts.*
 *Names: THANKAM (her) · KRISH (officer/lover) · RAMANAN (husband). Light: full night — moon + distant street lights (cool exterior) vs. kerosene lamp + hearth, and the final fire (warm interior).*
 
-Status: minutes 0:00–1:05 drafted (S5) — through the aftermath + the call. Continues to the disposal at sea next.
+Status: minutes 0:00–1:15 drafted (S5) — through the disposal. Continues to THE SOLO (packing, petrol, the cliff) next.
 
 ---
 
@@ -535,5 +535,90 @@ A long, terrible beat. The two of them and the body and the money between.
 And she watches it land on him — watches him understand, exactly, what she is, and what she will do to keep what's hers. Watches the fear of her arrive in the eyes of the one man who only ever looked at her with love.
 
 The night is half over, and so is he. He just doesn't know it yet. `[1:05]`
+
+*CONTINUED — no cut.*
+
+---
+
+## Minutes 1:05–1:15 — The Disposal (he obeys out of love)
+*No argument, no police. Love makes him her alibi and her accomplice. The second hand-off: he motors out, the camera stays with her — we will not leave her again.*
+
+**INT. THE HUT — CONTINUOUS** `[1:05]`
+
+Krish in the doorway, the torch shaking in his hand, its beam jittering over the body, the rice, the dark pool.
+
+He looks at Ramanan. He looks at her.
+
+And the camera watches the moment a good man decides. There is a version of him that crosses to that phone and calls it in, says *self-defence,* says *I'll stand by you in the daylight.* We watch that version arrive in him — and we watch it lose, quietly, to the older, stupider, stronger thing. She is standing there. He loves her past the edge of his own life. The law doesn't get a word in.
+
+He comes in. Kneels by the body — not recoiling, a man of the sea who has handled dead things. Two fingers to the throat, brief, certain. He lets out a breath.
+
+Then he sees her face in the lamplight — the split lip, the mark coming up along her jaw where Ramanan held her.
+
+Something in him goes very still and very cold on her behalf. `[1:07]`
+
+> **KRISH** *(low)*
+> He did this.
+
+She doesn't answer. She doesn't have to. She lets the bruise tell the story — lets him build, out of one true mark, the whole clean tale he needs: a man came home with his hands up, and she only survived. It is not a lie she says. It is a lie she allows. The first of the night.
+
+> **KRISH (CONT'D)** *(taking her face, gentle, careful of the hurt)*
+> Okay. Okay. Listen to me. You didn't do anything. You hear? Nothing happened here.
+
+He believes it already. That's the unbearable part — how fast he makes himself her alibi, how glad he almost is to finally be of use to her.
+
+> **KRISH (CONT'D)**
+> The sea takes him. Past the third bar, the current runs out — nothing comes back from out there. Nobody asks a guard why his boat's on the water.
+
+He's already moving. Already solving it. For her. `[1:09]`
+
+He strips the reed mat from the bed, rolls Ramanan into it the way you'd wrap a catch, binds it with the line from the fishing net in the corner. Practised hands. Grief shoved down under work. She helps where she's told — lifting, holding the lamp — and the two of them carry the long bundle out through the door into the moon.
+
+**EXT. THE SHORE — CONTINUOUS**
+
+Out of the warm hut into the cold silver. The sea flat and enormous. They set the bundle on the wet sand at the water's edge.
+
+> **KRISH**
+> Wait here. I'll bring her round and get into kit — anyone sees a guard, they see nothing.
+
+He cups her face once more, presses his forehead to hers.
+
+> **KRISH (CONT'D)**
+> We're alright. You and me. After this — we're alright. Soon, yeah?
+
+And there it is again, the word from the bed. *Soon.* He says it like a man laying down the last plank of a bridge to a country he's sure they'll reach together.
+
+> **THANKAM** *(and she gives it back to him, because she needs him on that water)*
+> Soon.
+
+He goes — jogging up the dark toward the rocks, the boat, the post where his uniform hangs. `[1:11]`
+
+And the camera does not go with him.
+
+It stays. On her. On the shore. With the bundle and the moon and the sea.
+
+This is the second hand-off, the mirror of the first: a man walks out of the frame, and we remain with her. We will not leave her again.
+
+She stands over the wrapped shape of her husband, the surf reaching for her feet and falling back. She does not look at it. She looks out — at the black water, at the far, useless necklace of street lights down the coast, at the moon road running out to nothing.
+
+An ENGINE, off in the dark. A small outboard, coughing to life.
+
+A LIGHT detaches from the rocks — the boat's lamp — and swings out onto the water, growing, coming round toward her. `[1:13]`
+
+Krish brings her in to the shallows. He's in the uniform now — the guard, the protector of this coast — and he wades to take the heavy bundle from the sand. Together they lift it over the gunwale. It settles into the little boat like it belongs to the sea already.
+
+He looks back at her once from the water, his face pale and certain in the boat-lamp.
+
+> **KRISH**
+> Lock the door. Sleep if you can. I'll come at first light and we'll—
+
+> **THANKAM**
+> Go. Before the tide turns.
+
+He nods. He opens the throttle. The boat pulls away from her, the wake silver, and the lamp on its bow shrinks — a small warm light going out across the cold enormous dark, carrying her husband and the last of the man who loves her.
+
+She stands in the surf and watches it go until it is just one more distant light on the water, no different now from the street lights, from the stars. `[1:15]`
+
+Then she turns. Back toward the hut. Toward the lamp still burning in the open door, and everything she has left to do before that boat comes back.
 
 *CONTINUED — no cut.*
