@@ -2,7 +2,7 @@
 *Single continuous take. Dialogue performed in Malayalam. Timecodes [m:ss] are real-time blocking aids, not cuts — there are no cuts.*
 *Names: THANKAM (her) · KRISH (officer/lover) · RAMANAN (husband). Light: full night — moon + distant street lights (cool exterior) vs. kerosene lamp + hearth, and the final fire (warm interior).*
 
-Status: opening ~10 minutes drafted (S5). Continues to the love scene + the rice-pot reveal next.
+Status: minutes 0:00–0:55 drafted (S5) — through the MIDPOINT kill. Continues to the aftermath (panic → calling Krish) next.
 
 ---
 
@@ -246,8 +246,8 @@ She doesn't move. She watches the dark doorway. `[0:28]`
 
 ---
 
-## Minutes 28–42 — The Rug-Pull: Ramanan (the meal, the simmer)
-*Ramanan plays with ruined tenderness — a man who was someone once — curdling into shame-driven threat.*
+## Minutes 28–42 — The Rug-Pull: Ramanan (the meal, the first beating)
+*The first quarrel is about HIM — not the money, not the lover. The first time he strikes her, she does not react. He finishes his food and goes to wash.*
 
 **INT. THE HUT — CONTINUOUS** `[0:28]`
 
@@ -258,7 +258,7 @@ RAMANAN fills the door. Fifties looking older, a body that was once a strong man
 He doesn't knock. You don't knock at your own house.
 
 > **RAMANAN** *(thick)*
-> Light's on. Burning oil for who.
+> Still awake.
 
 And there it is — the floor dropping out from under the last twenty minutes. The way he steps in and owns the air. The way she doesn't move to him and doesn't move away. At her throat, catching the lamp, a thin faded THALI we never noticed.
 
@@ -298,79 +298,140 @@ He looks up at her then, and for one unbearable second there's a man in there �
 
 She doesn't answer. They both know where it went. It went the way he's going — drunk into the water, piece by piece.
 
-For a breath they are just two people who lost the same life.
+For a breath they are just two people who lost the same life. `[0:34]`
 
-Then he reaches the bottom of the plate, and the softness has nowhere left to sit, and it sours — the way it always sours. He licks his fingers and looks around the room: the straight shelves, the steady lamp, the swept floor. A house that runs too well for a house with no money in it. `[0:34]`
+Then the plate is empty, and the softness has nowhere left to sit, and it sours — the way it always sours. Not over money. Not over any uniform man on the rocks. Over the smaller, older thing: that she is here, an arm's length away, and entirely gone from him.
+
+He reaches across the table and puts his hand over hers. Not gentle. Claiming. His thumb finds the thali at her throat, the proof that she's his.
 
 > **RAMANAN**
-> Eh. Lamp full of oil. Pot full of rice. Fish in the curry.
+> Come here. You're my wife or what.
+
+She doesn't pull away — pulling away is a reaction, and she has learned not to give him those. She simply isn't there. Her hand under his is a dead thing. Her eyes are on the middle distance. A woman waiting out weather.
+
+That absence is what he can't stand. Not another man — *no* man. Her leaving while standing still.
+
+> **RAMANAN (CONT'D)** *(quiet, then not)*
+> Look at me. Look at your husband. LOOK—
+
+He hits her. `[0:37]`
+
+The lamp throws it huge up the wall — a giant striking a giant.
+
+And she does not react.
+
+Her head turns with the blow and comes back. A thread of blood at the lip. She does not gasp, does not raise a hand, does not look at him. She lets it land the way the shore lets the kaitha take its little tax — a thing endured a thousand nights, costed long ago. The not-reacting is the most terrible thing in the room. It is the portrait of a marriage.
+
+He stands over her, chest going, waiting for the crying that is his only proof he still exists here. It doesn't come. Her stillness shames him more than any scream. `[0:39]`
+
+He wipes his mouth. Mutters something that isn't an apology and isn't not one. The fight has gone out of him as fast as it came — drink does that, gives and takes the fire.
+
+> **RAMANAN**
+> ...I'll wash.
+
+He shoves up from the table and goes — out the back door, into the dark of the yard, toward the water vessels and the bucket. We hear him out there: a tap, a slosh, a man washing his face in the moonlight, trying to sober.
+
+The camera stays inside, with her. `[0:40]`
+
+She sits a moment longer, exactly as she was. Then she lifts one hand — finally — and touches the blood at her lip. Looks at it on her fingertip. Not hurt. *Considering.*
+
+She rises. Clears his plate. Wipes the table. Rights the bench he knocked. Sets the room straight again — the straight shelves, the swept floor — restoring the order that is the only thing in this life that has ever obeyed her.
+
+The rice pot sits on its high shelf, untouched, full of grain and rolled money and a future. He never looked at it. He doesn't know it exists. `[0:42]`
+
+Out in the yard, the washing stops.
+
+*CONTINUED — no cut.*
+
+---
+
+## Minutes 42–55 — The Second Fight & The Kill (MIDPOINT)
+*He returns. This time she retaliates. The pot is knocked from the shelf by accident — and it is the spilling money, not the beating, that turns her lethal.*
+
+**INT. THE HUT — CONTINUOUS** `[0:42]`
+
+Ramanan comes back in, face wet, hair pushed back, a little steadier and somehow worse for it — the drink burned down to its bitter floor. Sober enough now to feel the size of his own uselessness, and to need someone smaller to set it on.
+
+He watches her moving about the clean room, putting his house in order without him, and the wrongness of it works in him.
+
+> **RAMANAN**
+> Sit. Stop. You make me feel like a guest in my own—
 
 > **THANKAM**
-> Eat your food.
-
-> **RAMANAN** *(rising heat under the slur)*
-> I'm asking how. Man brings nothing home in two years and the woman keeps a lamp like a temple. How, Thankam.
-
-> **THANKAM**
-> I manage.
+> Then sleep.
 
 > **RAMANAN**
-> You manage.
+> Don't *tell* me sleep.
 
-He says it slow, tasting the rot in it. His eyes go to the high shelf — pass over the rice pot — don't stop. Not yet. But the camera feels them pass, and so do we, and so does she. Her hand finds the edge of the table. `[0:36]`
+He catches her arm as she passes. She tries to walk through it. He doesn't let go. He turns her, grips the other arm, shakes her once — *look at me, be afraid, be here* —
 
-> **RAMANAN (CONT'D)**
-> Sumathi's man saw a fellow come down the rocks. Evenings. Uniform fellow.
+— and this time her hands come up. `[0:44]`
 
-The room goes very still. The fire mutters. Outside, the sea.
+She shoves him. Hard. Both palms to his chest.
 
-> **THANKAM** *(not a flicker)*
-> People walk the shore.
+It's the first thing she's given him all night and it stops him cold — more shock than force. A wife who has stood like stone through a hundred blows has just *pushed back.* For a half-second something like fear, or even respect, crosses his ruined face.
+
+Then it becomes rage, because that is the only road his blood knows now.
+
+The fight is fast and ugly and close, the way real ones are — no choreography, two people who know each other's bodies grappling in a room too small. The lamp jumps. The shadows on the wall thrash, giant and formless. He gets a hand in her hair; she rakes at him; he hauls her around and **flings** her off him —
+
+— and she goes back into the SHELF. `[0:46]`
+
+The straight shelf. The high one.
+
+The clay RICE POT tips, rolls, and goes off the edge —
+
+— and **shatters** on the floor between them.
+
+A white spray of raw rice. And in it, scattering across the swept floor, catching the lamplight — the ROLLS. A dozen of them. Soft, rubber-banded, fat. Months of them. Spilling out of the grain and rocking to a stop at his feet.
+
+The whole room stops. The sea comes up loud in the silence.
+
+Ramanan stares down at the money. `[0:48]`
+
+You can watch it reach him through the drink, slow and total. The lamp like a temple. The fish in the curry. The woman who manages. *How, Thankam.* And here it is, on his own floor, more cash than he has held in years — hidden from him, *kept* from him, in his own house, under his own rice.
+
+He doesn't think *where from.* He doesn't think of any man. A drunk's mind is small and immediate. He thinks: *mine.*
+
+He drops to his knees and starts gathering it. Both hands. Greedy, clumsy, raking notes and rice together, stuffing rolls into his shirt, his waistband.
+
+> **RAMANAN** *(half a laugh, wet, wondering)*
+> All this time. All this time, you—
+
+And Thankam — who took the blow without a sound, who has been stone all night —
+
+— *changes.* `[0:50]`
+
+It is not panic. It is not even rage, not at first. It is the cold door we saw begin to open earlier, swinging fully wide. He is not taking a beating's worth from her. He is taking the *years.* The exit. The boat south that was never his. Every roll in that pot is a morning she doesn't wake up here, and he is shoving them into his filthy waistband like loose change.
+
+Something in her goes very quiet and very clear.
+
+Her eyes leave him — just for an instant — and find the hearth. The firewood. A short, heavy billet of teak, one end black from the flames.
+
+She picks it up. `[0:51]`
+
+> **THANKAM** *(barely sound at all)*
+> Put it back.
+
+He doesn't even look up. Laughing now, scrabbling.
 
 > **RAMANAN**
-> To this hut. There's nothing past this hut but rock and sea.
+> Your money. *Hah.* Your—
 
-> **THANKAM**
-> Then he walked to the rock and the sea.
+She hits him.
 
-He stares at her. Drink makes him slow but it doesn't make him blind, and shame is a sharp thing in a soft man. He stands — too fast, the bench scraping, the lamp flames ducking. `[0:38]`
+The CAMERA does not gorge on it. It tilts — the way it lifted away from her at the bath, "politely, too late" — up, to the WALL, where the lamp has thrown them huge. We watch it as shadow: the giant raising the club; the kneeling giant folding; the arm coming down, and down, and down. The sound is small and wet and final and we will not forget it. Rice grinds underfoot. The lamp shudders with each blow but does not go out.
 
-> **RAMANAN**
-> Open the pot.
+The shadow-arm stops.
 
-> **THANKAM**
-> Which pot.
+The camera comes down. `[0:54]`
 
-> **RAMANAN**
-> You know which.
+Ramanan is on the floor among the rice and the rolls, still. A dark pool starting, soaking into the white grain. The billet is in her hand, her knuckles white around it, her chest heaving — the first hard breathing she's done all night.
 
-She doesn't move. And that — her not moving, her perfect unbothered stillness — is the thing that lights him. A woman who isn't afraid of you, when fear is the only currency you have left.
+She does not drop the wood. She stands over him, holding it, looking down — not at his face. At the money under him. At the notes going dark at the edges where the pool is reaching them.
 
-> **RAMANAN (CONT'D)** *(low, ruined, almost begging)*
-> Just give me what's in it. Little bit. I'll go. You won't see me three days.
+The fire mutters. The sea breathes. The curry, forgotten, has begun to catch and burn — a thin black thread of smoke rising from the kitchen, the second clock running out.
 
-> **THANKAM**
-> There's rice in it. Eat rice.
-
-He crosses the room. Not at the pot — at her. He takes her jaw in one big hand, not striking yet, just holding, turning her face up to the lamp to read it for the lie. `[0:40]`
-
-> **RAMANAN**
-> Whose money keeps this house.
-
-> **THANKAM** *(even, the table-edge white in her grip)*
-> Not yours. Never once yours.
-
-It's the truest thing she's said all night, and it's the worst thing she could have said.
-
-His hand tightens. The tenderness is all gone now — chased out by the oldest, smallest engine in him, the need to be bigger than the one person who has stopped being afraid.
-
-> **RAMANAN**
-> Say it again.
-
-She says nothing. She holds his eyes. Daring him, almost — some cold door in her already deciding.
-
-He hits her. `[0:42]`
-
-The lamp throws it huge up the wall — a giant striking a giant — and the room, the warm forgiving room, is not warm anymore.
+Thankam stands in the lamplight, over her husband, over her money, and the night is exactly half gone. `[0:55]`
 
 *CONTINUED — no cut.*
