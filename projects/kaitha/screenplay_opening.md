@@ -1,8 +1,8 @@
-# KAITHA — Screenplay (Draft)
+# KAITHA — Screenplay (Full Draft — 90 min, one continuous take)
 *Single continuous take. Dialogue performed in Malayalam. Timecodes [m:ss] are real-time blocking aids, not cuts — there are no cuts.*
 *Names: THANKAM (her) · KRISH (officer/lover) · RAMANAN (husband). Light: full night — moon + distant street lights (cool exterior) vs. kerosene lamp + hearth, and the final fire (warm interior).*
 
-Status: minutes 0:00–1:15 drafted (S5) — through the disposal. Continues to THE SOLO (packing, petrol, the cliff) next.
+Status: FULL DRAFT complete (S5) — 0:00–1:30. Next: S6 PRESSURE_TEST (DHS / CPI scoring).
 
 ---
 
@@ -622,3 +622,105 @@ She stands in the surf and watches it go until it is just one more distant light
 Then she turns. Back toward the hut. Toward the lamp still burning in the open door, and everything she has left to do before that boat comes back.
 
 *CONTINUED — no cut.*
+
+---
+
+## Minutes 1:15–1:30 — THE SOLO · CLIMAX · RESOLUTION (the finale)
+*Near-zero dialogue. The gaze loses her; the kaitha bookend; the lamp becomes the pyre; the voice note spare and ambiguous; she walks out of the frame and we do not follow.*
+
+**EXT. THE SHORE → INT. THE HUT — CONTINUOUS** `[1:15]`
+
+She walks back up the sand. The lamp still burns in the open door, patient, domestic, waiting for a night that's already over.
+
+Inside: the wreck. Rice and drying blood and the broken pot. She does not clean it. You don't clean what you've decided to burn.
+
+She moves with purpose now — the architect with time at last, and not much of it. From under the bed she drags a small cloth bundle, a little trunk. Into it, fast, unsentimental: a mundu, a folded blouse. Nothing of the life. Nothing of either man.
+
+Then the money. She takes the dry stack she set aside, and then she goes back to the bloodied rice on her knees and picks through it, plucking every roll she missed, wiping each on her mundu — patient, thorough, the way she does everything — until not one note is left for the fire. Years of it. The whole exit, gathered up off the floor where her husband bled. She binds it and buries it deep in the bundle. `[1:18]`
+
+She straightens. And for one moment she lets herself stop by the bed — where an hour and a lifetime ago two shadows folded into one on the wall. The boy who waited. The front seat of a boat that was never a cage. *Soon.*
+
+Out on the black water, the boat-light. She watches it. It seems to hang still — to turn — and her breath catches: too soon, he can't be back too soon. But it's only the swell swinging the lamp. It goes on, outward, about its terrible errand. She breathes.
+
+And here, at last, is the choice the whole film has been walking toward. No melodrama. Just a hardening, small and total. She loves him. She is going anyway. Both true, fused, forever.
+
+She closes the bundle.
+
+She takes up the KEROSENE — a dented tin from the kitchen — and walks the room pouring it: the bed, the straight shelves, the draped dead television, the reed where the body lay. The sharp smell of it riding over the blood. She backs out across the threshold, laying the last of it in a line at the door.
+
+She lifts the lamp out of the doorway. The same lamp she lit for his wounded leg. The warm heart of the whole warm lie. She holds it a moment in both hands.
+
+Then she turns, and climbs. `[1:21]`
+
+**EXT. THE ROCKS / THE KAITHA — CONTINUOUS**
+
+Up from the hut, into the boulders and the screwpine, the bundle on her shoulder, the lamp in her hand.
+
+And the kaitha takes its tax from her too. A saw-toothed leaf hooks her mundu, drags at her calf — exactly as it hooked him in the film's first minute. She stops. Works it loose with two careful fingers. A thin dark line wells on her skin. The shore takes from everyone who crosses it. Even her.
+
+She climbs on. Up the black rise we barely registered an hour ago. The cliff. `[1:23]`
+
+**EXT. THE CLIFF — CONTINUOUS**
+
+The top. The world laid out below: the moon road, the useless far necklace of street lights, the small dark hut with its open door — and out on the water, the boat-light, turning now, coming in. He's done it. He's heading home, to her, to the first light and the country south he's certain of.
+
+She sets down the bundle. Takes out the phone. The cold blue glow on her face one last time, against the warm lamp at her feet.
+
+She holds it to her mouth. Records. Her voice almost nothing, level, given to the dark:
+
+> **THANKAM** *(V.O. / RECORDING)*
+> Krishéttaa.
+> *(a breath; the sea underneath)*
+> ...Not all of it was a lie.
+
+She stops. There is more she could say. She doesn't say it.
+
+She sends it.
+
+She drops the phone into the bundle. She picks up the lamp.
+
+She looks down at the hut one last time — the home, the cage, the grave, the lie, all the same small dark shape from up here.
+
+She throws the lamp. `[1:25]`
+
+It turns once in the black air, the flame trailing, falling — down, and down — and breaks open on the kerosene-soaked threshold.
+
+The hut takes the fire the way the sea took the body: completely. Flame runs the doorway, leaps the reed, and the whole inside blooms GOLD — the brightest light in the film, at last; warm light flooding the cold night, throwing the rocks and the screwpine and her own still face into leaping orange. `[1:27]`
+
+Out on the water, the boat-light stops.
+
+Then turns hard for the shore.
+
+**EXT. THE CLIFF (THE SHORE BELOW) — CONTINUOUS**
+
+The boat grinds into the shallows. A small figure spills out into the surf — Krish, in his uniform — and stands, staring up at the burning hut, the heat shoving at him, far too late.
+
+He doesn't run to it. There is nothing left to run to.
+
+His hand goes to his pocket. The phone. He lifts it to his ear.
+
+From up here we can't hear it. We don't need to — we already have. We only watch the small, distant, uniformed man take in the few words, alone in the firelight, every "soon" he ever said going out with the tide. `[1:28]`
+
+And now, at last, the camera turns from the fire, back to her —
+
+— and she is already going.
+
+Bundle on her shoulder, the years inside it, she walks away from the cliff edge, away from the fire, into the dark on the landward side. She does not look back at the hut. She does not look back at the man below.
+
+She walks out of the frame.
+
+And we do not follow.
+
+We are left exactly where Krish is left — with the fire, the sea, and the small figure who thought he was building a bridge. The hut burns down toward its bones. The boat-lamp idles, useless, in the shallows. The moon road runs out to nothing.
+
+We hold on the empty dark where she was. `[1:29]`
+
+The fire. The man. The space.
+
+The sea keeps counting.
+
+After a long moment — the first and only cut in the film —
+
+**CUT TO BLACK.** `[1:30]`
+
+**THE END.**
