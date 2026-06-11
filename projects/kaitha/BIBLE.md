@@ -1,7 +1,7 @@
 # KAITHA — Project Bible
 
 *Developed on the AUTEUR v1.1.0 Multi-Agent Film Development Master System.*
-*Status: CORE_LOCK ✅ · WORLD_CHAR ✅ · STRUCTURE ✅ · (next: VISUAL_HANDOFF → DRAFT)*
+*Status: CORE_LOCK ✅ · WORLD_CHAR ✅ · STRUCTURE ✅ · DRAFT ✅ · PRESSURE_TEST ✅ · PACKAGE (pitch deck) ✅*
 
 > **Title:** Kaitha (കൈത — the thorny coastal screwpine/pandanus that snags the man's legs in the opening shot; beauty with thorns).
 
@@ -112,3 +112,4 @@ Time = screen time = shoot time. Camera locked to her after the opening hand-off
 | v2 | 2026-06-08 | DRAFT | Full 90-min real-time draft (0:00–1:30) | §6 S5 | SHOWRUNNER | — | None |
 | v3 | 2026-06-08 | PRESSURE_TEST | Audited; CONDITIONAL — 4 P1 punch-list | §16/§17 | SHOWRUNNER | DHS 92 / CPI 74 | Money-irony gap is the key fix (DEVILS_ADVOCATE) |
 | v4 | 2026-06-08 | PRESSURE_TEST→revise | Locked canon: money = Krish's bribe money (he recognizes it at the body, chooses blindness); phone = contraband charged by Krish. Closes P1.1 + P1.4(phone) | DEVILS_ADVOCATE + SME_POOL | DHS 92 / CPI ~76 (est.) | Resolved |
+| v5 | 2026-06-08 | PACKAGE | Pitch deck built (18 slides + key-art prompt) — logline, synopsis, single-take USP, comps, festival + distribution waterfall, budget tier, cult engine, the ask | §7 S7 PACKAGE | SHOWRUNNER | DHS 92 / CPI ~76 | None |
