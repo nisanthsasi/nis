@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "mcp-tools-istefox": {
+      "type": "http",
+      "url": "${OBSIDIAN_MCP_URL:-http://127.0.0.1:27200/mcp}",
+      "headers": {
+        "Authorization": "Bearer ${OBSIDIAN_MCP_TOKEN:-}"
+      }
+    }
+  }
+}
