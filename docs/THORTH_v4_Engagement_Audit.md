@@ -13,7 +13,99 @@
 
 ---
 
-<!-- SYNTHESIS -->
+# SYNTHESIS — Panel Verdict & Master Fix List
+
+## Verdict
+
+**Will people binge it, feel it, and evangelize it?** The panel's collective answer: the addiction machinery in v4 is unusually complete for a limited series, and the risks are concentrated rather than diffuse — five specific weak points, every one fixable inside existing scenes and rules, with no new architecture required.
+
+What the show already has, confirmed independently across lenses:
+
+- **A mystery ENGINE, not a mystery box** (fandom): visible, countable rules that let theorists win — the configuration that builds community trust, rewatch culture, and long-tail video-essay life instead of a finale that gets litigated.
+- **The knot ledger** — the single most valuable engagement asset on the page, flagged by *all six* panelists in their own vocabulary: the only persistent open loop (binge), the guilt ledger and compulsive-checking behavior (attachment), the Tumbbad engine made prop (horror), the built-in fan ritual and progress marker (fandom), the only continuous screen-readable stakes meter (structure), the subtitle-proof travel engine and UGC surface (market).
+- **An addiction-accurate dependency arc**: tolerance before surrender — Hari's fear returns *while the cloth is still in his hands* (Ep6) — an ordering almost no show gets right.
+- **A grief surrogate conducting the audience's emotion**: Karadi's five-beat throughline (collapse → lamp → corridor → speech → daylight extinguishing).
+- **Elite episode outs**: six of seven rate 8+/10, with two 10s (Ep4's head-turn, Ep6's blackout).
+- **A finale ordered for post-credits ache**: catharsis → consolation → private closure → systemic revocation — the sequence that produces "I was fine until the bulldozer" posts.
+- **An unoccupied market position**: the elegiac register — ghost as guardian, horror as homelessness — which no entry in the Malayalam horror wave has claimed. Gentle horror is the differentiator, not the risk; the only risk is a trailer that lies about it.
+
+## The five systemic gaps (cross-panel consensus)
+
+**1. The audience is asked to grieve a man with zero living seconds on the page.** (Attachment #1; anticipated in the v4 line-audit; enables fandom's hidden-Papa device and structure's Karadi bomb.) Papa is a function — cloth, knots, silhouette — never a person. Proxy grief through Karadi has a ceiling: viewers will cry for *Karadi losing Papa*, not for Papa, and Ep7's two biggest beats are Papa's own. **Converged fix (under two minutes of screen time):** the Act Zero elder is explicitly Papa, given one human gesture, his branch shot-matched to Ep1's empty branch; Karadi's Ep2 lamp gets a source-memory line (Papa kept a lamp burning all his life for anyone still on the road — making the beacon his virtue and the crisis his character); the grandmother remembers him in one sentence in Ep5.
+
+**2. An unfired bomb sits between the two leads.** (Structure #1.) Papa is *Karadi's* dead; Hari has been living in his best friend's grandfather's afterlife and lying about it since Ep2 — and the document never detonates this between them. Meanwhile Ep6's refusal delays without wounding anyone Hari loves, which is exactly the protagonist-at-his-worst churn hazard. **Converged fix:** surface the lie silently in Ep5 (the plathi, at the colony: *"I asked your friend once. The second week."* Karadi turns and looks at Hari. Cut.); in Ep6, a half-failed save injures *Karadi* because Papa is too spent. The Ep6 speech becomes forgiveness instead of gentleness — and the viewer stops judging Hari and starts fearing for a friendship. This single engine converts the season's two highest-churn episodes into its two strongest.
+
+**3. Ep5 is the season's hidden churn point.** (Binge: closure congestion + satiation stop; horror: fear trough with both entities humanized on the same schedule; attachment: heartbreak-by-information, all told not shown; structure: classic exposition-episode bleed.) Three loops close inside the stillest twenty minutes, and viewers stop after answers, not questions. **Converged fix package:** a ≤60s cold open (Karadi sleepless by the lamp, unable to say what he saw); crosscut the episode *around* the unbroken grandmother scene — while the colony explains the beacon, the hostel demonstrates it (Meenu's instruments spiking, a fourth attack on the market group, discovered in aftermath on return — the separation attack that also *proves* the siege mechanic Ep6 currently only asserts); weld the Ep5→6 joint by reprising the three-roads image as Ep6's first shot, figures nearer, first light.
+
+**4. The luck era is one thin episode and the front half's fun is under-built.** (Binge: Ep2→3 is the most dangerous interior boundary — drought episode, whisper out, new-characters pivot; structure: no use ladder, no signature set-piece, the arts fest planted and paid but never staged; horror: the montage must be maximally fun *and* tick with micro-wrongness, since Ep5 retro-poisons it and the poison is only as strong as the joy.) **Converged fix:** engineer the missing "In column" (≤60s cold opens advancing a live loop, every episode — starting with the plathi already traveling, stick between his knees on a country bus, putting a countdown under every win); build the use ladder in Ep2 (petty → public → on others' behalf); stage the arts-fest set-piece as Ep3's cold open — Hari winning publicly what he didn't earn, the lie celebrated by a crowd — which simultaneously repairs Ep3's thinness, gives the lead agency in the episode where the girl enters his room, and re-grips the season's weakest boundary.
+
+**5. The back-half ensemble goes dark exactly when attachment must pay off.** (Attachment + structure + fandom.) Meenu is pure function and disappears for Eps 5–7; Rakesh is dark Eps 2–3 and 5–6 and his promised Ep7 image (thermometer + thorthu) is nowhere in the grid; the comedy valves of the two darkest episodes belong to characters the audience has never met. **Converged fix:** Meenu gets a stake (her beloved research plots sit over graves; her own map horrifies *her*) and carries the hostel side of the Ep5 crosscut, her map retired in Ep7 (handed to the plathi as the record of where the dead lay); Rakesh absorbs the negotiator and fixer valves, voices a wrong knot hypothesis at Ep2's out ("cotton oxidizes"), runs a debunk refrain that inverts in Ep7, and his thermometer-and-thorthu shot is scheduled inside the rite; the coward-who-shows-up is seeded by name in Ep1's water fight; Kannan gets one Ep6 boundary beat — three years of keeping his head down, ending on camera.
+
+## The marketing-layer findings (prevent self-inflicted wounds)
+
+- **The poster/finale collision** (fandom's sharpest catch): §7 designates the hundreds-of-thorthus finale image as the poster — which pre-spends Ep7's payoff. Register-flip: poster = dusk, sparse cloths, **one empty branch**; finale = daylight, hundreds, softness. Trailer ends on the plathi before the empty branch, dogs rising, cut to black — *"Where is the thorth?"*
+- **The period bug** (market's unique catch, and the one outright factual error in v4): Ep1 sends a telegram — India's telegram service ended in 2013 — while Ep4 hires a *YouTube* ghost-hunter. **Lock the period at circa 2005–2008**: the telegram becomes correct, a local-TV exorcist celebrity replaces the YouTuber (funnier and truer), the phone-free horror logic stops fighting smartphones, and the show joins the proven Romancham/Manjummel nostalgia lane with its parents-lived-this co-viewing dividend.
+- **Sell the inversion, never terror.** "The ghost is the one protecting them" is trailer-speakable in any language; selling terror makes Eps 5–7 a bait-and-switch that poisons completion and word-of-mouth.
+- **Release full-season, Friday, Onam window**: 140 minutes is one family movie-night; the evangelism payload (shelter reveal, refusal, hanging thorthus) is back-loaded, so weekly release means a month of marketing a lesser show.
+- **13+ with one red line**: Ep3's luring must stay *legible* at 13+, because the Ep6 reckoning is priced off what the audience understood in Ep3. Test that scene; take 16+ only if legibility fails.
+- **Participatory campaign verb = the knot, not the hanging** (white cloth hung at home reads funereal in Kerala): "tie a knot for someone you miss."
+
+## Boundary risk scorecard (consolidated)
+
+| Boundary | Risk | Driver | Primary fix |
+|---|---|---|---|
+| Pilot minutes 1–10 | High | Coldest start on the longest episode | Cap Act Zero ~2:00–2:30 ending on the first-knot close-up; wrongness inside the water fight (dogs silent, facing B-block); telegram by minute 8 |
+| Ep1→2 | Medium | Biggest structural cliff; genre-settling | The elite double out already does the work; protect it |
+| Ep2→3 | **Highest interior** | Drought + whisper out + new-characters pivot | Plathi countdown under Ep2; night-bloomer paired with the knot at the out; arts-fest set-piece as Ep3's cold open |
+| Ep3→4 | Low | Compound out (empty room + first attack) | None needed |
+| Ep4→5 | Low–medium | 10/10 out, but the corridor answer is deferred | Ep5 cold open touches the promise inside the first minute |
+| Ep5→6 | **High (back half)** | Satiation stop after the answers episode | Crosscut package + three-roads weld into Ep6's open |
+| Ep6→7 | Near-zero | Irreversible act + blackout | Protect exactly as written |
+
+## Panel disagreements, adjudicated
+
+1. **Arts fest in Ep2 vs Ep3.** Structure wants it as Ep3's cold open; binge wants Ep2 strengthened in place; horror wants Ep2's joy maximal. **Adjudication: Ep3 cold open** — it fixes three problems at once (the weakest boundary's re-grip, Ep3's thinness, Hari's passivity in the episode that most needs him active), while Ep2 keeps its montage plus the plathi countdown.
+2. **Crosscutting Ep5 vs protecting the grandmother scene.** Structure says crosscut; horror says never intercut over the dignity scene. **Adjudication: both** — crosscut the episode, not the scene. The grandmother plays unbroken; the hostel pressure cuts in before and after; the attack is discovered in aftermath on return.
+3. **The YouTube ghost-hunter vs the period lock.** Fandom prizes the meta-virality of a fictional YouTuber failing on screen (real reaction channels engage); market shows the period is incoherent and the mid-2000s lane is worth more. **Adjudication: period lock wins** — the internal contradiction is fatal to the show's own logic, and a local-TV exorcist celebrity keeps the comedy; the meta-virality loss is real but smaller than the nostalgia-lane and co-viewing gains. This is the one adjudication the creator should consciously ratify.
+4. **Act Zero length.** Binge wants a ~2:00 hard cap; market wants it protected at full unhurried length as the "this is not YouTube" quality signal. **Adjudication: compatible** — unhurried *within* ~2:00–2:30, ending on the first-knot close-up. Unhurried is a register, not a duration.
+
+## Open decisions, resolved by the panel
+
+1. **Title: THORTH** — unanimous among panelists who addressed it, for converging reasons: hashtag-clean and ownable (fandom); opaque-and-brandable in the Tumbbad/Kantara school of untranslatable one-word genre brands, with the everyday-word-as-horror-title effect at home (market). PAPA is search-poison and mistranslates in every non-Malayalam market; both PAPA and SAVAPARAMBU are correctly spent as episode titles.
+2. **Coda: pure thematic chill — unanimous (5/5 who addressed it).** An explicit S2 hook converts a clean ending into an unpaid debt (binge), ache into marketing (attachment), and a debate door into a demand (fandom). Limited-series word-of-mouth is priced off ending satisfaction (market).
+3. **Rating: 13+**, gated on the Ep3 legibility test above.
+4. **New decision the panel adds: lock the mid-2000s period** before the dialogue pass — it is currently an incoherence, not a choice.
+5. **New decision: release strategy** — full-season Onam-window drop.
+
+## Consolidated DO-NOT-BREAK list (panel-wide)
+
+1. The knot ledger and its grammar — including a canonical, well-lit **knot audit shot** once per episode with absolutist continuity, and Ep7's "every knot undone but the first." (All six panelists.)
+2. Ep4's out exactly as written — the head-turn kept as an *out*, shot as horror first so the turn recodes it — and **never in any marketing**. (Binge, horror, fandom.)
+3. Ep6's blackout out — nothing resolves before the cut. (Binge, structure.)
+4. The plathi's one-question discipline — asked once in Ep2, answered wordlessly in Ep7; no added confrontation scene, no added lines. (Structure, attachment, fandom.)
+5. Karadi's five-beat throughline, untrimmed and unreassigned. (Attachment.)
+6. The silent handover and Ep7's payoff order — Hari stands unprotected *before* Papa gathers; no dialogue added to the rite; no fight. (Attachment, structure, horror.)
+7. Ep2's joy uncut — the Ep5 reframe only wounds if the luck was pure pleasure. (Horror, attachment.)
+8. Queue, not army — inevitability over spectacle at every scale decision. (Horror, binge.)
+9. The comedy valves — wrong-papa, ghost-catcher parade, the "Deceased" letter — the show's entire safe-clip economy. (Fandom, horror.)
+10. The hundreds-scale of the finale image — production pressure will try to make it dozens; hundreds or nothing. (Market.)
+11. The gentle, no-kills, ritual-resolution register — the unoccupied position in the wave; any "the ending needs a bigger scare" note trades a differentiator for a crowded lane. (Market, horror, attachment.)
+12. "Was the luck ever real" is never answered in dialogue; the Ep6→7 dark gap must be squarable with Rule 2 in the bible; Ep6 "full manifestation" is defined as intensification of stillness, never morphology. (Fandom, horror.)
+
+## Master fix list, ranked by engagement leverage
+
+1. **Living-Papa minimum dose anchored to the lamp** (Act Zero = Papa + one gesture + shot-matched branch; Karadi's Ep2 source-memory line; grandmother's one sentence).
+2. **Detonate the Karadi triangle** (Ep5 silent reveal; Ep6 half-failed save wounds Karadi; the speech becomes forgiveness).
+3. **Ep5 rescue package** (cold open; crosscut around the unbroken grandmother scene; separation attack discovered on return; three-roads weld into Ep6).
+4. **Engineer the In column** — ≤60s loop-advancing cold opens for all seven episodes.
+5. **Luck-era upgrade** (use ladder; plathi countdown under Ep2; arts-fest set-piece as Ep3's cold open; scaffold miss composed as a debris circle joining the show's circle grammar).
+6. **Institutionalize the knot bible** (per-episode canonical states + audit shot + continuity absolutism; teachable sacred-knot design).
+7. **Lock the mid-2000s period** (kills the telegram bug; local-TV exorcist; nostalgia lane; co-viewing dividend).
+8. **Back-half ensemble repair** (Meenu's stake + Ep5–7 presence + map retirement; Rakesh's refrain + valves + scheduled Ep7 shot; coward seeded Ep1; Kannan's Ep6 beat).
+9. **Load the sympathy flip** (her near-capture inside the parade; one homesickness image misreadable as stalking; one Rajasthan-iconography figure in the Ep6 queue so the national stakes are witnessed, not stated).
+10. **Marketing spine** (register-flip poster on the empty branch; protected-image list; trailer out on "Where is the thorth?"; sell the inversion; Onam full drop; 13+ with the Ep3 red line; knot-not-hanging campaign verb; hidden-Papa frames in Eps 2–4 for pause culture).
+
+Plus zero-cost bible locks: the daylight-corporeality scare rung; the well set-piece (Ep4); the Ep7 exhale laugh; the returned whisper over the hanging cloths; Papa's cloth on *the same branch*; the sleeping-dogs zero-reading; farewells ≤90 seconds; close the Ep1 bite loop in one grandmother line or flag it deliberately open.
 
 ---
 
@@ -473,4 +565,69 @@ Escalation logic: the document builds the **cost ladder** (knots) meticulously a
 
 ## Panelist 6 — Malayalam / Indian OTT Market Resonance
 
-<!-- PANELIST 6 REPORT -->
+# THORTH v4 — Market-Resonance Audit (Malayalam home market, OTT economics, pan-Indian travel)
+
+**Position statement:** v4 holds a rare asset — a horror prop the entire home market physically owns — and sits in the one register the Malayalam horror wave has not yet claimed. The engagement leverage now lives in three unmade decisions the document half-argues: the period setting (currently incoherent), the release/positioning strategy (absent), and the title (right answer, wrong reasoning). Findings below in mandate order; fixes ranked in §7.
+
+## 1. Cultural hook inventory (rated for home-market ignition)
+
+**Thorthu — 5/5, the franchise asset.** Every Malayali household owns one, and the specific register exploited — an old man's thorthu, at a funeral — is sense-memory, not symbolism. Real Kerala funerary practice already binds white cloth to the dead (mourners laying new white cloth on the body). The document never touches this real custom: one shot in Ep1's funeral of relatives laying cloth on Papa's body *before* the plathi's invented rite would anchor the fictional ritual in recognized practice — belief arrives cheaper. Also uncashed: smell. A thorthu holds its owner's smell; Karadi's Ep1 grief and his Ep5 corridor confirmation both have a free sensory trigger the doc ignores.
+
+**Hostel/campus lineage — 5/5, well-deployed.** The Ep1 water fight, arts-fest walkout, and gang grammar sit in an unbroken line from the In Harihar Nagar bachelor comedies through Adi Kapyare Kootamani's hostel farce to Karikku's YouTube hostel universe — the most pre-trained comedy audience in the language, precisely this show's demo. Two beats are stealth-remakes that will fire recognition: Ep3's girl-shunted-into-the-boys'-hostel is Adi Kapyare Kootamani's founding gag tipped into dread (she vanishes from a one-exit room), and Ep4's ghost-catcher parade is the exorcist-parade staple of Malayalam comedy given a Tumbbad wallet — Hari bankrolling everything except the one real payment. Underused: the arts fest is pure arc-scaffolding (walkout Ep1, re-entry Ep2, list Ep7). College arts-fest culture is universal Malayali nostalgia currency; one scene of actual fest texture would widen the recognition surface without touching structure.
+
+**Kavu — 5/5, live wire.** "Cutting a kavu brings ruin" is not archaism; it is current, half-believed folklore attached to real groves and real construction disputes. Rule 6 and the coda's bulldozer literalize an anxiety the audience already carries. The §8 consultant caution protects this hook rather than limiting it.
+
+**Land/displacement — 4/5.** "COMING SOON — HILL VIEW PREMIUM VILLAS" is a board every Keralite passes weekly; razed family plots and flats-on-paddy-fields are lived social memory. Lands untranslated at home; also the element most likely to travel (§5).
+
+**Funeral-journey comedy — 4/5.** The wrong-papa bus beat sits in the deep Malayalam death-house comedy tradition (prestige peak: Ee.Ma.Yau), and "comedy lands, then softens into a real funeral" is exactly how that tradition behaves. No fix needed.
+
+**Pooram/market texture — 3/5.** One episode's worth (Ep3); correctly sized.
+
+**Telegram — currently a broken hook.** India's telegram service ended in July 2013. Ep1 sends a telegram; Ep4 hires a *YouTube* ghost-hunter. The period signal is incoherent, and period is not trivia in this market: the wave's biggest engagement engines were nostalgia-period pieces (Romancham set in 2007, Manjummel Boys in 2006). This document's texture is already instinctively phone-free — dreams, wells, dogs, a constable's oral memory, a framed photo, nobody googling the clan. Commit to circa 2005–2008: the telegram becomes correct, the parade improves (a local-TV exorcist celebrity is funnier and truer than a YouTuber), horror logic stops fighting smartphones, and the show inherits the parents-lived-this co-viewing dividend. If contemporary is chosen, the telegram must go — but that choice pays less.
+
+## 2. Genre-wave positioning
+
+The slot is open. Bhoothakaalam proved OTT-direct Malayalam horror can own the conversation (the doc already borrows its grammar, §7); Bramayugam proved folk-dread prestige; Romancham — the closest sibling: bachelors, ouija, escalating dread inside comedy — proved gang-plus-ghost architecture at blockbuster scale. What no wave entry has claimed is the elegiac register: ghost as guardian, horror as homelessness. This is *not* untested here — the sympathetic-ghost reveal carried Pretham (2016) to a hit, and benign-spirit-as-family-member is the DNA of the biggest family fantasy in Malayalam history (My Dear Kuttichathan). **"Gentle horror with no kills" is a differentiator at home, not a risk** — after Bramayugam's darkness it is counter-programming. The risk is exclusively marketing mismatch: sell this as terror and Eps 5–7 read as bait-and-switch, which kills completion and poisons word-of-mouth. Sell the inversion itself — "the ghost is the one protecting them" is trailer-speakable in any language.
+
+Two comp cautions. Kantara teaches that land-plus-ritual travels pan-India *with climax spectacle*; THORTH refuses spectacle (Ep7: no fight, one ritual), so the hundreds-of-thorthus image must carry the entire spectacle budget — at "hundreds" scale, never a value-engineered dozens. Tumbbad teaches that a rule-bound object with a visible price travels on rule-clarity alone (the 2024 re-release phenomenon confirms current appetite) — the knot-count grammar is this show's subtitle-proof Tumbbad engine. Stranger Things must stay an internal engineering reference, never a marketing comp: it sets scale expectations the queue-not-army discipline is designed to refuse.
+
+## 3. Co-viewing and certification economics
+
+Take 13+ — with one red line. In Kerala households the completion engine is the living-room TV, not seven solo phone sessions; U/A 13+ keeps the show inside family and teen profiles, and the real audience skews younger than the characters (14–17 campus-aspirationals raised on Karikku hostels). v4 has what almost nothing in the wave has: genuine three-generation content — the grandmother scene (Ep5), the funeral texture, Act Zero's rite. Grandparents recognize the world, parents recognize the campus, teens get the ghost. A 140-minute season a household finishes in one evening is the strongest completion-and-evangelism configuration available to a Malayalam original. What 13+ costs — the hardcore Bramayugam/Tumbbad segment sniffing "soft" — is small and already over-served elsewhere. The red line: Ep3's luring must stay *legible* at 13+, because the Ep6 reckoning ("We took her there. Say it.") is priced entirely off what the audience understood in Ep3. If the certification pass blurs Ep3 past legibility, the reckoning collapses — in that case take 16+ rather than gut the beat. Decide by testing that scene, not in the abstract.
+
+## 4. Format-market fit
+
+7×20 is defensible but double-edged. Malayalam has no native tradition of 20-minute premium episodes; the duration is owned by Karikku on YouTube — instant grammar-familiarity for the demo, *and* a "web series lite" perception risk against ~30–40-minute prestige originals (Kerala Crime Files ran ~30-minute episodes). The document already contains the antidote: the pilot's wordless Act Zero is the "this is not YouTube" signal, and it must survive every trim pass at full unhurried length precisely because it plays in the first three minutes, when the autoplay audience decides which shelf this sits on.
+
+Release all at once. Three engagement reasons: (1) 140 minutes is one family movie-night — the format's entire advantage is being finishable. (2) The evangelism payload is back-loaded: Eps 1–2 are a fun campus comedy; the reasons anyone *proselytizes* (shelter reveal, Hari's Ep6 refusal, the hanging-thorthus image) land in Eps 5–7. Weekly means a month of marketing a lesser show before the real one arrives. (3) The precedent original in this market — Kerala Crime Files, all six episodes dropped simultaneously — set binge as the Malayalam-original norm; no seven-week conversation muscle has ever been demonstrated here. Drop on a Friday in the Onam window, when households co-view and thorthus are literally in the gift bundles. On §9 decision 5: pure thematic chill is also the market answer — limited-series word-of-mouth is priced off ending satisfaction, and an explicit S2 hook taxes it.
+
+## 5. Pan-Indian travel
+
+Travels: the knot-count/aging-cloth grammar (visual, subtitle-proof); the empty branch; the shelter-not-prison reversal (a one-line pitch in any language); the bulldozer coda (development displacement is a national wound); and the Rajasthan flashback — which **helps, decisively**. It converts a Kerala ghost story into a two-region national statement, hands the Hindi-belt trailer its anchor image (a grave opened to sun), and dramatizes Rule 10's "every erased ground in the country" claim. Keep it at the specced ≤90 seconds, and close open decision 2 (the clan's researched identity) *before* any marketing asset ships — an unresearched community on the trailer's face invites exactly the press cycle §8 exists to prevent.
+
+Does not travel: "Lucky Hari" campus-christening comedy, the wrong-papa gag's custom nuance, and the thorthu's emotional charge itself — outside Kerala it is just a towel until the knot grammar teaches viewers to read it (it will; Tumbbad proved object-rule literacy), but dubbing scripts must not lean on charge the object doesn't carry there.
+
+**Title:** THORTH — but for the correct reason. It doesn't travel because it's legible; it travels because it is *opaque and brandable* — the Tumbbad/Kantara school of untranslatable one-word titles that become genre brands — provided key art is always the cloth. At home, the everyday word as a horror title is itself the hook. PAPA dies as a series title: in every non-Malayalam market it means "father," promising a different show, and it is unsearchable; it survives as the pilot's title, where it already sits. SAVAPARAMBU over-promises corpse-field terror the show deliberately withholds — an expectation mismatch that damages completion and word-of-mouth — and is correctly spent as Ep5's title.
+
+## 6. The ownable-object marketing surface
+
+Every viewer owns the prop — near-zero-cost UGC, unprecedented for a Malayalam original. But the participatory verb must be **the knot, not the hanging**: white cloth hung at a home reads funereal in Kerala, so a "hang your thorthu" campaign is inauspicious-adjacent and will meet organic resistance. "Tie a knot for someone you miss" is safe, photographable, grief-participatory — and it teaches the show's own grammar (each knot = a cost paid for someone) before Ep2 reveals it. The prop bible's aging states (§7) are a ready merch line — replica cloths at Ep2/Ep4/Ep6 knot-counts — and the poster is, as the doc says, already shot. Clip inventory belongs to another panelist; the point from this seat is that the campaign asset is already in the audience's cupboards, which nothing else in this wave can claim.
+
+## 7. Fixes, ranked by engagement leverage
+
+1. **Lock the period at circa 2005–2008** — kills the telegram/YouTube contradiction, upgrades the Ep4 parade, joins the Romancham/Manjummel nostalgia lane, maximizes parent co-viewing.
+2. **Full-season Friday drop in the Onam window; keep the coda thematic** (§9 decision 5 as recommended).
+3. **Market the inversion ("the ghost is guarding them"), never terror** — no-kills is only a risk if the trailer lies.
+4. **Certify by testing Ep3's legibility at 13+**; take 16+ only if legibility fails.
+5. **Stage the real white-cloth funeral custom beside the invented rite in Ep1** — one shot, belief multiplier.
+6. **Close the clan-identity research before marketing assets exist** — travel-press insurance.
+7. **Add one scene of genuine arts-fest texture** — cheap nostalgia surface.
+
+---
+
+**(a) Highest-leverage recommendation.** Commit the series to a mid-2000s period setting. It resolves the document's one outright market error (a telegram in a world with YouTube ghost-hunters — the service died in 2013), buys entry into the proven nostalgia lane that powered Romancham and Manjummel Boys, legitimizes the show's already phone-free horror logic, and converts the 13+ family bet into a parents-lived-this intergenerational watch — the configuration most correlated with one-sitting completion and household-level evangelism.
+
+**(b) Do not break:**
+1. **The hundreds-scale of the hanging-thorthus finale (Ep7)** — poster, spectacle budget, and word-of-mouth image in one; production pressure will try to make it dozens. Hundreds or nothing.
+2. **The knot-count/aging-cloth instrument panel (Rule 4, §7 prop bible)** — the subtitle-proof travel engine and the entire UGC/merch surface; pace passes will be tempted to cut knots.
+3. **The gentle, no-kills, 13+-reachable climax register (Ep7: no fight, one ritual)** — the only unoccupied position in the Malayalam horror wave; any "the ending needs a bigger scare" note trades a differentiator for a crowded lane.
