@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0b0c10;
+  --color-panel: #14161c;
+  --color-panel-2: #1b1e26;
+  --color-line: #2a2e3a;
+  --color-mute: #8b90a0;
+  --color-text: #e8e9ee;
+  --color-accent: #e8b04b;
+  --color-accent-2: #5cc8ff;
+  --color-danger: #ff6b6b;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+html, body, #root { height: 100%; }
+body { margin: 0; background: var(--color-ink); color: var(--color-text); font-family: var(--font-sans); font-size: 13px; }
+* { scrollbar-width: thin; scrollbar-color: #333846 transparent; }
+input, select, textarea, button { font: inherit; color: inherit; }
+.field { @apply w-full bg-panel-2 border border-line rounded px-2 py-1.5 text-text outline-none focus:border-accent/70; }
+.btn { @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-line bg-panel-2 hover:bg-[#232733] text-text disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer whitespace-nowrap; }
+.btn-primary { @apply border-accent/60 bg-accent text-ink hover:bg-[#f2c063]; }
+.btn-ghost { @apply border-transparent bg-transparent hover:bg-panel-2; }
+.chip { @apply inline-block text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded bg-panel-2 border border-line text-mute; }
+.label { @apply block text-[11px] uppercase tracking-wide text-mute mb-1; }

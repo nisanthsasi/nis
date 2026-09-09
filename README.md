@@ -42,3 +42,12 @@ print(result.suggestions)  # list of improvement suggestions
 ```bash
 pytest tests/ -v
 ```
+
+## Storyboard Maker
+
+`storyboard/` holds a separate React + Vite app: a ShotDeck-style storyboard and shot-list builder with screenplay PDF import, director lens profiles, FrameThrower reference search, free AI frame generation and PDF export. See [storyboard/README.md](storyboard/README.md).
+
+```bash
+cd storyboard && npm install && npm run dev
+```
+
