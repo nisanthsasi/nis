@@ -31,7 +31,7 @@ export function TopBar({ onHome, onSettings }: { onHome: () => void; onSettings:
     <header className="h-12 border-b border-line bg-panel flex items-center gap-2 px-3 shrink-0">
       <button className="btn btn-ghost !px-2" onClick={onHome} title="All boards">🎞</button>
       <input className="bg-transparent outline-none font-semibold text-sm min-w-0 w-56" value={project.name} onChange={(e) => setProject({ name: e.target.value })} />
-      <button className="btn !py-1" onClick={() => setLeftTab('director')} title="Change director lens">🎬 {director.name}</button>
+      <button className="btn !py-1" onClick={() => setLeftTab('director')} title="Change director and cinematographer">🎬 {director.directorName}<span className="text-mute">·</span>📷 {director.dpName.split(' (')[0]}</button>
       <select className="field !w-auto !py-1" value={project.aspectRatio} onChange={(e) => setAspect(e.target.value as AspectRatio)} title="Project aspect ratio">
         {ASPECT_RATIOS.map((a) => <option key={a.value} value={a.value}>{a.label}</option>)}
       </select>

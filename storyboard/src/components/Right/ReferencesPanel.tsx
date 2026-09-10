@@ -56,6 +56,19 @@ export function ReferencesPanel() {
     limit: 24,
   }))
   const similar = (id: string) => { setMode('similar'); void run(() => framesApi.similar(id, 'visual')) }
+  /** FrameThrower has no cinematographer filter, so search with the DP's name and float their films first. */
+  const browseDp = () => {
+    const dpName = director.dpName.split(' (')[0]
+    const size = shot ? SHOT_SIZES.find((s) => s.value === shot.shotSize)?.label.toLowerCase() ?? '' : ''
+    setMode('lens')
+    void run(async () => {
+      const res = await framesApi.search(`${size} shot by cinematographer ${dpName}`.trim(), 40, 'description')
+      const last = dpName.split(' ').slice(-1)[0].toLowerCase()
+      const mine = res.filter((f) => (f.film.dp ?? '').toLowerCase().includes(last))
+      const rest = res.filter((f) => !mine.includes(f))
+      return [...mine, ...rest]
+    })
+  }
 
   const attach = (f: FTFrame) => {
     if (!shot) { toast('Select a shot first.', 'error'); return }
@@ -91,6 +104,7 @@ export function ReferencesPanel() {
         <div className="flex gap-1 flex-wrap">
           {shot && <button className="btn !py-1" onClick={() => setQ(buildReferenceQuery(shot, scene))}>↻ From shot</button>}
           {director.frameThrowerDirector && <button className="btn !py-1" onClick={() => { setMode('lens'); browseLens() }} disabled={busy} title={`Browse ${director.name}'s frames matching this shot size`}>🎬 {director.name.split(' ').slice(-1)[0]}'s frames</button>}
+          {director.dp.id !== 'same' && director.dp.id !== 'custom' && <button className="btn !py-1" onClick={browseDp} disabled={busy} title={`Frames shot by ${director.dpName}`}>📷 {director.dpName.split(' ').slice(-1)[0].replace('(Ghibli)', '')}'s frames</button>}
           <button className="btn !py-1" onClick={() => void run(() => framesApi.random(24))} disabled={busy}>🎲 Random</button>
         </div>
         {err && <div className="text-danger">{err.text} {err.link && <a className="underline" href={err.link} target="_blank" rel="noreferrer">Buy credits</a>}</div>}

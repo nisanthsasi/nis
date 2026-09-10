@@ -7,7 +7,9 @@ Everything runs locally. Projects and images are stored in your browser (Indexed
 ## What works with zero keys
 
 - **Screenplay import**: upload a PDF, `.fountain` or `.txt` (or paste text). Scenes, action, character cues, dialogue and parentheticals are parsed in the browser. Nothing is uploaded anywhere.
-- **Director lens**: pick a director (Villeneuve, Kubrick, Fincher, Wong Kar-wai, Malick, Tarkovsky, Ozu, Bong Joon-ho, Wes Anderson, PTA, Nolan, Mani Ratnam, Lijo Jose Pellissery, Dileesh Pothan, Anurag Kashyap, Vetrimaaran, Ram Gopal Varma, Padmarajan, Bharathan, Greta Gerwig), write a custom grammar, or use neutral defaults. The lens drives the shot list, the reference search and the image prompts.
+- **Director lens**: pick who directs. 28 profiles: Villeneuve, Kubrick, Spielberg, Iñárritu, Cuarón, Fincher, Wong Kar-wai, Malick, Tarkovsky, Ozu, Kurosawa, Miyazaki, Satyajit Ray, Bong Joon-ho, Park Chan-wook, Michael Mann, Wes Anderson, PTA, Nolan, Mani Ratnam, Lijo Jose Pellissery, Dileesh Pothan, Anurag Kashyap, Vetrimaaran, Ram Gopal Varma, Padmarajan, Bharathan, Greta Gerwig, plus a custom grammar and neutral defaults. The director decides coverage, blocking, pacing and where the cut falls.
+- **Cinematographer lensing**: pick who shoots it, separately. 25 DP profiles with format, focal-length ladder, light, colour and camera temperament: Deakins, Lubezki, Doyle, Kamiński, Prieto, van Hoytema, Fraser, Bradford Young, Cronenweth, Elswit, Yeoman, Hong Kyung-pyo, Chung Chung-hoon, Dion Beebe, Asakazu Nakai, Kazuo Miyagawa, Atsushi Okui, Santosh Sivan, P.C. Sreeram, Ravi Varman, Rajeev Ravi, Girish Gangadharan, Shyju Khalid, Madhu Neelakandan, Subrata Mitra, plus custom lensing. "Director's usual DP" is the default (Mani Ratnam brings Santosh Sivan, Spielberg brings Kamiński, Iñárritu brings Lubezki). Mix freely: Lijo's staging with Deakins's light.
+- **Variants**: every re-direct keeps the previous shot list as a variant. The Variants view puts the active list and each variant side by side for the same scene, so you can read how coverage changes between Villeneuve and Kashyap, or the same director under two DPs. Make any variant active, or copy single shots across.
 - **Auto shot list**: an offline rule engine lays out coverage per scene in that grammar (openers, masters, OTS, singles, inserts on props named in the action, peaks, closers) with shot size, angle, movement, lens mm, lighting, time of day, palette, duration.
 - **Board**: drag to reorder, duplicate, delete, drop your own stills onto any card, multiple candidate frames per shot with one hero frame.
 - **AI frames**: the default provider is **Pollinations** (FLUX), free with no key. One image per ~15 s on the anonymous tier; small watermark unless you register a free account and set `POLLINATIONS_TOKEN`.
@@ -41,9 +43,9 @@ Production: `npm run build && npm start` serves the built app and the API from o
 ## Workflow
 
 1. **New board**, name it, pick the aspect ratio in the top bar.
-2. **Director tab**: choose the lens. Custom lets you type your own grammar ("long takes, handheld, 32mm, sodium light, slow").
+2. **Director tab**: choose the director, then the cinematographer (or keep their usual DP). Custom entries accept plain text ("long takes, observational, slow" / "Alexa 65, 24mm 40mm 75mm, anamorphic, low key, handheld").
 3. **Script tab**: upload the screenplay PDF, tick the scenes, import with "Lay out shots in the lens" on. With an Anthropic key you can tick "Use Claude to direct".
-4. **Board**: click a shot to edit its taxonomy on the right. Drop images on cards. Reorder by dragging.
+4. **Board**: click a shot to edit its taxonomy on the right. Drop images on cards. Reorder by dragging. Press **Re-direct current scene** after changing director or DP, then **Variants** to compare the versions side by side.
 5. **References tab** (FrameThrower): search from the shot, pull the director's own frames, attach candidates, copy metadata onto the shot.
 6. **Generate tab**: the prompt is built from the shot plus the lens vocabulary. Pick a provider, optionally add reference images (Gemini/OpenAI), generate variations. First result becomes the hero frame.
 7. **Export PDF** from the top bar. **JSON** exports the project structure (images stay in the browser).
@@ -61,7 +63,9 @@ npm run build     # tsc strict + vite
 server/            Express API: /api/frames/* (FrameThrower), /api/generate (providers), /api/shotlist (Claude), /api/img (image proxy)
 src/types.ts       data model
 src/taxonomy.ts    option lists + FrameThrower metadata mappers
-src/directors.ts   director lens profiles
+src/directors.ts   director profiles (coverage, blocking, pacing)
+src/cinematographers.ts  DP profiles (format, lens ladder, light, colour)
+src/lens.ts        merges director + DP into the working lens
 src/lib/screenplay.ts  PDF/Fountain/txt -> scenes
 src/lib/shotlist.ts    offline rule engine
 src/lib/prompt.ts      shot + lens -> image prompt / reference query

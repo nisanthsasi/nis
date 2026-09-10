@@ -77,7 +77,8 @@ export async function loadProject(id: string): Promise<Project | undefined> {
 export async function deleteProject(id: string): Promise<void> {
   const p = await db.projects.get(id)
   if (p) {
-    const ids = Object.values(p.shots).flatMap((s) => s.frames.map((f) => f.imageId).filter((x): x is string => !!x))
+    const variantShots = p.scenes.flatMap((sc) => (sc.variants ?? []).flatMap((v) => v.shots))
+    const ids = [...Object.values(p.shots), ...variantShots].flatMap((s) => s.frames.map((f) => f.imageId).filter((x): x is string => !!x))
     await Promise.all(ids.map(deleteImage))
   }
   await db.projects.delete(id)

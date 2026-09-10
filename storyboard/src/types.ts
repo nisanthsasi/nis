@@ -83,6 +83,16 @@ export interface Shot {
   heroFrameId: string | null
 }
 
+/** A saved shot-list version for a scene, tagged with the lens that made it. */
+export interface ShotVariant {
+  id: string
+  label: string
+  directorId: string
+  dpId: string
+  shots: Shot[]
+  createdAt: number
+}
+
 export interface Scene {
   id: string
   sceneNo: string
@@ -95,6 +105,10 @@ export interface Scene {
   scriptText: string
   characters: string[]
   shotIds: string[]
+  /** Alternative shot lists (other director/DP combinations). Active list lives in shotIds. */
+  variants: ShotVariant[]
+  /** The lens that produced the active list, so it is labelled correctly when parked as a variant. */
+  activeLens?: { directorId: string; dpId: string; label: string }
 }
 
 export interface ProjectSettings {
@@ -110,6 +124,9 @@ export interface Project {
   directorId: string
   /** Free-text grammar when directorId === 'custom' */
   customDirector: string
+  /** Cinematographer id, 'same' = the director's usual DP (or derived from the director), 'custom' = customDp text */
+  dpId: string
+  customDp: string
   aspectRatio: AspectRatio
   scenes: Scene[]
   shots: Record<string, Shot>
@@ -122,6 +139,34 @@ export type CoverageStyle =
   | 'classical' | 'long-take' | 'fragmented' | 'observational' | 'tableau' | 'kinetic'
 
 export type Pacing = 'slow' | 'measured' | 'brisk' | 'frenetic'
+
+/** Focal lengths a DP reaches for: their wide, their normal, their long. */
+export interface LensLadder { wide: number; normal: number; long: number }
+
+export type CameraTemperament = 'locked' | 'fluid' | 'handheld' | 'mixed'
+
+export interface CinematographerProfile {
+  id: string
+  name: string
+  region: string
+  era: string
+  summary: string
+  /** e.g. "35mm anamorphic", "Alexa 65 large format", "Super 16" */
+  format: string
+  aspectRatio: AspectRatio
+  lensCharacter: LensCharacter
+  lensLadder: LensLadder
+  lightingKey: LightingKey
+  lightingQuality: LightingQuality
+  palette: string[]
+  colorTags: string[]
+  camera: CameraTemperament
+  depthOfField: 'deep' | 'shallow' | 'mixed'
+  /** Visual descriptors for image prompts (never the DP's name) */
+  styleVocabulary: string[]
+  signature: string[]
+  knownFor: string[]
+}
 
 export interface DirectorProfile {
   id: string
@@ -138,6 +183,12 @@ export interface DirectorProfile {
   lensCharacter: LensCharacter
   /** [wide, long] focal length range in mm the director lives in */
   lensRange: [number, number]
+  /** Optional finer ladder; when present it overrides lensRange for lens picks */
+  lensLadder?: LensLadder
+  /** Film format label, when the DP layer sets one */
+  format?: string
+  /** The DP this director usually works with; used when project.dpId === 'same' */
+  defaultDpId?: string
   lightingKey: LightingKey
   lightingQuality: LightingQuality
   palette: string[]
@@ -150,6 +201,13 @@ export interface DirectorProfile {
   signatureMoves: string[]
   /** Name to pass to FrameThrower browse({ director }) */
   frameThrowerDirector?: string
+}
+
+/** The merged working profile: a director's grammar with a cinematographer's lensing layered on top. */
+export interface Lens extends DirectorProfile {
+  directorName: string
+  dpName: string
+  dp: CinematographerProfile
 }
 
 /** A screenplay element produced by the parser */

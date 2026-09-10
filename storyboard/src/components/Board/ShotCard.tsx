@@ -45,7 +45,7 @@ export function ShotCard({ shot, ratio, sceneNo }: { shot: Shot; ratio: number; 
           <span className="chip text-text border-accent/40">{size?.label ?? shot.shotSize}</span>
           {angle && angle.value !== 'eye-level' && <span className="chip">{angle.label}</span>}
           {move && <span className="chip">{move.label.split(' ')[0]}</span>}
-          {shot.lensMm && <span className="chip">{shot.lensMm}mm</span>}
+          <span className="chip">{shot.lensMm ? `${shot.lensMm}mm ` : ''}{shot.lensCharacter}</span>
         </div>
         <div className="text-[11px] leading-snug text-text/90 line-clamp-2 min-h-[2.4em]">{shot.subject || shot.action || <span className="text-mute">Untitled shot</span>}</div>
         {shot.dialogue && <div className="text-[11px] text-mute italic line-clamp-1">“{shot.dialogue}”</div>}

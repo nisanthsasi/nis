@@ -8,6 +8,7 @@ import { Empty, Spinner } from '../ui'
 import { parseScreenplay, textToLines } from '../../lib/screenplay'
 import { generateShotList } from '../../lib/shotlist'
 import { claudeShotList } from '../../api/shotlist'
+import { CompareView } from './CompareView'
 
 export function BoardGrid() {
   const project = useProject((s) => s.project)!
@@ -16,11 +17,12 @@ export function BoardGrid() {
   const moveShot = useProject((s) => s.moveShot)
   const addShot = useProject((s) => s.addShot)
   const updateScene = useProject((s) => s.updateScene)
-  const addShotsFromDrafts = useProject((s) => s.addShotsFromDrafts)
+  const redirectScene = useProject((s) => s.redirectScene)
   const selectShot = useProject((s) => s.selectShot)
   const providers = useProject((s) => s.providers)
   const toast = useProject((s) => s.toast)
   const [busy, setBusy] = useState<string | null>(null)
+  const [compare, setCompare] = useState(false)
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 6 } }))
   const ratio = aspectToRatio(project.aspectRatio)
 
@@ -46,21 +48,19 @@ export function BoardGrid() {
   const autoShots = () => {
     const ps = parsedScene()
     if (!ps) { toast('Add script text or a synopsis to this scene first.', 'error'); return }
-    if (shots.length && !confirm(`Replace the ${shots.length} existing shots in this scene?`)) return
     const drafts = generateShotList(ps, director)
-    addShotsFromDrafts(scene.id, drafts, true)
-    toast(`${drafts.length} shots laid out in the ${director.name} lens.`)
+    redirectScene(scene.id, drafts)
+    toast(`${drafts.length} shots laid out as ${director.name}.${shots.length ? ' The previous list is saved as a variant.' : ''}`)
   }
 
   const claudeShots = async () => {
     const ps = parsedScene()
     if (!ps) { toast('Add script text or a synopsis to this scene first.', 'error'); return }
-    if (shots.length && !confirm(`Replace the ${shots.length} existing shots in this scene?`)) return
     setBusy('Claude is breaking down the scene…')
     try {
       const res = await claudeShotList({ heading: scene.heading, text: ps.text, characters: ps.characters }, director, project.aspectRatio)
       if (!res) { toast('Claude is not configured on the server.', 'error'); return }
-      addShotsFromDrafts(scene.id, res.shots.map((s) => ({ ...s, lensCharacter: s.lensCharacter ?? director.lensCharacter, aspectRatio: null, colorTags: s.colorTags?.length ? s.colorTags : [...director.colorTags] })), true)
+      redirectScene(scene.id, res.shots.map((s) => ({ ...s, lensCharacter: s.lensCharacter ?? director.lensCharacter, aspectRatio: null, colorTags: s.colorTags?.length ? s.colorTags : [...director.colorTags] })))
       if (res.sceneSummary) updateScene(scene.id, { synopsis: res.sceneSummary })
       toast(`${res.shots.length} shots from Claude (${res.model}).`)
     } catch (e) {
@@ -70,13 +70,15 @@ export function BoardGrid() {
 
   return (
     <div className="h-full flex flex-col">
+      {compare && <CompareView scene={scene} onClose={() => setCompare(false)} />}
       <div className="px-4 py-3 border-b border-line flex items-center gap-3 shrink-0">
         <span className="chip">Sc {scene.sceneNo}</span>
         <input className="bg-transparent outline-none text-sm font-semibold flex-1 min-w-0" value={scene.heading}
           onChange={(e) => updateScene(scene.id, { heading: e.target.value })} placeholder="INT. LOCATION - DAY" />
         <span className="text-mute text-xs whitespace-nowrap">{shots.length} shots</span>
         <button className="btn" onClick={() => addShot(scene.id)}>＋ Shot</button>
-        <button className="btn" onClick={autoShots} title={`Lay out coverage in the ${director.name} lens (offline)`}>🎬 Auto shot list</button>
+        <button className="btn" onClick={autoShots} title={`Lay out coverage as ${director.name} (offline). Any existing list is kept as a variant.`}>🎬 Auto shot list</button>
+        <button className="btn" onClick={() => setCompare(true)} title="Compare this scene under different director / DP combinations">⇄ Variants{scene.variants?.length ? ` (${scene.variants.length})` : ''}</button>
         {providers?.claude && (
           <button className="btn" onClick={() => void claudeShots()} disabled={!!busy} title="Claude directs the scene in this lens">
             {busy ? <Spinner /> : '✦'} Claude breakdown

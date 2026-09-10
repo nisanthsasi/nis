@@ -66,8 +66,8 @@ function extractBeats(els: ScriptElement[]): Beat[] {
 }
 
 function lensFor(size: ShotSize, d: DirectorProfile): number {
-  const [w, l] = d.lensRange
-  const mid = Math.round((w + l) / 2)
+  const [w, l] = d.lensLadder ? [d.lensLadder.wide, d.lensLadder.long] : d.lensRange
+  const mid = d.lensLadder ? d.lensLadder.normal : Math.round((w + l) / 2)
   switch (size) {
     case 'EWS': case 'WS': case 'POV': return w
     case 'FS': case 'MWS': case 'TWO': return Math.round((w + mid) / 2)
