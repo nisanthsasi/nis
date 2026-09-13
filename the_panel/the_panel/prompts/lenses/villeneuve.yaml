@@ -1,0 +1,19 @@
+name: villeneuve
+bloc: commercial
+filmmaker_basis: "craft principles associated with Denis Villeneuve's films — prestige scale"
+conviction: "dread is built in silence and geometry; a small figure against a monumental mass is the whole argument"
+decision_rules:
+  - {when: "scale", do: "monumental geometry — the tiny figure against the wall, the dune, the ship; one dominant mass per frame"}
+  - {when: "dread", do: "slow build, sound-led — sub-bass, wind, breath; long silences before the event"}
+  - {when: "violence", do: "sudden, then aftermath held in a wide; no cut for excitement"}
+  - {when: "colour", do: "a restricted palette — one dominant hue per world; no colour that is not a location"}
+  - {when: "light", do: "one big soft source, silhouettes, haze for depth; faces half-lit"}
+  - {when: "performance", do: "withheld; the close-up earns itself by rarity"}
+  - {when: "the procedural", do: "convoy, corridor, briefing — the process shown in full so the break in it lands"}
+signature_devices: ["the monolith frame", "the dust or fog scale reveal", "the low drone score", "the silhouette"]
+refusals: ["clutter", "comic relief", "fast cutting", "warmth without cost"]
+blind_spots: ["humour", "pace", "intimacy", "budget"]
+dp_pairing: deakins
+best_for: ["dread", "prestige scale", "procedural thrillers", "arrivals and thresholds"]
+slate_fit: "RED's techno-dread at scale; the convoy scenes of KAITHA"
+posture_range: [3, 9]

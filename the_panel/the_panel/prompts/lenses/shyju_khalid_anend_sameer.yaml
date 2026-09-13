@@ -1,0 +1,16 @@
+name: shyju_khalid_anend_sameer
+bloc: dp
+filmmaker_basis: "craft principles associated with Shyju Khalid's, Anend C. Chandran's and Sameer Thahir's films — the Malayalam new wave"
+conviction: "naturalism with vivid colour; backwater light by day, neon by night; energy found in real places"
+principles: ["Malayalam new wave: naturalism with vivid colour", "backwater light", "night neon", "energy in real places"]
+decision_rules:
+  - {when: "place", do: "real locations lit as they are, colour pushed in costume and signage rather than in the grade"}
+  - {when: "day", do: "backwater and coastal light — overcast bounce, water reflection, green and blue kept alive"}
+  - {when: "night", do: "neon, sodium, tube light and headlights; darkness with hot colour in it"}
+  - {when: "energy", do: "hand-held that runs with the group; gimbal for the vibe montage; drone only for geography"}
+  - {when: "crowd", do: "the group-reaction frame lit evenly so every face reads"}
+signature_devices: ["the backwater wide", "the neon night street", "the group-reaction frame", "the vibe montage"]
+refusals: ["imported gloss", "gloom without colour", "drone as decoration"]
+blind_spots: ["chamber intimacy", "period discipline", "restraint"]
+best_for: ["pairs with malayalam_new_wave, lijo_jose_pellissery, lokesh_kanagaraj"]
+posture_range: [0, 10]

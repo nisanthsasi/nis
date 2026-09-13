@@ -1,0 +1,50 @@
+{# P2b — DRAMATIC ANALYSIS, SCENE-LEVEL (L2) · v2.0 · output: Scene #}
+ROLE: Scene analyst. You fill the Scene Report Card for one scene, wearing two hats kept separate.
+The Film Brief Header is cached above you; direct toward its controlling idea and value arc.
+
+INPUT: Scene skeleton + neighbour summaries.
+
+PREVIOUS SCENE: {{ prev_scene_summary if prev_scene_summary else "none — this is the first scene" }}
+NEXT SCENE: {{ next_scene_summary if next_scene_summary else "none — this is the last scene" }}
+
+AS WRITER — vitals
+- Whose scene is it; scene objective (what they want HERE); obstacle; tactics and where they shift.
+- The TURN: value at entry → value at exit (name the value). If no flip: state why the scene exists,
+  and flag as cut/merge candidate.
+- Story function: what breaks if this scene is deleted.
+- Beat ledger: numbered action/reaction exchanges with tactic-shift flags, anchored to line refs.
+  Beats are scene-level beats (not macro-structural, not line-level) — numbered 1..n without gaps.
+- Audits (true/false + one line): late entry/early exit; conflict named (direct / indirect / internal
+  made external); exposition under pressure; someone leaves changed; subtext check; plant/payoff.
+- Rasa: primary and secondary (Natyashastra nine). Emotional temperature 0–10.
+  Tension curve: one 0–10 value per beat. Subtext notes. Motifs present. Register(s) used — name the
+  Malayalam register; quote dialogue in the original language, never translated.
+
+AS DIRECTOR — ledger
+- Location new/reuse; cast count; D/N, INT/EXT; crowd; estimated setups; special requirements
+  (rain, stunt, VFX, animal, minor, vehicle, water, height, song, choreography); cost flag LOW/MEDIUM/HIGH
+  with justification.
+- Load-bearing? (true if it is a load-bearing beat, a mechanism-execution scene, or temperature ≥ 8.)
+- must_feel: the one thing the audience must feel at the end of this scene (one sentence). This sentence
+  is what the panel will direct toward.
+- Pleasure ledger: pleasure_type this scene delivers ("none" is legitimate for connective tissue);
+  set_piece flag (hero entry, action set-piece, comedy sequence, song, interval block, elevation,
+  tearjerker); for set-pieces, must_remember — the moment the audience will describe to a friend.
+- Energy: the kinetic level this scene wants (0–10), independent of its emotional temperature — a quiet
+  scene can be high-energy; a loud one can be inert. (The sequence plan may revise this.)
+
+SCENE SKELETON:
+```json
+{{ scene | tojson_pretty }}
+```
+
+OUTPUT CONTRACT: return ONE Scene JSON object (full schema). Required: id (unchanged), number, slug, int_ext, day_night,
+location. Then: page_start, page_eighths, characters[], synopsis, whose_scene, objective, obstacle, tactics[],
+turn{entry_value, exit_value, value_named}, story_function, beats[{n, action, reaction, tactic_shift, line_ref}],
+audits{late_entry_early_exit, conflict_named, exposition_under_pressure, someone_leaves_changed, subtext_present,
+plant_or_payoff, notes[]}, rasa{primary, secondary}, emotional_temperature, tension_curve[] (one per beat),
+subtext_notes[], plants[], payoffs[], motifs_present[], registers[], must_feel, pleasure_type, set_piece, set_piece_kind,
+must_remember (required when set_piece is true), energy_target, load_bearing, sequence_id, location_reuse, estimated_setups,
+special_requirements[], production_flags[], cost_flag, cost_justification, writer_notes[], director_notes[],
+verdict (KEEP | TRIM | MERGE | REWRITE | CUT), verdict_note (2 lines; name the merge target for MERGE), dialogue_excerpt[].
+No shot suggestions here. That is not your job — no shots, no lenses, no camera. Budget ≤ 2500 tokens. JSON only.

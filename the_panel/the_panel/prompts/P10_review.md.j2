@@ -1,0 +1,89 @@
+{# P10 — HUMAN REVIEW SCREEN (Gate 3) · v2.0 · rendered for the human, not a model · output: markdown #}
+{% set rec = plan.recommended %}
+{% macro option_block(opt, score) -%}
+1. **Governing idea:** {{ opt.governing_idea if opt.governing_idea else plan.governing_idea }}
+2. **Blocking:** {{ opt.blocking }}
+3. **Why:** {{ opt.rationale }}{% if opt.source_lenses %} _(stolen from: {{ opt.source_lenses | join(", ") }})_{% endif %}
+   Shots: {{ opt.shots | length }}{% if opt.reduced_coverage_variant %} · reduced-coverage variant: {{ opt.reduced_coverage_variant }}{% endif %}
+   Scores: fidelity {{ score.dramatic_fidelity }} · impact {{ score.emotional_impact }} · engagement {{ score.engagement }} · style {{ score.style_coherence }} · feasibility {{ score.feasibility }} · freshness {{ score.earned_freshness }}{% if score.consensus_device_penalty %} (consensus-device −{{ score.consensus_device_penalty }}){% endif %}{% if score.weighted_total is not none %} → **{{ score.weighted_total }}**{% endif %}
+{%- endmacro %}
+# Scene {{ scene.id }} · {{ scene.slug }}
+
+**Must-feel:** {{ scene.must_feel }}
+**Governing idea:** {{ plan.governing_idea }}
+**Pleasure beat:** {{ plan.pleasure_beat }}{% if plan.pleasure_none_reason %} _(none because: {{ plan.pleasure_none_reason }})_{% endif %}{% if plan.trailer_shot %} · **Trailer shot:** {{ plan.trailer_shot }}{% endif %}{% if plan.must_remember_delivery %} · **Must-remember lands:** {{ plan.must_remember_delivery }}{% endif %}
+**Energy:** plan {{ plan.energy_check.plan_energy }} vs sequence target {{ plan.energy_check.sequence_energy_target }} — {{ "matches" if plan.energy_check.matches else "MISMATCH" }}{% if plan.energy_check.note %} ({{ plan.energy_check.note }}){% endif %}
+
+## What we're doing here and why
+{{ plan.digest if plan.digest else plan.directors_note }}
+
+## Option A{% if rec == "A" %} — recommended{% endif %}
+{{ option_block(plan.option_A, plan.resonance_A) }}
+
+## Option B{% if rec == "B" %} — recommended{% endif %}
+{{ option_block(plan.option_B, plan.resonance_B) }}
+
+## The shot it cannot live without
+Shot {{ plan.the_shot_it_cannot_live_without.shot_no }} — {{ plan.the_shot_it_cannot_live_without.why }}
+
+## Department stances
+- **Colour:** {{ plan.department_handoff.colour_stance }}
+- **Music:** {{ plan.department_handoff.music_stance }}
+- **Sound:** {{ plan.department_handoff.sound_stance }}
+- **Design:** {{ plan.department_handoff.design_stance }}
+- **Performance:** {{ plan.department_handoff.performance_stance }}
+
+## Director's note (for the actors)
+{{ plan.directors_note }}
+
+## Audit flags
+{% if audit_flags is mapping %}
+{% for k, v in audit_flags.items() %}
+- **{{ k }}:** {{ v if v is string else v | tojson_pretty }}
+{% else %}
+- none
+{% endfor %}
+{% elif audit_flags is string %}
+- {{ audit_flags }}
+{% else %}
+{% for f in audit_flags %}
+- {{ f if f is string else f | tojson_pretty }}
+{% else %}
+- none
+{% endfor %}
+{% endif %}
+
+## Cap ledger
+{% if caps_status is mapping %}
+{% for k, v in caps_status.items() %}
+- {{ k }}: {{ v }}
+{% else %}
+- no caps recorded
+{% endfor %}
+{% else %}
+- {{ caps_status }}
+{% endif %}
+{% if plan.devices_used %}
+Devices spent by this scene: {% for d in plan.devices_used %}{{ d.device }} (earned by {{ d.setup_ref }}){% if not loop.last %}; {% endif %}{% endfor %}
+{% endif %}
+{% if plan.unresolved_tensions %}
+
+## Unresolved tensions
+{% for t in plan.unresolved_tensions %}
+- {{ t }}
+{% endfor %}
+{% endif %}
+
+## HUMAN_QUESTIONS
+{% for q in plan.human_questions %}
+- **{{ q.id }}** ({{ q.raised_by }}): {{ q.question }}
+  - [{{ "x" if q.conservative_option == 0 else " " }}] Option 1: {{ q.options[0] }}
+  - [{{ "x" if q.conservative_option == 1 else " " }}] Option 2: {{ q.options[1] }}{% if q.rationale %}
+  - _{{ q.rationale }}_{% endif %}
+{% else %}
+- none — the panel did not need to guess.
+{% endfor %}
+
+---
+Decide: **A** | **B** | **custom** (free text) + notes + overrides. An override that breaks the Style Bible, the scene's
+TURN or a cap gets exactly one push-back with the reason and the cost; then the system complies and logs it.

@@ -1,0 +1,40 @@
+{# P3 — PRODUCTION BREAKDOWN (L3) · v2.0 · output: BreakdownResult #}
+ROLE: 1st AD / line producer. You make the script schedulable and the panel honest.
+
+INPUT: All Scene JSON + budget tier + release target.
+
+BUDGET TIER: {{ budget_tier }} (micro / low / mid / studio — define the INR band you are working in{% if budget_inr is defined and budget_inr %}; stated budget: INR {{ budget_inr }}{% endif %}).
+RELEASE TARGET: {{ release_target }} — theatrical implies an interval block to cost; OTT implies a cold open.
+
+PER SCENE: cast speaking / non-speaking; background count; location (new / reuse; company move?);
+props (all capitalised items + implied); set dressing; wardrobe & continuity notes; makeup/SFX;
+vehicles; animals; minors (working-hour constraints); stunts; VFX; special equipment (rain machine,
+crane, drone, underwater, Steadicam, gimbal, high-speed); time-of-day light window (golden hour scenes
+flagged as schedule-critical); estimated setups; page eighths; cost flag.
+SET-PIECE COSTING: for every set_piece=true scene — extra shoot days, choreography/fight/dance rehearsal
+days, playback and lip-sync needs for songs, crowd and chorus numbers, high-speed camera days, VFX plates,
+star availability windows — and the cheapest staging that keeps the must_remember intact.
+A set-piece without a cost line is not yet a set-piece.
+
+FILM-LEVEL: location list with reuse map and grouping for company moves; cast day estimates per actor
+(star days separately); night-exterior count; crowd scenes; weather-dependent scenes; song and
+choreography days; CBFC/OTT risk flags (violence, language, sexual content, religion, real institutions)
+with the likely certificate band and what a safer staging would cost dramatically; top 10 cost drivers
+with a cheaper staging alternative for each.
+
+SCENES:
+```json
+{{ scenes | tojson_pretty }}
+```
+
+OUTPUT CONTRACT: return ONE BreakdownResult JSON object: rows[] (one BreakdownRow per scene, keyed by scene_id —
+required scene_id; then cast_speaking[], cast_non_speaking[], background_count, location, location_new, company_move,
+props[], set_dressing[], wardrobe_notes[], makeup_sfx[], vehicles[], animals[], minors[], stunts[], vfx[],
+special_equipment[], light_window, schedule_critical, estimated_setups, page_eighths, production_flags[], cost_flag,
+set_piece_costing{extra_shoot_days, rehearsal_days, playback_lipsync, crowd_count, high_speed_days, vfx_plates,
+star_windows[], cheapest_staging_keeping_must_remember} (required for set-piece scenes, null otherwise), cbfc_notes[])
+and film{budget_tier, budget_inr, locations[{name, scene_ids[], group, reuse_count}], cast_days[{name, days, is_star}],
+night_ext_count, crowd_scene_ids[], weather_dependent_ids[], song_choreography_days, cbfc_flags[{scene_id, category,
+likely_band, safer_staging, dramatic_cost}], likely_certificate, cost_drivers[≤10 {driver, scene_ids[], cheaper_alternative}],
+feasibility_facts[] (the ≤ 5 facts the panel must respect — these become HARD constraints in L5–L7),
+digest (≤ 200 words)}. Budget ≤ 6000 tokens. JSON only.

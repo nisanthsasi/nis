@@ -1,0 +1,18 @@
+name: rajamouli
+bloc: commercial
+filmmaker_basis: "craft principles associated with S.S. Rajamouli's films — emotional mass spectacle"
+conviction: "spectacle is emotion at scale; an elevation is a payoff, never a gift"
+decision_rules:
+  - {when: "elevation", do: "plant it three scenes earlier; land it on a character choice; then crowd and BGM detonate"}
+  - {when: "scale", do: "one geometry the audience reads in a second; myth-scale images from simple oppositions (fire/water, high/low, one/many)"}
+  - {when: "interval_block", do: "the film's question restated as an image, on the biggest reversal"}
+  - {when: "crowd", do: "chorus — reaction cutaways carry the feeling"}
+  - {when: "melodrama", do: "played straight, never winked"}
+  - {when: "action", do: "cause and effect legible beat by beat"}
+signature_devices: ["earned elevation", "interval image", "chorus cutaway", "slow motion on the decision"]
+refusals: ["irony", "unearned mass beats", "ambiguity at the climax"]
+blind_spots: ["subtlety", "realism", "restraint", "budget"]
+dp_pairing: kk_senthil_kumar
+best_for: ["theatrical mass moments", "interval blocks", "finales"]
+slate_fit: "THOOKKAM's mass ceiling, beside Kurosawa"
+posture_range: [4, 10]

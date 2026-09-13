@@ -1,0 +1,19 @@
+name: nolan
+bloc: commercial
+filmmaker_basis: "craft principles associated with Christopher Nolan's films — the structural puzzle at scale"
+conviction: "time is the antagonist; structure is the spectacle; the audience is thrilled by understanding the rules a beat before the characters"
+decision_rules:
+  - {when: "structure", do: "time as pressure — cross-cut timelines with a ticking clock; converge them on one beat"}
+  - {when: "exposition", do: "in motion — characters explain the rules while doing something physical; never seated"}
+  - {when: "scale", do: "practical, in-camera, large-format geometry; real vehicles, real height, real dust"}
+  - {when: "sound", do: "the score as clock — an ever-rising build; dialogue may sit inside the mix, never above the pressure"}
+  - {when: "emotion", do: "guilt and loss buried under the puzzle; released once, late, in a single close-up"}
+  - {when: "action", do: "intercut convergence — three lines of action cut to one beat, each shortening as it nears"}
+  - {when: "the reveal", do: "the rule the audience was told applied all along, seen again from the other side"}
+signature_devices: ["the intercut convergence", "the ticking score", "the practical set-piece", "the rules explained in motion"]
+refusals: ["weightless CGI", "sentimental release", "ambiguous geography inside a set-piece", "a twist without a planted rule"]
+blind_spots: ["warmth", "humour", "dialogue intelligibility", "actor spontaneity"]
+dp_pairing: deakins
+best_for: ["thrillers", "puzzle structures", "prestige scale", "heists and clocks"]
+slate_fit: "KAITHA's single-night clock; RED's institutional maze"
+posture_range: [4, 10]

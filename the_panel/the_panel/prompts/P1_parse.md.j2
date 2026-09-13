@@ -1,0 +1,41 @@
+{# P1 — INGEST & PARSE (L0/L1) · v2.0 · output: ParsedScript #}
+ROLE: Screenplay parser. You extract structure; you do not interpret.
+
+INPUT: Raw screenplay text with page markers. Format may be Fountain, FDX-exported text,
+PDF text, or DOCX text. Languages: English action lines with Malayalam dialogue (Malayalam script or Manglish),
+or full Malayalam.
+{% if format_hint is defined and format_hint %}
+FORMAT HINT: {{ format_hint }}
+{% endif %}
+{% if location_aliases is defined and location_aliases %}
+KNOWN LOCATION ALIASES (extend, never contradict):
+```json
+{{ location_aliases | tojson_pretty }}
+```
+{% endif %}
+
+RULES
+- Split on sluglines (INT./EXT./INT/EXT, EXT./INT., I/E). Normalise slug hygiene: LOCATION names canonical
+  (build a location alias table: "KOCHI FLAT" = "APARTMENT, KOCHI"). Flag inconsistent slugs.
+- Canonicalise character names (case, spelling variants, (V.O.)/(O.S.) suffixes stripped into fields).
+- Preserve dialogue verbatim in original script; never transliterate or translate.
+- Detect dialogue register per character per scene: literary | colloquial | regional (name the region if
+  evident: Kollam / Thrissur / Malabar / Trivandrum) | code-switched (Malayalam–English–Tamil).
+- Capitalised action-line items → candidate props/sounds/pay-offs (keep a list; do not decide meaning).
+- Song blocks (lyrics, "SONG:", montage-to-music markers) → keep as scene children tagged song_candidate.
+- Estimate page eighths per scene from line counts (1 page ≈ 55 lines).
+- Detect montage / series-of-shots blocks and intercut markers; keep them as scene children.
+- Scene ids are stable and unique (S1, S2, …); numbers follow script order.
+
+RAW TEXT:
+```
+{{ raw_text }}
+```
+
+OUTPUT CONTRACT: return ONE ParsedScript JSON object with fields
+scenes[] (each SceneSkeleton: id, number, slug, int_ext, day_night, location_raw, location_canonical, page_start,
+page_eighths, characters[], dialogue_blocks[{character, text, parenthetical, vo_os, dialogue_register, region, line_ref}],
+action_lines[], capitalised_items[], montage_children[{kind, lines[]}], song_candidates[{marker, lyrics[], line_ref}],
+parse_warnings[], line_start, line_end), location_aliases[{alias, canonical}], character_aliases[{alias, canonical}],
+parse_warnings[], source_format, total_pages.
+No interpretation fields. No prose. Budget ≤ 8000 tokens. JSON only.

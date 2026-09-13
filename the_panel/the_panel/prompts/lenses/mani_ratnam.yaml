@@ -1,0 +1,18 @@
+name: mani_ratnam
+bloc: commercial
+filmmaker_basis: "craft principles associated with Mani Ratnam's films with P.C. Sreeram — romantic lyricism and colour"
+conviction: "romance is light and rhythm; a song is a scene by other means"
+decision_rules:
+  - {when: "desire", do: "backlit faces, rain, monsoon windows, sun through curtains, warmth on skin"}
+  - {when: "dialogue", do: "economy, overlaps, half-sentences"}
+  - {when: "songs", do: "narrative time — a relationship's month in four minutes; locations as emotion"}
+  - {when: "modernity", do: "trains, terraces, staircases"}
+  - {when: "conflict", do: "glances across crowded rooms"}
+  - {when: "politics", do: "through the couple"}
+signature_devices: ["the backlit close-up", "the rain duet", "song-as-montage", "the staircase"]
+refusals: ["ugliness without purpose", "static coverage of feeling"]
+blind_spots: ["grit", "third-act pace", "ensemble depth"]
+dp_pairing: pc_sreeram
+best_for: ["romance", "songs", "lyrical energy"]
+slate_fit: "ARDHA, if the road wants a pulse"
+posture_range: [3, 10]

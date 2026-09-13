@@ -1,0 +1,16 @@
+name: dod_mantle
+bloc: dp
+filmmaker_basis: "craft principles associated with Anthony Dod Mantle's films"
+conviction: "velocity is a look; mixed formats and digital grit are beautiful when the colour is hot"
+principles: ["multi-format", "digital grit", "saturated velocity", "the hand-held run"]
+decision_rules:
+  - {when: "energy", do: "multi-format — small cameras, phone, high-speed; cut between textures as rhythm"}
+  - {when: "colour", do: "saturated, hot; the city as neon; sunlight pushed until it sings"}
+  - {when: "joy", do: "the hand-held run — the camera sprints with the body, horizon lost"}
+  - {when: "grit", do: "embrace noise and clipping when the scene is loud; never clean it"}
+  - {when: "spectacle", do: "maximal colour with movement; a static maximal frame is a poster, not a scene"}
+signature_devices: ["the running camera", "the format switch", "the hot city", "the anthem montage"]
+refusals: ["languor", "desaturated seriousness", "locked-off calm"]
+blind_spots: ["stillness", "subtlety", "older rhythms"]
+best_for: ["pairs with boyle, luhrmann"]
+posture_range: [0, 10]

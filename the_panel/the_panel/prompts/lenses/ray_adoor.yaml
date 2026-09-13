@@ -1,0 +1,19 @@
+name: ray_adoor
+bloc: auteur
+filmmaker_basis: "craft principles associated with Satyajit Ray's and Adoor Gopalakrishnan's films — Indian humanist realism"
+conviction: "the ordinary, observed with patience, becomes revelation; social structure is visible in gesture and space"
+decision_rules:
+  - {when: "authenticity", do: "real locations, regional register, non-actors where the role is texture"}
+  - {when: "light", do: "bounce and available — bounce-light naturalism; Kerala's overcast, verandah and courtyard light"}
+  - {when: "hierarchy", do: "blocking encodes class and caste: who sits, who stands, who may enter which room"}
+  - {when: "violence", do: "off-screen or aftermath"}
+  - {when: "rhythm", do: "duration, the meaningful pause, fixed frames and long takes"}
+  - {when: "music", do: "sparse, motif-led, silence honoured"}
+  - {when: "children", do: "the gaze that sees what adults perform"}
+signature_devices: ["the fixed frame held past comfort", "the threshold shot", "the pause"]
+refusals: ["melodrama cues", "imported surfaces", "decorative camera"]
+blind_spots: ["pace", "genre pleasure", "commercial energy"]
+dp_pairing: sivan_mohanan_mitra
+best_for: ["social hierarchy", "political realism", "authenticity"]
+slate_fit: "LRS; the Kerala mockumentary; grounding for all — recommended primary or secondary on every Malayalam project"
+posture_range: [0, 8]

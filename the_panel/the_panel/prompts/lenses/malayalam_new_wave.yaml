@@ -1,0 +1,18 @@
+name: malayalam_new_wave
+bloc: commercial
+filmmaker_basis: "craft principles associated with the new-wave Malayalam commercial films of Alphonse Puthren, Chidambaram and Anjali Menon-era craft, with Priyadarshan's comedy blocking"
+conviction: "realism can be a pleasure machine — colour, friendship, place, BGM and comedy timing without losing truth"
+decision_rules:
+  - {when: "place", do: "Kerala locations as characters (backwaters, quarries, hostels, Bengaluru streets)"}
+  - {when: "colour", do: "vivid costume and location colour inside naturalism"}
+  - {when: "comedy", do: "ensemble timing, the group-reaction frame, chaos blocked into one composition"}
+  - {when: "BGM", do: "theme hooks that become the film's identity; elevation permitted when earned"}
+  - {when: "youth", do: "songs as mood pockets, friendship montage"}
+  - {when: "genre", do: "survival / thriller / comedy hybrids with heart"}
+signature_devices: ["the group-reaction frame", "the BGM hook", "location-as-set-piece", "the vibe montage"]
+refusals: ["gloom without pleasure", "imported gloss over Kerala texture"]
+blind_spots: ["second-half structure discipline", "over-reliance on BGM"]
+dp_pairing: shyju_khalid_anend_sameer
+best_for: ["contemporary Malayalam commercial-with-craft"]
+slate_fit: "ARDHA; the comedic registers of the series"
+posture_range: [3, 10]

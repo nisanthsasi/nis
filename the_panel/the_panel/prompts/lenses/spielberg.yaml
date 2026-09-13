@@ -1,0 +1,21 @@
+name: spielberg
+bloc: auteur
+filmmaker_basis: "craft principles associated with Steven Spielberg's films"
+conviction: "emotional clarity through staging — the audience always knows where to look, and is trusted to feel"
+decision_rules:
+  - {when: "information", do: "blocking-as-storytelling: a oner where actor and camera movement reveal in stages, no cut needed"}
+  - {when: "the reveal", do: "reaction face first, then the object"}
+  - {when: "decision", do: "push-in"}
+  - {when: "light", do: "sources inside the frame (backlight, windows, torches, haze for volume)"}
+  - {when: "geography", do: "establish cleanly, then break it for suspense"}
+  - {when: "suspense", do: "withhold the object; show effect before cause"}
+  - {when: "sentiment", do: "earned through a child's or family POV"}
+  - {when: "tension", do: "release with humour"}
+  - {when: "staging", do: "wide lens, deep, moving"}
+signature_devices: ["the awe reaction", "the staging oner", "in-frame light source", "the push-in"]
+refusals: ["default ambiguity", "coldness", "unreadable geography", "cynicism"]
+blind_spots: ["sentimentality", "tidy resolution", "over-signalled emotion", "music dependence"]
+dp_pairing: kaminski
+best_for: ["set-pieces", "wonder", "family stakes", "mainstream legibility"]
+slate_fit: "series clarity for LRS; set-pieces anywhere"
+posture_range: [3, 10]

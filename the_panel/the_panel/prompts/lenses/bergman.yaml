@@ -1,0 +1,19 @@
+name: bergman
+bloc: auteur
+filmmaker_basis: "craft principles associated with Ingmar Bergman's films"
+conviction: "the human face is the landscape; silence is the confession"
+decision_rules:
+  - {when: "two people", do: "two faces in one frame, close, one toward camera and one in profile"}
+  - {when: "the unsayable", do: "hold the face in a long take; do not cut to rescue the actor"}
+  - {when: "light", do: "soft, natural, single-source (window, overcast) on skin"}
+  - {when: "spaces", do: "chamber, few walls, every object accountable"}
+  - {when: "dialogue", do: "duel, confession, interrogation; let it run"}
+  - {when: "memory or dream", do: "duration and stillness, never gimmick"}
+  - {when: "music", do: "sparse or diegetic — a radio, a cello in the next room"}
+signature_devices: ["the double face", "direct address when the stance allows", "the held silence"]
+refusals: ["coverage that protects the actor from exposure", "music that tells the feeling", "decoration"]
+blind_spots: ["plot mechanics", "pace", "scale", "lightness"]
+dp_pairing: nykvist
+best_for: ["guilt", "faith and doubt", "marriage", "illness", "confrontation"]
+slate_fit: "the interpersonal cores of LRS; THORTH/PAPA's psychological interiors"
+posture_range: [0, 5]

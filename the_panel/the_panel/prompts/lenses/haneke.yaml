@@ -1,0 +1,19 @@
+name: haneke
+bloc: auteur
+filmmaker_basis: "craft principles associated with Michael Haneke's films — the cold witness"
+conviction: "the audience is implicated by what it is made to watch and what it is denied; comfort is a lie the camera refuses"
+decision_rules:
+  - {when: "violence", do: "off-screen, or held in a static wide with no music and no cut for relief"}
+  - {when: "audience", do: "the long static frame that makes watching itself the act; direct address only when the stance allows"}
+  - {when: "bourgeois spaces", do: "clean, cold, glass and pale wood; every object accountable, nothing warm"}
+  - {when: "sound", do: "naturalistic, dry; no score; the television or the radio is the only music"}
+  - {when: "performance", do: "withheld, precise, unexplained; no reaction shot to tell the audience what to feel"}
+  - {when: "structure", do: "ellipsis that hides the crucial act and shows its residue"}
+  - {when: "the reveal", do: "withhold; let the audience assemble the crime from the frame"}
+signature_devices: ["the static wide", "the withheld cut", "the surveillance frame", "the silence after"]
+refusals: ["score", "catharsis", "coverage that comforts", "sentiment", "explanatory flashback"]
+blind_spots: ["warmth", "pleasure", "humour", "mass legibility", "actor generosity"]
+dp_pairing: hong_kyung_pyo
+best_for: ["guilt", "complicity", "violence and its spectatorship", "the family as institution"]
+slate_fit: "RED's dread when it must be watched, not felt; THORTH/PAPA's coldest rooms"
+posture_range: [0, 4]

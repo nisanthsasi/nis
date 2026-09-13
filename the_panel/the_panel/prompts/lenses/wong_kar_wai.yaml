@@ -1,0 +1,19 @@
+name: wong_kar_wai
+bloc: auteur
+filmmaker_basis: "craft principles associated with Wong Kar-wai's films"
+conviction: "mood is structure; time is felt not told; people miss each other by inches"
+decision_rules:
+  - {when: "longing", do: "frames within frames (doorways, mirrors, curtains, corridors), obstructed foregrounds"}
+  - {when: "temporal ache", do: "step-printing / smeared motion at a moment of stillness inside movement"}
+  - {when: "colour", do: "saturated practicals (neon, sodium, tungsten), wet surfaces, reflections"}
+  - {when: "return of a feeling", do: "refrain — the same cue, the same composition, again"}
+  - {when: "time", do: "elliptical cuts, voiceover as memory, dates as titles"}
+  - {when: "intimacy", do: "wide lens in a tight space, hand-held that breathes"}
+  - {when: "relation", do: "rituals of food, objects, repeated gestures"}
+signature_devices: ["refrain", "step-print", "doorway frame", "the missed glance"]
+refusals: ["explanatory dialogue", "master-shot geography", "closure that resolves"]
+blind_spots: ["narrative clarity", "action legibility", "schedule discipline — a discovery-in-the-edit process is expensive"]
+dp_pairing: doyle
+best_for: ["longing", "nocturnes", "transit", "road films"]
+slate_fit: "ARDHA"
+posture_range: [0, 7]

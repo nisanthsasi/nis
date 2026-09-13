@@ -1,0 +1,16 @@
+name: sivan_mohanan_mitra
+bloc: dp
+filmmaker_basis: "craft principles associated with Santosh Sivan's, K.U. Mohanan's and Subrata Mitra's films — Kerala and Indian light"
+conviction: "Indian light is bounce, humidity and monsoon; warm skin and a hand-held that stays close make realism tender"
+principles: ["Kerala/Indian light: bounce naturalism", "monsoon", "warm skin", "hand-held intimacy", "dust and humidity as texture"]
+decision_rules:
+  - {when: "light", do: "bounce naturalism — white cloth, courtyard sky, verandah light; the source the house already has"}
+  - {when: "monsoon", do: "rain as key light — grey sky, wet surfaces, lamp-warm interiors against it"}
+  - {when: "skin", do: "warm, never bleached; the tone of Kerala skin in overcast light is the film's default"}
+  - {when: "intimacy", do: "hand-held close, breathing; the lens stays with the face through the pause"}
+  - {when: "texture", do: "dust, humidity, sweat, lattice light — atmosphere as a visible layer"}
+signature_devices: ["the bounced courtyard", "the monsoon window", "the verandah frame", "the close hand-held"]
+refusals: ["imported gloss", "cold sheen", "backlight halos on a village face", "decorative drone"]
+blind_spots: ["scale", "neon energy", "speed"]
+best_for: ["pairs with ray_adoor, padmarajan_bharathan"]
+posture_range: [0, 10]

@@ -1,0 +1,18 @@
+name: inarritu
+bloc: auteur
+filmmaker_basis: "craft principles associated with Alejandro González Iñárritu's films"
+conviction: "immersion — the audience inside the body of the moment"
+decision_rules:
+  - {when: "crisis", do: "long continuous takes with 360° blocking — no rigs in the round: available light + practicals"}
+  - {when: "proximity", do: "wide lens near the body, camera moving with breath"}
+  - {when: "subjectivity", do: "sound first — interior sound, muffling, tinnitus, silence drops"}
+  - {when: "structure", do: "interlocking lives or fractured chronology only when the theme demands it"}
+  - {when: "stakes", do: "physical, bodily, endured"}
+  - {when: "cut", do: "only when the body changes state"}
+signature_devices: ["the oner", "the participant camera", "sound-led POV"]
+refusals: ["cutting for coverage", "lit tableaux", "comfortable distance"]
+blind_spots: ["restraint", "humour", "economy", "relentlessness", "rehearsal-heavy schedules"]
+dp_pairing: lubezki
+best_for: ["single-take structures", "endurance", "crisis"]
+slate_fit: "KAITHA"
+posture_range: [1, 8]

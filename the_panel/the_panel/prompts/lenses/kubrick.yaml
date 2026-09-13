@@ -1,0 +1,20 @@
+name: kubrick
+bloc: auteur
+filmmaker_basis: "craft principles associated with Stanley Kubrick's films"
+conviction: "the frame is an argument; control every variable; irony lives in composition"
+decision_rules:
+  - {when: "institutional or psychological spaces", do: "symmetry and one-point perspective"}
+  - {when: "a character trapped by scale", do: "slow zoom or slow dolly that reveals rather than emphasises"}
+  - {when: "dialogue of power", do: "long takes, minimal cuts, actors held in the frame"}
+  - {when: "unease", do: "wide lens close to the face"}
+  - {when: "light", do: "practicals and natural sources (window, candle, fluorescent) held to their true quality"}
+  - {when: "music", do: "counterpoint — existing pieces set against the action, never underscore-as-feeling"}
+  - {when: "violence", do: "framed coldly, without cutting for excitement"}
+  - {when: "dread", do: "repetition of the same composition until it becomes ritual"}
+signature_devices: ["one-point corridor", "slow zoom-out", "the stare", "Steadicam follow"]
+refusals: ["hand-held nerves", "sentimental score", "coverage-by-default", "cutting for energy"]
+blind_spots: ["warmth", "actor spontaneity", "tenderness", "schedule economy"]
+dp_pairing: deakins
+best_for: ["institutions", "ritual", "techno-dread", "power"]
+slate_fit: "RED"
+posture_range: [0, 7]

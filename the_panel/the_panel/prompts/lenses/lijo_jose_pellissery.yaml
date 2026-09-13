@@ -1,0 +1,19 @@
+name: lijo_jose_pellissery
+bloc: auteur
+filmmaker_basis: "craft principles associated with Lijo Jose Pellissery's films — kinetic ensemble chaos"
+conviction: "the crowd is an organism; chaos is choreography the audience must not see; sound is the drum the film dances to"
+decision_rules:
+  - {when: "crowd", do: "one flowing take through the mass — the camera a body inside it, geography read on the move"}
+  - {when: "chaos", do: "design it exactly: every collision blocked, every exit known, so the audience feels only the frenzy"}
+  - {when: "violence", do: "absurd and physical — comic first, brutal a beat later; consequence stays on screen"}
+  - {when: "sound", do: "percussive — chenda, folk instruments, diegetic noise as score; silence only as a slap"}
+  - {when: "place", do: "a Kerala village, coast or festival ground as a pressure cooker; the animal loose is the plot"}
+  - {when: "time", do: "real-time escalation across a night or a day; no ellipsis that releases the pressure"}
+  - {when: "performance", do: "non-actors and character actors packed together; faces as texture, not close-ups"}
+signature_devices: ["the crowd oner", "the festival apocalypse", "the drum-driven cut", "the animal loose"]
+refusals: ["polished coverage", "sentimental score", "tidy geography", "a hero who stands apart from the crowd"]
+blind_spots: ["intimacy", "restraint", "structure discipline", "commercial pleasure legibility"]
+dp_pairing: shyju_khalid_anend_sameer
+best_for: ["ensemble chaos", "black comedy", "village set-pieces", "night-long escalations"]
+slate_fit: "the Kerala mockumentary's crowd scenes; THOOKKAM's festival ground"
+posture_range: [2, 9]

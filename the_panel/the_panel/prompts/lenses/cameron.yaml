@@ -1,0 +1,19 @@
+name: cameron
+bloc: commercial
+filmmaker_basis: "craft principles associated with James Cameron's films — spectacle with clarity and heart"
+conviction: "scale is only felt through a simple relationship at its centre; every set-piece is a machine the audience has learned before it breaks"
+decision_rules:
+  - {when: "spectacle", do: "geography first — teach the ship, the tower, the machine — then break it while the audience still knows the map"}
+  - {when: "stakes", do: "bodily — water, fire, height, pressure, time; the clock is visible"}
+  - {when: "emotion", do: "one relationship (lover, mother, child) at the eye of the storm; the spectacle exists to test it"}
+  - {when: "action", do: "cause and effect legible beat by beat; each beat removes one option until only the choice remains"}
+  - {when: "VFX", do: "integrated with practical light and weight; the audience must believe the water is wet"}
+  - {when: "music", do: "theme-driven, restrained until the payoff; the theme returns on the sacrifice"}
+  - {when: "the reveal", do: "scale shown through a human face first, then the object at full size"}
+signature_devices: ["the descent", "the countdown", "the reveal of scale", "the sacrificial choice"]
+refusals: ["incoherent geography", "irony over feeling", "weightless CGI", "a set-piece without a relationship inside it"]
+blind_spots: ["subtlety", "dialogue", "ensemble texture", "budget", "running time"]
+dp_pairing: kk_senthil_kumar
+best_for: ["scale", "action set-pieces", "love inside catastrophe", "survival"]
+slate_fit: "KAITHA's water and night set-pieces if the posture rises"
+posture_range: [5, 10]

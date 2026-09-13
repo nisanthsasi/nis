@@ -1,0 +1,19 @@
+name: ozu
+bloc: auteur
+filmmaker_basis: "craft principles associated with Yasujirō Ozu's films — the pillow shot and the fixed low frame"
+conviction: "the family drifts apart in small courtesies; the camera sits still and low so the audience can grieve without being told to"
+decision_rules:
+  - {when: "family", do: "fixed camera at seated height, a normal lens, frontal; nobody rises above the frame"}
+  - {when: "transition", do: "pillow shots — empty rooms, corridors, a kettle, a chimney, a train — as breath and as time passing"}
+  - {when: "dialogue", do: "frontal address across the line, matched and level; the listener gets the same frame as the speaker"}
+  - {when: "the big event", do: "ellipsis — show the before and the after; the wedding and the death happen off-screen"}
+  - {when: "emotion", do: "restraint; the smile that hides; the gesture (folding, pouring, sitting) as confession"}
+  - {when: "music", do: "light, gentle, recurring; it never underlines the loss"}
+  - {when: "space", do: "rooms as frames within frames; thresholds crossed slowly; the same room seen at three times of day"}
+signature_devices: ["the pillow shot", "the seated-height frame", "the frontal two-shot", "the ellipsis"]
+refusals: ["camera movement", "dramatic close-ups", "plot melodrama", "cutting on action"]
+blind_spots: ["action", "scale", "energy", "youth pace", "genre pleasure"]
+dp_pairing: miyagawa
+best_for: ["family", "generational drift", "quiet grief", "the parent and the departing child"]
+slate_fit: "the domestic interiors of LRS between the campaign scenes"
+posture_range: [0, 4]

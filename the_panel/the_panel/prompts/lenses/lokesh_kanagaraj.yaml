@@ -1,0 +1,19 @@
+name: lokesh_kanagaraj
+bloc: commercial
+filmmaker_basis: "craft principles associated with Lokesh Kanagaraj's films — procedural mass in neon night"
+conviction: "a hero moment is earned by procedure — the plan, the reveal, the payoff — and detonated by BGM; the night location is the set-piece"
+decision_rules:
+  - {when: "mass", do: "the hero entry earned by procedure — a plan we watched, a reveal we did not; then the BGM hook"}
+  - {when: "night", do: "neon, sodium, wet streets, practicals; darkness with one hot colour in it"}
+  - {when: "action", do: "the location is the set-piece — a hospital floor, a truck, a prison block — geography learned, then weaponised"}
+  - {when: "interval_block", do: "the reveal that reframes the hero or the villain; the question restated as a face"}
+  - {when: "ensemble", do: "each character gets a signature (prop, gesture, hook); cameo energy is designed, never stumbled into"}
+  - {when: "BGM", do: "theme hooks as identity — eight bars the crowd will hum; the drop before the drop"}
+  - {when: "violence", do: "fast, legible, consequence shown in the crowd's reaction; no gore for its own sake"}
+signature_devices: ["the procedural reveal", "the neon night set-piece", "the BGM hook entry", "the interval flip"]
+refusals: ["sentimental slack", "unearned entries", "daylight flatness", "a villain without a procedure of his own"]
+blind_spots: ["depth for women characters", "restraint", "second-half discipline", "quiet scenes"]
+dp_pairing: shyju_khalid_anend_sameer
+best_for: ["mass action", "procedural thrillers", "star vehicles", "night-city set-pieces"]
+slate_fit: "THOOKKAM's mass night; KAITHA if the posture climbs past 7"
+posture_range: [6, 10]

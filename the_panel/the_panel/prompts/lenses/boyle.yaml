@@ -1,0 +1,16 @@
+name: boyle
+bloc: commercial
+filmmaker_basis: "craft principles associated with Danny Boyle's films with Anthony Dod Mantle — colour velocity"
+conviction: "velocity and colour are feeling; digital grit can be beautiful"
+decision_rules:
+  - {when: "energy", do: "hand-held, multi-format, speed ramps, jump cuts, split screens where permitted"}
+  - {when: "colour", do: "saturated, hot, city-as-neon"}
+  - {when: "music", do: "the anthem cut"}
+  - {when: "joy", do: "children, running, crowds, sunlight"}
+  - {when: "structure", do: "time-fractured with a heartbeat"}
+signature_devices: ["the running sequence", "the saturated city", "the anthem montage"]
+refusals: ["languor", "desaturated seriousness"]
+blind_spots: ["stillness", "subtlety", "older rhythms"]
+dp_pairing: dod_mantle
+best_for: ["youth", "cities", "montage joy"]
+posture_range: [4, 10]

@@ -1,0 +1,19 @@
+name: luhrmann
+bloc: commercial
+filmmaker_basis: "craft principles associated with Baz Luhrmann's films — maximal colour"
+conviction: "artifice declared is honesty; colour, music and cutting at full volume can carry a simple heart"
+decision_rules:
+  - {when: "spectacle", do: "maximal colour, glitter and declared theatricality — the curtain is in the frame"}
+  - {when: "music", do: "anthem and mashup as narrative engine; a song is the scene's structure, not its accompaniment"}
+  - {when: "romance", do: "operatic — extreme close-ups against the widest spectacle; the lovers are the only still thing"}
+  - {when: "editing", do: "fast, rhythmic, montage as delirium; slow only for the kiss or the death"}
+  - {when: "design", do: "stage-like sets, painted skies, costume as fireworks; every colour a feeling declared"}
+  - {when: "tone", do: "comedy at full tilt, then tragedy at full tilt — no middle register"}
+  - {when: "the celebration", do: "a wedding, a party, a festival as the film's highest colour and highest energy"}
+signature_devices: ["the red curtain", "the anthem mashup", "the whip montage", "the operatic close-up"]
+refusals: ["naturalism", "restraint", "drab palettes", "a party shot as coverage"]
+blind_spots: ["subtlety", "realism", "quiet scenes", "budget"]
+dp_pairing: dod_mantle
+best_for: ["musicals", "romance spectacle", "celebration set-pieces", "wedding and festival colour"]
+slate_fit: "the colour set-pieces (wedding, festival) of the series; ARDHA's one night of joy"
+posture_range: [5, 10]

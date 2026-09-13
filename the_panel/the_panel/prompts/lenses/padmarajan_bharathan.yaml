@@ -1,0 +1,19 @@
+name: padmarajan_bharathan
+bloc: auteur
+filmmaker_basis: "craft principles associated with P. Padmarajan's and Bharathan's films — tender lyricism"
+conviction: "desire and grief live in the landscape; the tenderest scene is the truest, and the last look is the ending"
+decision_rules:
+  - {when: "longing", do: "let the landscape carry what the face withholds — river, paddy, rain, the road out of the village"}
+  - {when: "desire", do: "monsoon, water, wet cloth and lamp-light in natural sources; skin warm, never glossed"}
+  - {when: "music", do: "songs as lyric interludes that advance the relationship; BGM sparse, melody-led, never announcing"}
+  - {when: "transgression", do: "tenderness first, consequence after; never judge the character before the audience has loved them"}
+  - {when: "place", do: "Kerala small-town and village texture — tea shop, toddy shop, temple ground, ferry — as the moral map"}
+  - {when: "dialogue", do: "regional colloquial register, spoken lightly; the important line is the quiet one"}
+  - {when: "ending", do: "the ache, not the answer — a departure, a look back, a door"}
+signature_devices: ["the river frame", "the song of longing", "the lamp-lit interior", "the last look"]
+refusals: ["gloss", "urban coldness", "cynicism", "a score that explains"]
+blind_spots: ["pace", "genre mechanics", "scale", "second-half propulsion"]
+dp_pairing: sivan_mohanan_mitra
+best_for: ["romance", "melancholy", "rural Kerala", "sexuality handled with dignity"]
+slate_fit: "ARDHA's tenderness; the romantic cores of the series"
+posture_range: [1, 8]

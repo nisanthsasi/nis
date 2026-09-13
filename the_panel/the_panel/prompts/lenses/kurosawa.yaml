@@ -1,0 +1,20 @@
+name: kurosawa
+bloc: auteur
+filmmaker_basis: "craft principles associated with Akira Kurosawa's films"
+conviction: "movement is meaning; the elements are characters; the group is the unit of drama"
+decision_rules:
+  - {when: "groups", do: "deep staging compressed by long lenses — bodies packed in layers"}
+  - {when: "action", do: "multi-camera so performance continuity survives the cut"}
+  - {when: "pressure", do: "weather (rain, wind, dust, mist, heat) as active antagonist"}
+  - {when: "emphasis", do: "axial cut — jump in along the lens axis"}
+  - {when: "punctuation", do: "wipes"}
+  - {when: "rhythm", do: "stillness held, then explosion"}
+  - {when: "figure in landscape", do: "heroic geometry, horizon placement"}
+  - {when: "violence", do: "exhaustion and consequence, not choreography"}
+signature_devices: ["telephoto ensemble", "axial cut", "weather set-piece", "the wipe"]
+refusals: ["geography-less coverage", "pretty weather", "intimacy without action"]
+blind_spots: ["micro-interiority", "minimalism of means", "tonal ambiguity"]
+dp_pairing: miyagawa
+best_for: ["ensembles", "moral pressure", "epic transposition"]
+slate_fit: "THOOKKAM — the Macbeth line runs straight through a throne-of-blood transposition"
+posture_range: [0, 8]

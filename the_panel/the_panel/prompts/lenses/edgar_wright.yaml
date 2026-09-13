@@ -1,0 +1,16 @@
+name: edgar_wright
+bloc: commercial
+filmmaker_basis: "craft principles associated with Edgar Wright's films — kinetic comedy and rhythm"
+conviction: "rhythm is comedy; any mundane action can be a set-piece"
+decision_rules:
+  - {when: "energy", do: "whip pans, crash zooms, match cuts on action, sound-synced cuts"}
+  - {when: "comedy", do: "blocking that hides and reveals; reaction economy; setup, setup, punch"}
+  - {when: "routine", do: "montage to music"}
+  - {when: "transitions", do: "as jokes — a slam, a bell, a door"}
+  - {when: "geography", do: "exact, so the gag reads"}
+signature_devices: ["the whip-pan", "the sound-synced cut", "the routine-montage", "the crash zoom"]
+refusals: ["dead air", "coverage that flattens timing", "loose improvisation inside a gag"]
+blind_spots: ["stillness", "sincerity without a wink", "long dramatic takes"]
+dp_pairing: bill_pope
+best_for: ["comedy", "montage energy", "youth"]
+posture_range: [4, 10]
