@@ -1,0 +1,63 @@
+# THE PANEL — runtime configuration.
+# Model IDs are the only place model names live. Verify against docs.claude.com before a real run.
+# Nothing in this file is a taste judgement: rubric weights, caps and panel mix come from the
+# approved Style Bible's commercial_posture via prompts/posture_presets.yaml — never from here.
+
+models:
+  fast: claude-sonnet-5          # L1 parse, L3 breakdown, exports that need a model
+  reasoning: claude-opus-5       # L2 understand, L4 style bible, lenses, integrator, departments, auditors
+  judge: claude-opus-5           # CP-8 eval judge
+
+routing:
+  parser: fast
+  breakdown: fast
+  analyst_film: reasoning
+  analyst_scene: reasoning
+  style_bible: reasoning
+  lens: reasoning
+  sequence_lens: reasoning
+  critique: reasoning
+  integrator: reasoning
+  department: reasoning
+  auditor: reasoning
+  judge: judge
+
+# Output-token budgets per stage (from the spec's cost shape). max_tokens = budget * slack.
+# A result whose output_tokens exceed the budget is flagged over_budget; strict_budgets raises.
+budgets:
+  slack: 2.0
+  strict_budgets: false
+  parser: 8000
+  analyst_film: 6000
+  analyst_scene: 2500
+  breakdown: 6000
+  style_bible: 6000
+  sequence_lens: 450
+  lens: 750
+  critique: 200
+  integrator: 1600
+  department: 850
+  auditor: 600
+  judge: 800
+
+request:
+  thinking: adaptive           # adaptive | none  (Opus 5 runs adaptive by default; omit on Fable)
+  effort: high                 # low | medium | high | xhigh | max
+  cache_ttl: 1h                # prompt-cache TTL for the Film Brief Header
+  timeout_s: 600
+  max_retries: 2
+
+pipeline:
+  scene_chunk_size: 12
+  full_panel_temperature_threshold: 8
+  reduced_panel_size: 3
+  header_max_tokens: 3000
+  batch_mode: false            # use the Message Batches API for whole-script passes
+
+paths:
+  prompts: the_panel/prompts
+  lenses: the_panel/prompts/lenses
+  store: .panel/state.sqlite
+  snapshots: .panel/snapshots
+  vault: vault                 # Obsidian vault export root
+  exports: exports

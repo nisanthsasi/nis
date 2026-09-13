@@ -1,0 +1,96 @@
+# Posture presets (§10). Every value is overridable in the approved Style Bible.
+# 0–3 arthouse · 4–6 hybrid · 7–10 mass. Nothing here is a taste judgement.
+bands:
+  arthouse: {min: 0, max: 3}
+  hybrid:   {min: 4, max: 6}
+  mass:     {min: 7, max: 10}
+
+rubric_weights:
+  arthouse: {dramatic_fidelity: 0.30, emotional_impact: 0.25, engagement: 0.05, style_coherence: 0.20, feasibility: 0.10, earned_freshness: 0.10}
+  hybrid:   {dramatic_fidelity: 0.25, emotional_impact: 0.25, engagement: 0.15, style_coherence: 0.15, feasibility: 0.10, earned_freshness: 0.10}
+  mass:     {dramatic_fidelity: 0.20, emotional_impact: 0.25, engagement: 0.25, style_coherence: 0.10, feasibility: 0.10, earned_freshness: 0.10}
+
+# Tie-break order: Style Bible → Feasibility → (posture ≥ 7: Engagement; otherwise Dramatic Fidelity)
+tie_break:
+  arthouse: [style_coherence, feasibility, dramatic_fidelity]
+  hybrid:   [style_coherence, feasibility, dramatic_fidelity]
+  mass:     [style_coherence, feasibility, engagement]
+
+panel_mix:
+  arthouse: {primaries_auteur_min: 3, primaries_commercial_min: 0, secondaries_commercial_min: 1, secondaries_auteur_min: 0}
+  hybrid:   {primaries_auteur_min: 1, primaries_commercial_min: 1, secondaries_commercial_min: 0, secondaries_auteur_min: 0}
+  mass:     {primaries_auteur_min: 0, primaries_commercial_min: 2, secondaries_commercial_min: 0, secondaries_auteur_min: 1}
+
+caps:                       # null = unlimited, each earned
+  arthouse: {elevation_cues: 1, slow_motion: 1, needle_drops: 0}
+  hybrid:   {elevation_cues: 3, slow_motion: 3, needle_drops: 2}
+  mass:     {elevation_cues: 5, slow_motion: null, needle_drops: 4}
+
+device_permissions:         # default earned devices allowed per band (device → what it must pay off)
+  arthouse:
+    - {device: "slow motion", must_pay_off: "a single decision the film has been building toward"}
+    - {device: "bgm elevation", must_pay_off: "the thesis image; spends the film's only cap"}
+  hybrid:
+    - {device: "slow motion", must_pay_off: "a character choice, planted earlier"}
+    - {device: "bgm elevation", must_pay_off: "a reversal that changes the central value"}
+    - {device: "needle drop", must_pay_off: "period or attitude the scene has already established"}
+    - {device: "drone", must_pay_off: "geography the story needs read in one second"}
+    - {device: "speed ramp", must_pay_off: "an impact whose cause the audience has seen"}
+  mass:
+    - {device: "slow motion", must_pay_off: "the decision, never the entrance alone"}
+    - {device: "bgm elevation", must_pay_off: "a planted choice; crowd and BGM detonate after it"}
+    - {device: "needle drop", must_pay_off: "attitude or period the scene owns"}
+    - {device: "drone", must_pay_off: "scale the audience reads in one second"}
+    - {device: "speed ramp", must_pay_off: "legible cause and effect"}
+    - {device: "freeze frame", must_pay_off: "a name, a moment the film will return to"}
+    - {device: "mass low-angle", must_pay_off: "the star entry earned by story need"}
+    - {device: "direct address", must_pay_off: "an audience contract declared in the cold open"}
+
+song_policy:
+  arthouse: {required_slots: 0, policy: "none / diegetic only"}
+  hybrid:   {required_slots: 0, policy: "BGM-led; songs optional as montage"}
+  mass:     {required_slots: 2, policy: "song plan required (≥ 2 slots)"}
+
+interval_block:
+  arthouse: {required: false, must_carry_reversal: false}
+  hybrid:   {required_if_theatrical: true, must_carry_reversal: false, ott_alternative: "optional midpoint detonation"}
+  mass:     {required: true, must_carry_reversal: true}
+
+first_hook_minute:
+  arthouse: {theatrical: 12, ott: 12}
+  hybrid:   {theatrical: 8, ott: 3}
+  mass:     {theatrical: 5, ott: 2}
+
+max_pleasure_gap_minutes:
+  arthouse: null
+  hybrid: 10
+  mass: 6
+
+must_remember_per_act:
+  arthouse: 0
+  hybrid: 1
+  mass: 2
+
+star_entry:
+  arthouse: "character moment"
+  hybrid: "set-piece if star_cast non-empty"
+  mass: "set-piece, designed with elevation permission"
+
+colour_energy_default:
+  arthouse: "restrained; motif colours only"
+  hybrid: "vivid inside naturalism; ≥ 1 colour set-piece"
+  mass: "saturated; colour set-pieces per act"
+
+comedy:
+  arthouse: "as character truth"
+  hybrid: "placed relative to dread in P9.4"
+  mass: "placed and timed; comedy run as set-piece"
+
+anti_groupthink:
+  consensus_device_share: 0.60      # device in > 60% of visions → 'consensus device', Earned Freshness −2
+  consensus_device_penalty: 2.0
+  lone_engagement_carry_threshold: 8.0   # a single lens's pleasure beat with Engagement ≥ 8 is carried
+
+engagement_audit:
+  full_panel_temperature_threshold: 8
+  reduced_panel_size: 3
