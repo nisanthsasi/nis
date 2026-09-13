@@ -42,3 +42,15 @@ print(result.suggestions)  # list of improvement suggestions
 ```bash
 pytest tests/ -v
 ```
+
+---
+
+## THE PANEL — AI Director suite
+
+`the_panel/` is a separate uv-managed Python 3.12 project: a multi-lens AI Director pipeline that turns a
+screenplay into department-ready directing plans (script → understanding → deliberation → directives).
+See [`the_panel/README.md`](the_panel/README.md) and the design document [`the_panel/docs/SPEC.md`](the_panel/docs/SPEC.md).
+
+```bash
+cd the_panel && uv sync --extra dev && uv run pytest -q
+```
