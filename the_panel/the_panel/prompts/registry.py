@@ -25,7 +25,7 @@ class TemplateSpec:
 
 TEMPLATES: dict[str, TemplateSpec] = {
     "P0_showrunner": TemplateSpec("P0_showrunner", "P0_showrunner.md.j2", (), ("film_brief_header",), "orchestrator system prompt"),
-    "P1_parse": TemplateSpec("P1_parse", "P1_parse.md.j2", ("raw_text",), ("format_hint", "location_aliases"), "L0/L1 parser (model-assisted pass)"),
+    "P1_parse": TemplateSpec("P1_parse", "P1_parse.md.j2", ("raw_text",), ("format_hint", "location_aliases", "rule_based_parse"), "L0/L1 parser (model-assisted pass)"),
     "P2a_film": TemplateSpec("P2a_film", "P2a_film.md.j2", ("scenes", "release_target"), ("mechanism_notes", "cast_notes", "budget_tier"), "film-level dramaturgy"),
     "P2b_scene": TemplateSpec("P2b_scene", "P2b_scene.md.j2", ("scene", "prev_scene_summary", "next_scene_summary"), (), "scene report card"),
     "P3_breakdown": TemplateSpec("P3_breakdown", "P3_breakdown.md.j2", ("scenes", "budget_tier", "release_target"), ("budget_inr",), "production breakdown"),

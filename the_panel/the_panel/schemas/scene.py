@@ -68,6 +68,7 @@ class SceneSkeleton(BaseModel):
     capitalised_items: list[str] = Field(default_factory=list)
     montage_children: list[MontageChild] = Field(default_factory=list)
     song_candidates: list[SongCandidate] = Field(default_factory=list)
+    transitions: list[str] = Field(default_factory=list, description="transitions written in the scene (CUT TO:, FADE OUT.) — structure, not a cut decision")
     parse_warnings: list[str] = Field(default_factory=list)
     line_start: int | None = None
     line_end: int | None = None

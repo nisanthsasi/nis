@@ -4,8 +4,22 @@ The Film Brief Header is cached above you; direct toward its controlling idea an
 
 INPUT: Scene skeleton + neighbour summaries.
 
+{% if prev_scene_summary is mapping %}
+PREVIOUS SCENE:
+```json
+{{ prev_scene_summary | tojson_pretty }}
+```
+{% else %}
 PREVIOUS SCENE: {{ prev_scene_summary if prev_scene_summary else "none — this is the first scene" }}
+{% endif %}
+{% if next_scene_summary is mapping %}
+NEXT SCENE:
+```json
+{{ next_scene_summary | tojson_pretty }}
+```
+{% else %}
 NEXT SCENE: {{ next_scene_summary if next_scene_summary else "none — this is the last scene" }}
+{% endif %}
 
 AS WRITER — vitals
 - Whose scene is it; scene objective (what they want HERE); obstacle; tactics and where they shift.

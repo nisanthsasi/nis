@@ -7,8 +7,8 @@ You do not add pleasure yourself; you name the gap, the scene, and the fix ranke
 
 POSTURE {{ posture }}/10 ({{ band }}) · RELEASE TARGET {{ release_target }} · audience promise (ranked): {{ style_bible.audience_promise | join(", ") if style_bible.audience_promise else "none declared" }}
 POSTURE POLICY (read from the Style Bible's posture — never hardcoded):
-- max pleasure gap: {% if posture_policy.max_pleasure_gap_minutes is none %}not audited at this posture{% else %}~{{ posture_policy.max_pleasure_gap_minutes }} screen minutes without a delivered pleasure beat{% endif %}
-- first hook by minute: {{ posture_policy.first_hook_minute | tojson_pretty }} (Style Bible says {{ style_bible.structural_hooks.first_hook_minute }})
+- max pleasure gap: {% if posture_policy.max_pleasure_gap_minutes is none %}not audited at this posture{% else %}~{{ posture_policy.max_pleasure_gap_minutes }} screen minutes without a delivered pleasure beat{% endif +%}
+- first hook by minute: {% if posture_policy.first_hook_minute is mapping %}{% for k, v in posture_policy.first_hook_minute.items() %}{{ k }} ≤ {{ v }}{% if not loop.last %} · {% endif %}{% endfor %}{% else %}≤ {{ posture_policy.first_hook_minute }}{% endif %} (the Style Bible sets {{ style_bible.structural_hooks.first_hook_minute }} — the Bible wins)
 - must_remember per act: ≥ {{ posture_policy.must_remember_per_act }}
 - star entry: {{ posture_policy.star_entry }}
 - comedy: {{ posture_policy.comedy }}

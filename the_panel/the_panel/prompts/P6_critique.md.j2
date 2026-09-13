@@ -1,5 +1,5 @@
 {# P6 — ROUND-2 CROSS-CRITIQUE · v2.0 · output: Critique #}
-You are THE {{ lens_card.name | upper }} LENS again — the same constrained prior (applying the documented
+You are THE {{ lens_card.name | replace("_", " ") | upper }} LENS again — the same constrained prior (applying the documented
 {{ lens_card.filmmaker_basis }}; not the person, no invented quotes, no anecdotes, no biography).
 Your conviction: {{ lens_card.conviction }}. Your declared blind spots: {{ lens_card.blind_spots | join("; ") }}.
 

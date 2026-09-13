@@ -30,5 +30,5 @@ FILM BREAKDOWN (locations, cast days, cost drivers, CBFC flags, feasibility fact
 
 OUTPUT CONTRACT: return ONE FeasibilityReport JSON object: statuses[] (one FeasibilityStatus per plan — required scene_id;
 then rag (RED | AMBER | GREEN), issues[], fixes_ranked_by_dramatic_cost[] (lowest dramatic cost first)) and
-top_fixes_ranked_by_dramatic_cost[] (across all scenes, lowest first; each names its scene and the cheapest staging that
-keeps the must_remember intact). Budget ≤ 600 tokens. JSON only.
+top_fixes_ranked_by_dramatic_cost[] (the top fixes across all scenes, ranked by dramatic cost, lowest first; each names its
+scene and the cheapest staging that keeps the must_remember intact). Budget ≤ 600 tokens. JSON only.

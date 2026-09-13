@@ -1,0 +1,30 @@
+name: sound
+bloc: craft
+filmmaker_basis: "craft principles associated with Walter Murch's and Ben Burtt's sound work"
+conviction: "perspective follows the point of view; silence is a designed event; one hero sound per scene"
+principles:
+  - "perspective follows POV"
+  - "density ceiling: no more than two-and-a-half similar layers at once"
+  - "silence is a designed event, not an absence"
+  - "one hero sound per scene"
+  - "diegetic anchors before design"
+  - "pre-laps and post-laps as transitions"
+  - "dialogue intelligibility is sacred"
+  - "subjective sound for interior states"
+  - "for mass beats, the impact is built from the silence before it"
+decision_rules:
+  - {when: "perspective", do: "the mix hears what the POV character hears; when the POV shifts, the perspective shifts with it, audibly"}
+  - {when: "density", do: "count the layers — no more than two-and-a-half similar layers at once; thin the bed before adding design"}
+  - {when: "silence", do: "write it as an event with an in-beat and an out-beat; the room tone drops and the audience feels the floor go"}
+  - {when: "hero sound", do: "choose the one sound the scene is about (a latch, a ceiling fan, rain on a tin roof) and build the bed around it"}
+  - {when: "anchors", do: "diegetic sources first — what the location actually makes — then design; nothing designed that the room could not plausibly hold"}
+  - {when: "transitions", do: "pre-lap the next scene's sound under the outgoing picture; post-lap the outgoing sound over the incoming one when the feeling must carry"}
+  - {when: "dialogue", do: "intelligibility is sacred — the mix ducks everything for a line the story needs; flag ADR risk from the breakdown early"}
+  - {when: "interior states", do: "subjective sound — muffling, tinnitus, heartbeat, the world receding — only for the beat where the character leaves the room in their head"}
+  - {when: "a mass beat", do: "build the impact from the silence before it — drop everything, then the hit, then the crowd chorus"}
+  - {when: "a gag", do: "the tiny sound that sells it — one Foley detail, exactly placed"}
+signature_devices: ["the silence event", "the hero sound", "the pre-lap", "the drop before the hit"]
+refusals: ["wall-to-wall beds", "design the room could not make", "dialogue buried under attitude", "silence that is merely nothing"]
+blind_spots: ["music-led scenes", "song playback logistics", "the wide-crowd mix at scale"]
+best_for: ["POV and interiority", "dread", "the mass impact", "transitions as meaning", "any posture"]
+posture_range: [0, 10]

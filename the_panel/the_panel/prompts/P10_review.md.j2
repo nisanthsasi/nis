@@ -3,24 +3,24 @@
 {% macro option_block(opt, score) -%}
 1. **Governing idea:** {{ opt.governing_idea if opt.governing_idea else plan.governing_idea }}
 2. **Blocking:** {{ opt.blocking }}
-3. **Why:** {{ opt.rationale }}{% if opt.source_lenses %} _(stolen from: {{ opt.source_lenses | join(", ") }})_{% endif %}
-   Shots: {{ opt.shots | length }}{% if opt.reduced_coverage_variant %} · reduced-coverage variant: {{ opt.reduced_coverage_variant }}{% endif %}
-   Scores: fidelity {{ score.dramatic_fidelity }} · impact {{ score.emotional_impact }} · engagement {{ score.engagement }} · style {{ score.style_coherence }} · feasibility {{ score.feasibility }} · freshness {{ score.earned_freshness }}{% if score.consensus_device_penalty %} (consensus-device −{{ score.consensus_device_penalty }}){% endif %}{% if score.weighted_total is not none %} → **{{ score.weighted_total }}**{% endif %}
+3. **Why:** {{ opt.rationale }}{% if opt.source_lenses %} _(stolen from: {{ opt.source_lenses | join(", ") }})_{% endif +%}
+   Shots: {{ opt.shots | length }}{% if opt.reduced_coverage_variant %} · reduced-coverage variant: {{ opt.reduced_coverage_variant }}{% endif +%}
+   Scores: fidelity {{ score.dramatic_fidelity }} · impact {{ score.emotional_impact }} · engagement {{ score.engagement }} · style {{ score.style_coherence }} · feasibility {{ score.feasibility }} · freshness {{ score.earned_freshness }}{% if score.consensus_device_penalty %} (consensus-device −{{ score.consensus_device_penalty }}){% endif %}{% if score.weighted_total is not none %} → **{{ score.weighted_total }}**{% endif +%}
 {%- endmacro %}
 # Scene {{ scene.id }} · {{ scene.slug }}
 
 **Must-feel:** {{ scene.must_feel }}
 **Governing idea:** {{ plan.governing_idea }}
-**Pleasure beat:** {{ plan.pleasure_beat }}{% if plan.pleasure_none_reason %} _(none because: {{ plan.pleasure_none_reason }})_{% endif %}{% if plan.trailer_shot %} · **Trailer shot:** {{ plan.trailer_shot }}{% endif %}{% if plan.must_remember_delivery %} · **Must-remember lands:** {{ plan.must_remember_delivery }}{% endif %}
-**Energy:** plan {{ plan.energy_check.plan_energy }} vs sequence target {{ plan.energy_check.sequence_energy_target }} — {{ "matches" if plan.energy_check.matches else "MISMATCH" }}{% if plan.energy_check.note %} ({{ plan.energy_check.note }}){% endif %}
+**Pleasure beat:** {{ plan.pleasure_beat }}{% if plan.pleasure_none_reason %} _(none because: {{ plan.pleasure_none_reason }})_{% endif %}{% if plan.trailer_shot %} · **Trailer shot:** {{ plan.trailer_shot }}{% endif %}{% if plan.must_remember_delivery %} · **Must-remember lands:** {{ plan.must_remember_delivery }}{% endif +%}
+**Energy:** plan {{ plan.energy_check.plan_energy }} vs sequence target {{ plan.energy_check.sequence_energy_target }} — {{ "matches" if plan.energy_check.matches else "MISMATCH" }}{% if plan.energy_check.note %} ({{ plan.energy_check.note }}){% endif +%}
 
 ## What we're doing here and why
 {{ plan.digest if plan.digest else plan.directors_note }}
 
-## Option A{% if rec == "A" %} — recommended{% endif %}
+## Option A{% if rec == "A" %} — recommended{% endif +%}
 {{ option_block(plan.option_A, plan.resonance_A) }}
 
-## Option B{% if rec == "B" %} — recommended{% endif %}
+## Option B{% if rec == "B" %} — recommended{% endif +%}
 {{ option_block(plan.option_B, plan.resonance_B) }}
 
 ## The shot it cannot live without
@@ -64,7 +64,7 @@ Shot {{ plan.the_shot_it_cannot_live_without.shot_no }} — {{ plan.the_shot_it_
 - {{ caps_status }}
 {% endif %}
 {% if plan.devices_used %}
-Devices spent by this scene: {% for d in plan.devices_used %}{{ d.device }} (earned by {{ d.setup_ref }}){% if not loop.last %}; {% endif %}{% endfor %}
+Devices spent by this scene: {% for d in plan.devices_used %}{{ d.device }} (earned by {{ d.setup_ref }}){% if not loop.last %}; {% endif %}{% endfor +%}
 {% endif %}
 {% if plan.unresolved_tensions %}
 
@@ -78,8 +78,8 @@ Devices spent by this scene: {% for d in plan.devices_used %}{{ d.device }} (ear
 {% for q in plan.human_questions %}
 - **{{ q.id }}** ({{ q.raised_by }}): {{ q.question }}
   - [{{ "x" if q.conservative_option == 0 else " " }}] Option 1: {{ q.options[0] }}
-  - [{{ "x" if q.conservative_option == 1 else " " }}] Option 2: {{ q.options[1] }}{% if q.rationale %}
-  - _{{ q.rationale }}_{% endif %}
+  - [{{ "x" if q.conservative_option == 1 else " " }}] Option 2: {{ q.options[1] }}{% if q.rationale +%}
+  - _{{ q.rationale }}_{% endif +%}
 {% else %}
 - none — the panel did not need to guess.
 {% endfor %}

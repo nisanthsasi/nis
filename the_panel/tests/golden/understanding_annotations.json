@@ -1,0 +1,28 @@
+{
+  "_about": "Hand annotations for the five-scene understanding pilot (tests/test_understanding.py). The L2 tests run P2a/P2b offline against these expectations: the FilmBrief's load-bearing beats, sequence map and set-piece candidates, and every scene's load_bearing / set_piece / sequence_id after apply_film_flags. The scene responder reports load_bearing=false and no sequence_id on purpose — the pipeline must derive both from the brief (and from temperature ≥ 8).",
+  "five_scene_pilot": {
+    "title": "KAITHA (pilot sequence)",
+    "release_target": "both",
+    "scene_ids": ["S1", "S2", "S3", "S4", "S5"],
+    "load_bearing_beats": [
+      {"name": "inciting", "scene_id": "S1", "note": "Ravi does not come to the jetty; Anju takes the witness herself"},
+      {"name": "midpoint", "scene_id": "S3", "note": "the checkpoint: Anju chooses the witness over her brother's alibi"},
+      {"name": "climax", "scene_id": "S5", "note": "Ammachi returns the locket; loyalty is paid, not passed on"}
+    ],
+    "sequences": [
+      {"sequence_id": "SEQ1", "scene_ids": ["S1", "S2", "S3"], "function": "the smuggling begins and the first exit closes", "rhythm": "accelerating", "act": "1"},
+      {"sequence_id": "SEQ2", "scene_ids": ["S4", "S5"], "function": "the price is paid at home", "rhythm": "releasing", "act": "3"}
+    ],
+    "set_piece_candidates": [
+      {"scene_id": "S3", "kind": "action", "pleasure_type": "thrill", "earning_beat": "Anju's choice at the barrier", "interval_candidate": true},
+      {"scene_id": "S5", "kind": "tearjerker", "pleasure_type": "tears", "earning_beat": "the locket handed back without a word", "interval_candidate": false}
+    ],
+    "scenes": {
+      "S1": {"sequence_id": "SEQ1", "emotional_temperature": 6, "load_bearing": true, "set_piece": false, "pleasure_type": "dread", "why": "inciting beat in the brief"},
+      "S2": {"sequence_id": "SEQ1", "emotional_temperature": 4, "load_bearing": false, "set_piece": false, "pleasure_type": "none", "why": "connective tissue; below the temperature threshold and not a beat"},
+      "S3": {"sequence_id": "SEQ1", "emotional_temperature": 9, "load_bearing": true, "set_piece": true, "set_piece_kind": "action", "pleasure_type": "thrill", "must_remember": "Anju drives the ambulance through the checkpoint barrier with the siren off", "why": "midpoint reversal; the action set-piece"},
+      "S4": {"sequence_id": "SEQ2", "emotional_temperature": 8, "load_bearing": true, "set_piece": false, "pleasure_type": "dread", "why": "not a beat in the brief — temperature 8 alone makes it load-bearing"},
+      "S5": {"sequence_id": "SEQ2", "emotional_temperature": 7, "load_bearing": true, "set_piece": true, "set_piece_kind": "tearjerker", "pleasure_type": "tears", "must_remember": "Ammachi hands the brass locket back without a word", "why": "climax; the tearjerker set-piece"}
+    }
+  }
+}

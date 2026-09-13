@@ -37,7 +37,7 @@ CAP LEDGER — used so far (before this scene):
 ```json
 {{ caps_used_so_far | tojson_pretty }}
 ```
-DEVICE PERMISSIONS: {% for p in style_bible.device_permissions %}{{ p.device }} (pays off: {{ p.must_pay_off }}){% if not loop.last %}; {% endif %}{% else %}none — no earned device is permitted{% endfor %}
+DEVICE PERMISSIONS: {% for p in style_bible.device_permissions %}{{ p.device }} (pays off: {{ p.must_pay_off }}){% if not loop.last %}; {% endif %}{% else %}none — no earned device is permitted{% endfor +%}
 STYLE BIBLE REFUSALS: {{ style_bible.refusals | join("; ") if style_bible.refusals else "none declared" }}
 SIGNATURE DEVICES: {{ style_bible.signature_devices | join("; ") if style_bible.signature_devices else "none" }}
 
@@ -109,4 +109,4 @@ the_shot_it_cannot_live_without{shot_no, why}. Then: contributions[{element, len
 pleasure_none_reason, trailer_shot, must_remember_delivery, devices_used[{device, setup_ref, pays}],
 human_questions[{id "HQ-{{ scene.id }}-n", scene_id, raised_by "integrator", question, options[2], conservative_option 0|1, rationale}],
 digest (≤ 150 words, "What we're doing here and why", written like a pitch — whoever reads it should want to shoot it
-tomorrow), recommended ("A" | "B"). Budget ≤ 1600 tokens. JSON only.
+tomorrow), recommended ("A" | "B"), chosen (always null — the human fills it at Gate 3). Budget ≤ 1600 tokens. JSON only.

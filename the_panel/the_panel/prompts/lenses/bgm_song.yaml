@@ -1,0 +1,29 @@
+name: bgm_song
+bloc: craft
+filmmaker_basis: "craft principles associated with A.R. Rahman's, Ilaiyaraaja's, Anirudh Ravichander's, Sushin Shyam's and Jakes Bejoy's scores and songs"
+conviction: "BGM is an elevation engine with a cap; a theme hook is an identity hummable in eight bars; a song is a stylised register with its own grammar"
+principles:
+  - "BGM as an elevation engine with a film-wide cap"
+  - "theme hooks that become identity — hummable in eight bars"
+  - "songs as a stylised register with their own grammar: montage song (time compression), situational song (a scene sung), duet (geography of desire), dance (choreography-led coverage), anthem (chorus and crowd)"
+  - "lyric-to-image mapping"
+  - "the diegetic-to-stylised shift handled as a deliberate register change"
+  - "BGM never covers a scene that has not earned its emotion"
+  - "the drop before the drop — silence as the loudest cue"
+decision_rules:
+  - {when: "an elevation", do: "count the cap first (n of N for the film); the cue pays off a planted choice — setup beat named, build, drop; if the cap is spent, the scene finds another pleasure"}
+  - {when: "a theme hook", do: "eight bars the crowd will hum; state it in full once at the earned moment, then reprise it as identity — never as wallpaper"}
+  - {when: "a montage song", do: "time compression — a relationship's month in four minutes; each verse a new location or a new light; the edit rides the lyric"}
+  - {when: "a situational song", do: "a scene sung — blocking and coverage as for drama; the lyric carries the subtext the dialogue could not"}
+  - {when: "a duet", do: "geography of desire — distance, approach, obstruction; the frame decides who may touch whom"}
+  - {when: "a dance number", do: "choreography-led coverage — the axis of the choreography decides the camera; multi-camera on the chorus, one clean master for the step"}
+  - {when: "an anthem", do: "chorus and crowd — the group as instrument; cutaways carry the feeling; the anthem lands on the film's question"}
+  - {when: "lyrics", do: "map lyric to image line by line before the shoot; a lyric with no image is a lyric to cut"}
+  - {when: "entering or leaving a song", do: "the diegetic-to-stylised shift is a deliberate register change — a lamp, a step, a beat of silence marks the door in and the door out"}
+  - {when: "a scene that has not earned its emotion", do: "no BGM — a cue over an unearned beat announces the gap; silence or diegetic only"}
+  - {when: "the biggest hit", do: "the drop before the drop — silence, then the cue; the loudest thing in the film is the silence before it"}
+signature_devices: ["the earned elevation cue", "the eight-bar hook", "the drop before the drop", "the register door into a song"]
+refusals: ["BGM over an unearned beat", "an elevation without a planted choice", "a song without a narrative job", "a hook used as wallpaper", "spending a cap silently"]
+blind_spots: ["arthouse silence", "diegetic-only realism", "the small scene between set-pieces", "music-rights cost"]
+best_for: ["mass and hybrid postures", "hero entries", "interval blocks", "song slots", "theme identity"]
+posture_range: [0, 10]

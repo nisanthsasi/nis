@@ -1,0 +1,105 @@
+{
+  "_about": "Hand annotations for the golden scripts. L1 (CP-2) tests check the structural fields; L2 (CP-3) tests check load_bearing / set_piece against these ids.",
+  "kaitha_pilot": {
+    "file": "kaitha_pilot.fountain",
+    "source_format": "fountain",
+    "scene_count": 9,
+    "load_bearing": ["S3", "S7"],
+    "set_piece": "S7",
+    "set_piece_kind": "action",
+    "set_piece_prop": "BRASS LOCKET",
+    "prop_planted_in": "S1",
+    "prop_pays_off_in": "S7",
+    "night_exteriors": ["S1", "S5", "S7"],
+    "crowd_scene": "S5",
+    "intercut_scene": "S6",
+    "canonical_locations": {
+      "S1": "VYPIN JETTY",
+      "S2": "AMBULANCE",
+      "S3": "KOCHI FLAT",
+      "S4": "KOCHI FLAT",
+      "S5": "BROADWAY NIGHT MARKET",
+      "S6": "AMBULANCE / KOCHI FLAT",
+      "S7": "GOSHREE BRIDGE CHECKPOINT",
+      "S8": "VYPIN JETTY",
+      "S9": "KOCHI FLAT"
+    },
+    "location_variants": {
+      "KOCHI FLAT": ["KOCHI FLAT", "APARTMENT, KOCHI", "KOCHI FLAT."],
+      "VYPIN JETTY": ["VYPIN JETTY", "VYPEEN JETTY"]
+    },
+    "int_ext": {"S1": "EXT", "S2": "INT", "S6": "INT/EXT", "S9": "INT"},
+    "day_night": {"S1": "NIGHT", "S2": "CONTINUOUS", "S4": "LATER", "S8": "DAWN", "S9": "DAWN"},
+    "characters": ["ANJU", "RAVI", "KURIAKOSE", "AMMACHI", "SHIBU", "MAN IN WHITE", "SI KUNJUMON", "CONSTABLE"],
+    "characters_by_scene": {
+      "S1": ["ANJU", "RAVI"],
+      "S3": ["AMMACHI", "ANJU"],
+      "S4": ["RAVI", "ANJU", "SHIBU"],
+      "S7": ["SI KUNJUMON", "ANJU", "CONSTABLE"]
+    },
+    "character_aliases": {"SHIBOO": "SHIBU"},
+    "vo_os": [
+      {"scene": "S1", "character": "RAVI", "vo_os": "V.O."},
+      {"scene": "S6", "character": "AMMACHI", "vo_os": "V.O."}
+    ],
+    "song_candidates": {"S9": 1},
+    "song_lyric_count": {"S9": 4},
+    "montage_children": {"S5": "series_of_shots", "S6": "intercut", "S9": "montage"},
+    "montage_children_total": 3,
+    "song_candidates_total": 1,
+    "registers": [
+      {"scene": "S1", "block": 0, "character": "ANJU", "script": "malayalam", "register": "colloquial", "region": null},
+      {"scene": "S1", "block": 1, "character": "RAVI", "script": "manglish", "register": "colloquial", "region": null},
+      {"scene": "S3", "block": 3, "character": "AMMACHI", "script": "malayalam", "register": "literary", "region": null},
+      {"scene": "S4", "block": 2, "character": "SHIBU", "script": "manglish", "register": "colloquial", "region": null},
+      {"scene": "S6", "block": 1, "character": "ANJU", "script": "mixed", "register": "code_switched", "region": null},
+      {"scene": "S7", "block": 0, "character": "SI KUNJUMON", "script": "malayalam", "register": "regional", "region": "Thrissur"},
+      {"scene": "S7", "block": 3, "character": "CONSTABLE", "script": "manglish", "register": "regional", "region": "Kollam"},
+      {"scene": "S7", "block": 6, "character": "CONSTABLE", "script": "english", "register": "colloquial", "region": null}
+    ],
+    "verbatim_dialogue": {
+      "S1": ["ചേട്ടാ, ഞാൻ ജെട്ടിയിൽ ഉണ്ട്. നീ എവിടെയാ?", "Ippo varaam. Onnu wait cheyy, Anju. Vandi block aayi.", "പത്തു മിനിറ്റ്. അതിൽ കൂടുതൽ ഇല്ല."],
+      "S7": ["എന്തൂട്ടാ ഇത്ര രാത്രി? ഏത് ആശുപത്രി?"]
+    }
+  },
+  "veri_scenes": {
+    "file": "veri_scenes.pdf",
+    "source_format": "pdf",
+    "scene_count": 3,
+    "total_pages": 2,
+    "page_of_scene": {"S1": 1, "S2": 1, "S3": 2},
+    "canonical_locations": {"S1": "THRISSUR POORAM GROUND", "S2": "TEMPLE OFFICE", "S3": "ELEPHANT SHED"},
+    "day_night": {"S1": "DAY", "S2": "CONTINUOUS", "S3": "NIGHT"},
+    "characters": ["VELU", "TEMPLE SECRETARY"],
+    "crowd_scene": "S1",
+    "set_piece_prop": "STEEL TIFFIN CARRIER",
+    "registers": [
+      {"scene": "S1", "block": 0, "character": "VELU", "script": "manglish", "register": "regional", "region": "Thrissur"},
+      {"scene": "S2", "block": 1, "character": "TEMPLE SECRETARY", "script": "manglish", "register": "colloquial", "region": null}
+    ],
+    "verbatim_dialogue": {"S2": ["Secretary sir, aana onnu nokkanam. Pani undu.", "Pooram kazhinjittu mathi. Ippo pattilla."]},
+    "multiline_dialogue": {"scene": "S1", "block": 0, "lines": ["Enthoottu thirakka ithu. Vazhi tharoo,", "vazhi tharoo!"]},
+    "parenthetical": {"scene": "S3", "block": 0, "value": "to the elephant"},
+    "furniture_never_parsed": ["(CONTINUED)", "CONTINUED:", "1.", "2."]
+  },
+  "ardha_song": {
+    "file": "ardha_song.docx",
+    "source_format": "docx",
+    "scene_count": 2,
+    "total_pages": 2,
+    "page_of_scene": {"S1": 1, "S2": 2},
+    "canonical_locations": {"S1": "PERIYAR RIVERBANK", "S2": "MEERA'S HOUSE"},
+    "characters": ["MEERA", "VISHNU", "AMMA"],
+    "vo_os": [{"scene": "S1", "character": "VISHNU", "vo_os": "O.S."}],
+    "song_candidates": {"S1": 1},
+    "song_lyric_count": {"S1": 4},
+    "song_marker_contains": "ARDHA NILAVIL",
+    "montage_children": {"S1": "montage"},
+    "registers": [
+      {"scene": "S1", "block": 0, "character": "MEERA", "script": "malayalam", "register": "colloquial", "region": null},
+      {"scene": "S1", "block": 1, "character": "VISHNU", "script": "manglish", "register": "colloquial", "region": null}
+    ],
+    "verbatim_dialogue": {"S1": ["ഇന്നും വരില്ലെന്ന് അറിയാം. എന്നിട്ടും ഞാൻ ഇവിടെ ഇരിക്കുന്നു."], "S2": ["പാട്ട് പാടി നടന്നാൽ വയറ് നിറയില്ല."]},
+    "lyrics_verbatim": ["♪ അർദ്ധ നിലാവിൽ ഞാൻ കാത്തിരുന്നു", "♪ Nee varum ennu, nee varum ennu"]
+  }
+}

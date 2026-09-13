@@ -13,6 +13,15 @@ KNOWN LOCATION ALIASES (extend, never contradict):
 {{ location_aliases | tojson_pretty }}
 ```
 {% endif %}
+{% if rule_based_parse is defined and rule_based_parse %}
+RULE-BASED PARSE (refine this; do not re-parse from scratch). Keep every scene id, number, line_start and
+line_end exactly; keep every dialogue text byte-for-byte. You may correct dialogue_register / region per
+block, add or fix location_aliases and character_aliases, correct a mis-split character cue, and add
+parse_warnings. Nothing else changes.
+```json
+{{ rule_based_parse | tojson_pretty }}
+```
+{% endif %}
 
 RULES
 - Split on sluglines (INT./EXT./INT/EXT, EXT./INT., I/E). Normalise slug hygiene: LOCATION names canonical

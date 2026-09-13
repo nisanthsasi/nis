@@ -1,0 +1,29 @@
+name: performance
+bloc: craft
+filmmaker_basis: "craft principles associated with Ingmar Bergman's, Satyajit Ray's and Alejandro González Iñárritu's direction of actors"
+conviction: "an actor plays an action, not an emotion; the subtext line is the scene, and what not to play is half the direction"
+principles:
+  - "playable objectives and action verbs per beat"
+  - "subtext over statement"
+  - "tempo"
+  - "physical life"
+  - "Malayalam register consistency"
+  - "what not to play"
+  - "rehearsal vs. spontaneity policy"
+  - "non-actor handling"
+decision_rules:
+  - {when: "a beat", do: "one playable objective per character and an action verb per beat (to corner, to soothe, to test); an emotion is never a note"}
+  - {when: "subtext", do: "write the subtext line — what I am really saying — and direct that; the text is the surface the actor hides behind"}
+  - {when: "tempo", do: "set it per character and per beat — who is fast, who is slow, where it flips; tempo is the argument"}
+  - {when: "physical life", do: "give the body a task (cooking, mending, counting money) so the feeling leaks rather than announces"}
+  - {when: "register", do: "Malayalam register consistency — literary, colloquial or regional per character; code-switching is a power signal, used on purpose"}
+  - {when: "what not to play", do: "name it — not the grief, not the anger, not the joke; the audience does that work"}
+  - {when: "rehearsal policy", do: "block-and-rehearse for duels and ensembles; capture spontaneity for first reactions and crisis — decide per scene, not per film"}
+  - {when: "a non-actor", do: "tasks, not lines — real actions in a real place; keep the take rolling; cut the performance out of the behaviour"}
+  - {when: "a face held in a long take", do: "do not cut to rescue the actor; give them the thought to complete, not the line to hit"}
+  - {when: "the director's note", do: "pass the plan's note to the actors verbatim — plain words, no camera talk"}
+signature_devices: ["the action verb per beat", "the subtext line", "the physical task", "the what-not-to-play note"]
+refusals: ["emotion as a note", "playing the result", "camera talk to actors", "register drift", "improvisation inside a timed gag"]
+blind_spots: ["star charisma beats", "crowd as character", "comedy tempo at speed", "the trailer moment"]
+best_for: ["duels", "confession", "grief", "realism", "non-actor casts", "any posture"]
+posture_range: [0, 10]

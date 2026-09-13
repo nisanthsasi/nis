@@ -15,7 +15,7 @@ POSTURE {{ posture }}/10 ({{ band }}). RESONANCE RUBRIC WEIGHTS (from the Style 
 - {{ c }}: {{ w }}
 {% endfor %}
 Score each criterion 0–10 on the recommended option ({{ plan.recommended }}):
-  dramatic_fidelity — serves the TURN ({{ scene.turn.value_named }} {{ scene.turn.entry_value }} → {{ scene.turn.exit_value }}) and the must-feel; every shot beat-tethered to beats {% for b in scene.beats %}{{ b.n }}{% if not loop.last %}, {% endif %}{% endfor %}
+  dramatic_fidelity — serves the TURN ({{ scene.turn.value_named }} {{ scene.turn.entry_value }} → {{ scene.turn.exit_value }}) and the must-feel; every shot beat-tethered to beats {% for b in scene.beats %}{{ b.n }}{% if not loop.last %}, {% endif %}{% endfor +%}
   emotional_impact — rasa {{ scene.rasa.primary }} realised; temperature {{ scene.emotional_temperature }} reached
   engagement — pleasure {{ scene.pleasure_type }} delivered; energy matches {{ scene.energy_target }}; colour alive; must-remember lands; survives a trailer
   style_coherence — Style Bible compliance (refusals: {{ style_bible.refusals | join("; ") if style_bible.refusals else "none" }}); caps; amendments justified
